@@ -112,4 +112,7 @@ if (isset($_POST['crearequipo'])) {
             </div>
         </div>
 </div>
+
+<?php include '../includes/foot.php';?>
+
 <?php include 'includes/footer.php';?>

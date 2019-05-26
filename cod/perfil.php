@@ -103,5 +103,7 @@ $sql = $conex->prepare("INSERT INTO `cod`(`id_cod`, `nombre`, `rol`, `modo_pref`
         </div>
     </div>
 
+    <?php include '../includes/foot.php';?>
+
 
     <?php include '../includes/foot.php';?>
