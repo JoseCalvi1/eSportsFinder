@@ -5,6 +5,8 @@
     $opc = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
     $dsn = "mysql:host=localhost;dbname=esports_finder";
     $conex = new PDO($dsn, "root", "", $opc);
+    //$dsn = "mysql:host=esportsfpqjose.mysql.db;dbname=esportsfpqjose";
+    //$conex = new PDO($dsn, "esportsfpqjose", "19TEquiero2014", $opc);
     } catch (Exception $ex) {
       die("Error: ".$e->getMessage());
     }

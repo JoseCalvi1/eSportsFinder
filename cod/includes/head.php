@@ -21,4 +21,5 @@ $correo = $_SESSION['correo'];
     <link rel="stylesheet" type="text/css" href="../css/esports.css">
     <link rel="manifest" href="../manifest.json">
     <title>eSports Finder</title>
+    <link  rel="icon"   href="/images/icono-1x.png" type="image/png">
   </head>

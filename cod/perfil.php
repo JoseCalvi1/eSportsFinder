@@ -31,6 +31,8 @@ if (isset($_POST['crearjugador'])) {
             $opc = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
             $dsn = "mysql:host=localhost;dbname=esports_finder";
             $conex = new PDO($dsn, "root", "", $opc);
+            //$dsn = "mysql:host=esportsfpqjose.mysql.db;dbname=esportsfpqjose";
+            //$conex = new PDO($dsn, "esportsfpqjose", "19TEquiero2014", $opc);
         } catch (Exception $ex) {
           die("Error: ".$e->getMessage());
         }
@@ -49,7 +51,7 @@ $sql = $conex->prepare("INSERT INTO `cod`(`id_cod`, `nombre`, `rol`, `modo_pref`
 } 
 
 ?>
-<div class="container-fluid">
+<div class="container">
         <div class="row content">
                 <form class="formcrear margin5" action="perfil.php" method="POST">
                     <div class="form-group">
@@ -84,7 +86,7 @@ $sql = $conex->prepare("INSERT INTO `cod`(`id_cod`, `nombre`, `rol`, `modo_pref`
                     </fieldset>
                     <fieldset class="form-group">
                         <label>Disponibilidad</label>
-                        <div class="form-check">
+                        <div class="form-check checkbox">
                             <label class="form-check-label">
                                 <input type="checkbox" class="form-check-input" name="tiempo[]" value="Mañana"> Mañana
                             </label><br>

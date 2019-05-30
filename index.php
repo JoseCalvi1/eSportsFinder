@@ -62,7 +62,7 @@
         <h5 class="modal-title" id="exampleModalLabel">Inicia sesión</h5>
       </div>
       <div class="modal-body">
-        <form action="Login.php" method="POST">
+        <form action="" method="POST">
             <div class="form-group">
                 <label for="email" class="bmd-label-floating">Correo electrónico</label>
                 <input type="email" class="form-control" id="correo" name="correo">

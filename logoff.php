@@ -3,5 +3,5 @@
 session_start();
 // Y la eliminamos     
 session_unset();
-header("Location: Login.php");
+header("Location: index.php");
 ?>

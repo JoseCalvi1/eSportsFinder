@@ -1,5 +1,5 @@
 <!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark primary-color fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
   <!-- Navbar brand -->
   <a class="navbar-brand" href="juegos.php">Esports Finder</a>

@@ -16,25 +16,30 @@ if (!isset($_SESSION['correo'])) {
 
 <div class="container elegirJuego">
     <div class="row">
-        <div class="col-6 padding-5">
+        <div class="col-6 col-md-3  padding-5">
             <a href="cod/index.php">
                 <img class="imgElegir" src="images/cod.jpg">
             </a>
         </div>
-        <div class="col-6 padding-5">
-            <img class="imgElegir" src="images/lol.jpg">
+        <div class="col-6 col-md-3  padding-5">
+            <img class="imgElegir opacity" src="images/lol.jpg">
+            <h4 class="centrado">Próximamente</h4>
         </div>
-        <div class="col-6 padding-5">
-            <img class="imgElegir" src="images/apex.jpg">
+        <div class="col-6 col-md-3  padding-5">
+            <img class="imgElegir opacity" src="images/apex.jpg">
+            <h4 class="centrado">Próximamente</h4>
         </div>
-        <div class="col-6 padding-5">
-            <img class="imgElegir" src="images/cod.jpg">
+        <div class="col-6 col-md-3  padding-5">
+            <img class="imgElegir opacity" src="images/fifa.jpg">
+            <h4 class="centrado">Próximamente</h4>
         </div>
-        <div class="col-6 padding-5">
-            <img class="imgElegir" src="images/lol.jpg">
+        <div class="col-6 col-md-3  padding-5">
+            <img class="imgElegir opacity" src="images/fortnite.jpg">
+            <h4 class="centrado">Próximamente</h4>
         </div>
-        <div class="col-6 padding-5">
-            <img class="imgElegir" src="images/apex.jpg">
+        <div class="col-6 col-md-3  padding-5">
+            <img class="imgElegir opacity" src="images/overwatch.jpg">
+            <h4 class="centrado">Próximamente</h4>
         </div>
     </div>
 </div>

@@ -15,6 +15,8 @@
                 $opc = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
                 $dsn = "mysql:host=localhost;dbname=esports_finder";
                 $conex = new PDO($dsn, "root", "", $opc);
+                //$dsn = "mysql:host=esportsfpqjose.mysql.db;dbname=esportsfpqjose";
+                //$conex = new PDO($dsn, "esportsfpqjose", "19TEquiero2014", $opc);
             } catch (Exception $ex) {
               die("Error: ".$e->getMessage());
             }
@@ -23,7 +25,7 @@
             " VALUES ('','".$Rnombre."','".$Rcorreo."','".$Rusuario."','".MD5($Rclave)."','".$Rcorreo."','".$Rcorreo."',null)");
             $sql->execute();
             unset($conex);
-            header("Location: Login.php");
+            header("Location: index.php");
 
         }
     }
@@ -31,7 +33,7 @@
 
 
 <div class="container">
-<div><span class="error"><?php if(isset($error)) echo $error; ?></span></div>
+<div><h3>Introduce los datos para registrarte</h3></div>
 
     <form action="registrar.php" method="POST">
             <div class="form-group">
@@ -56,13 +58,8 @@
                 <label for="rclave" class="bmd-label-floating"> Repite contraseña</label>
                 <input type="password" class="form-control" id="Rrclave">
             </div>
-            <div class="checkbox">
-                <label>
-                <input type="checkbox"> Recuerdame
-                </label>
-            </div>
             <button type="submit" class="btn btn-primary btn-raised" name="registrar" value="Registrar">Registrar</button>
-            <p>Ir a <a href="Login.php">Inicio</a></p>
+            <p>Ir a <a href="index.php">Inicio</a></p>
         </form>
     </div>
 
