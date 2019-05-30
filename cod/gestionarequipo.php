@@ -135,6 +135,8 @@ if (isset($_POST['agregarjugador'])) {
                         <input id="dedicado" type="number" class="form-control" name="dedicado" value="<?php echo $resultado['tiempo_juego']; ?>" required>
                     </fieldset>
                     <button type="submit" class="btn btn-primary" name="modificarequipo">Modificar equipo</button>
+                </form>
+                <form class="formcrear margin5" action="gestionarequipo.php" method="POST">
                     <button type="submit" class="btn btn-danger" name="eliminarequipo">Eliminar equipo</button>
                 </form>
                 <br>

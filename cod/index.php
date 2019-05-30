@@ -80,10 +80,10 @@ if (!isset($_SESSION['correo'])) {
             </a>
         </div>
         <div class="col-6 padding-5">
-            <a class="link-none" href="equipos.php">
+            <a class="link-none" href="mensajes.php">
                 <div class="opcionCoD padding-5">
                     <img src="../images/equipos.ico">
-                    <p>Equipos</p>
+                    <p>Mensajes</p>
                 </div>
             </a>
         </div>
