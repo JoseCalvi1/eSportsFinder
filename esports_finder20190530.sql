@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-05-2019 a las 20:33:36
+-- Tiempo de generación: 30-05-2019 a las 17:28:39
 -- Versión del servidor: 10.1.30-MariaDB
 -- Versión de PHP: 7.2.1
 
@@ -44,6 +44,13 @@ CREATE TABLE `cod` (
   `id_usuario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `cod`
+--
+
+INSERT INTO `cod` (`id_cod`, `nombre`, `rol`, `modo_pref`, `descripcion`, `tiempo_juego`, `disponibilidad`, `created_by`, `modified_by`, `date_entered`, `date_modified`, `id_equipo`, `id_usuario`) VALUES
+(1, 'JoseCalvi1', 'Slayer', 'Control', '', 'Menos de 2 horas', 'Tarde, Noche', 'josecalvilloolmedo@gmail.com', 'josecalvilloolmedo@gmail.com', '2019-05-30 11:13:29', '2019-05-30 17:22:03', NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -68,13 +75,36 @@ CREATE TABLE `equipo_cod` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `mensajes`
+--
+
+CREATE TABLE `mensajes` (
+  `id_mensaje` int(11) NOT NULL,
+  `send_from` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `send_to` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `mensaje` varchar(200) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `mensajes`
+--
+
+INSERT INTO `mensajes` (`id_mensaje`, `send_from`, `send_to`, `mensaje`) VALUES
+(1, 'josecalvilloolmedo@gmail.com', 'josecalvilloolmedo@gmail.com', 'asdasd'),
+(2, 'josecalvilloolmedo@gmail.com', 'josecalvilloolmedo@gmail.com', 'asdasd'),
+(3, 'josecalvilloolmedo@gmail.com', 'josecalvilloolmedo@gmail.com', 'asdasdasd'),
+(4, 'josecalvilloolmedo@gmail.com', 'asd', 'asdasd'),
+(5, 'josecalvilloolmedo@gmail.com', 'josecalvilloolmedo@gmail.com', 'asdasdasd4');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `team_scrim_cod`
 --
 
 CREATE TABLE `team_scrim_cod` (
   `id_teamscrim` int(11) NOT NULL,
   `fecha` datetime DEFAULT NULL,
-  `hora` datetime DEFAULT NULL,
   `id_equipo` int(11) NOT NULL,
   `created_by` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
   `modified_by` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
@@ -103,6 +133,13 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id_usuario`, `nombre`, `correo`, `usuario`, `clave`, `created_by`, `modified_by`, `date_entered`, `date_modified`, `id_cod`) VALUES
+(5, 'Jose Calvillo', 'josecalvilloolmedo@gmail.com', 'JoseCalvi1', '09bde05b8f6b9272fea2fe773d50cffb', 'josecalvilloolmedo@gmail.com', 'josecalvilloolmedo@gmail.com', '2019-05-30 10:44:28', '2019-05-30 11:13:29', 1);
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -120,6 +157,12 @@ ALTER TABLE `cod`
 ALTER TABLE `equipo_cod`
   ADD PRIMARY KEY (`id_equipo`),
   ADD KEY `fk_capitan` (`id_capitan`);
+
+--
+-- Indices de la tabla `mensajes`
+--
+ALTER TABLE `mensajes`
+  ADD PRIMARY KEY (`id_mensaje`);
 
 --
 -- Indices de la tabla `team_scrim_cod`
@@ -143,7 +186,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `cod`
 --
 ALTER TABLE `cod`
-  MODIFY `id_cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `equipo_cod`
@@ -152,16 +195,22 @@ ALTER TABLE `equipo_cod`
   MODIFY `id_equipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT de la tabla `mensajes`
+--
+ALTER TABLE `mensajes`
+  MODIFY `id_mensaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT de la tabla `team_scrim_cod`
 --
 ALTER TABLE `team_scrim_cod`
-  MODIFY `id_teamscrim` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_teamscrim` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
