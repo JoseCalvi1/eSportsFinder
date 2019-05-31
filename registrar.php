@@ -38,21 +38,21 @@
     <form action="registrar.php" method="POST">
             <div class="form-group">
                 <label for="Rnombre" class="bmd-label-floating">Nombre completo</label>
-                <input type="text" class="form-control" id="Rnombre" name="Rnombre" required>
+                <input type="text" class="form-control" id="Rnombre" name="Rnombre" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" title="Formato de nombre incorrecto" required>
             </div>
             <div class="form-group">
                 <label for="Rcorreo" class="bmd-label-floating">Correo electrónico</label>
-                <input type="email" class="form-control" id="Rcorreo" name="Rcorreo" required>
+                <input type="email" class="form-control" id="Rcorreo" name="Rcorreo" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" title="Formato de correo erróneo" required>
                 <span class="bmd-help">Tu correo no se compartirá con nadie.</span>
             </div>
             <div class="form-group">
                 <label for="Rusuario" class="bmd-label-floating">Usuario</label>
-                <input type="text" class="form-control" id="Rusuario" name="Rusuario" required>
+                <input type="text" class="form-control" id="Rusuario" name="Rusuario" pattern="^([a-zA-Z0-9]){5,12}$" title="Logintud de 5 a 12 caracteres entre letras y números" required>
                 <span class="bmd-help">Tu correo no se compartirá con nadie.</span>
             </div>
             <div class="form-group">
                 <label for="Rclave" class="bmd-label-floating">Clave</label>
-                <input type="password" class="form-control" id="Rclave" name="Rclave" required>
+                <input type="password" class="form-control" id="Rclave" name="Rclave" pattern="[A-Za-z0-9!?-]{8,12}" title="Letras mayúsculas, minúsculas, números y los caracteres !?- Su tamaño: entre 8 y 12 caracteres." required>
             </div>
             <div class="form-group">
                 <label for="rclave" class="bmd-label-floating"> Repite contraseña</label>
