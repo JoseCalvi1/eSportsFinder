@@ -1,6 +1,7 @@
 <?php include 'includes/head.php';?>
 <?php
 $error = "d-none";
+$disabled = "disabled";
 
 // Comprobamos que el usuario se haya autentificado
 if (!isset($_SESSION['correo'])) {
@@ -22,6 +23,10 @@ if (!isset($_SESSION['correo'])) {
     $sql->execute();
     $resultado = $sql->fetch(PDO::FETCH_ASSOC);
     $id_equipo = $resultado['id_equipo'];
+
+    if ($resultado['created_by'] == $correo) {
+        $disabled = "";
+    }
 
     // Obtenemos los datos de los jugadores de dicho equipo para mostrarlos
     $listar = $conex->prepare("SELECT * FROM cod WHERE id_equipo='$id_equipo'");
@@ -117,30 +122,30 @@ if (isset($_POST['agregarjugador'])) {
                 <form class="formcrear margin5" action="gestionarequipo.php" method="POST">
                     <div class="form-group">
                         <label for="equipo">Nombre del equipo:</label>
-                        <input id="equipo" type="text" class="form-control" placeholder="Nombre del equipo" name="equipo" value="<?php echo $resultado['nombre']; ?>" required>
+                        <input id="equipo" type="text" class="form-control" placeholder="Nombre del equipo" name="equipo" value="<?php echo $resultado['nombre']; ?>" required <?php echo $disabled; ?>>
                         <small class="form-text text-muted">Se podrá buscar el equipo por su nombre en el listado.</small>
                     </div>
                     <div class="form-group">
                         <label for="teamtag">Team Tag</label>
-                        <input type="text" class="form-control" placeholder="Tag del equipo" maxlength="4" name="teamtag" value="<?php echo $resultado['team_tag']; ?>" required>
+                        <input type="text" class="form-control" placeholder="Tag del equipo" maxlength="4" name="teamtag" value="<?php echo $resultado['team_tag']; ?>" required <?php echo $disabled; ?>>
                         <small class="form-text text-muted">Máximo 4 letras.</small>
                     </div>
                     <div class="form-group">
                         <label for="jugadores">Jugadores en el equipo</label>
-                        <input id="jugadores" type="number" class="form-control" name="jugadores" value="<?php echo $resultado['num_jugadores']; ?>" required>
+                        <input id="jugadores" type="number" class="form-control" name="jugadores" value="<?php echo $resultado['num_jugadores']; ?>" required <?php echo $disabled; ?>>
                     </div>
                     <div class="form-group">
                         <label for="descripcion">Descripcion</label>
-                        <textarea class="form-control" rows="3" placeholder="Opcional" name="descripcion" value="<?php echo $resultado['descripcion']; ?>"></textarea>
+                        <textarea class="form-control" rows="3" placeholder="Opcional" name="descripcion" value="<?php echo $resultado['descripcion']; ?>" <?php echo $disabled; ?>></textarea>
                     </div>
                     <fieldset class="form-group">
                         <label for="dedicado">Tiempo dedicado/día</label>
-                        <input id="dedicado" type="number" class="form-control" name="dedicado" value="<?php echo $resultado['tiempo_juego']; ?>" required>
+                        <input id="dedicado" type="number" class="form-control" name="dedicado" value="<?php echo $resultado['tiempo_juego']; ?>" required <?php echo $disabled; ?>>
                     </fieldset>
-                    <button type="submit" class="btn btn-primary" name="modificarequipo">Modificar equipo</button>
+                    <button type="submit" class="btn btn-primary" name="modificarequipo" <?php echo $disabled; ?>>Modificar equipo</button>
                 </form>
                 <form class="formcrear margin5" action="gestionarequipo.php" method="POST">
-                    <button type="submit" class="btn btn-danger" name="eliminarequipo">Eliminar equipo</button>
+                    <button type="submit" class="btn btn-danger" name="eliminarequipo" <?php echo $disabled; ?>>Eliminar equipo</button>
                 </form>
                 <br>
             </div>
@@ -155,9 +160,9 @@ if (isset($_POST['agregarjugador'])) {
                 <form class="formcrear margin5" action="gestionarequipo.php" method="POST">
                     <div class="form-group">
                         <label for="jugador" class="bmd-label-floating">Correo electrónico</label>
-                        <input id="jugador" type="text" class="form-control" name="jugador" required>
+                        <input id="jugador" type="text" class="form-control" name="jugador" required <?php echo $disabled; ?>>
                         <small class="form-text text-muted">Inserta el email del jugador que quieras agregar.</small>
-                        <button type="submit" class="btn btn-primary" name="agregarjugador">Añadir jugador</button>
+                        <button type="submit" class="btn btn-primary" name="agregarjugador" <?php echo $disabled; ?>>Añadir jugador</button>
                     </div>
                 </form>
             </div>
