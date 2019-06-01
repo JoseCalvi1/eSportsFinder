@@ -1,6 +1,7 @@
 <?php include 'includes/head.php';?>
 <?php
 $correo = $_SESSION['correo'];
+$error = "d-none";
 
 // Listamos las team scrims disponibles
 try {
@@ -26,7 +27,7 @@ if (isset($_POST['enviarmensaje'])) {
 
     // Hacemos la consulta
     if (empty($destinatario) || empty($mensaje)) {
-        echo "<script type=\"text/javascript\">alert(\"Debes introducir los datos correctamente\");</script>";
+      $error = "";
     } else {
         // Insertamos el mensaje en la base de datos
         $sql = $conex->prepare("INSERT INTO `mensajes`(`send_from`, `send_to`, `mensaje`) VALUES ('".$correo."','".$destinatario."','".$mensaje."')");
@@ -46,6 +47,7 @@ if (isset($_POST['enviarmensaje'])) {
         <div class="row margin-top-20">
         <button type="button" class="btn btn-primary btn-lg btn-block loginBTN" data-toggle="modal" data-target="#mensajeModal" name="enviar">Enviar mensaje</button>
         </div>
+        <div class="alert alert-warning <?php echo $error ?>" role="alert"><strong>Oh vaya!</strong> Parece que no has rellenado los datos correctamente.</div>
 
         <div class="row">
             <h3 class="h-align margin-top-20">Mensajes recibidos</h3>

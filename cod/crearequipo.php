@@ -1,6 +1,7 @@
 <?php include 'includes/head.php';?>
 <?php
 $correo = $_SESSION['correo'];
+$error = "d-none";
 
 // Creamos una consulta para crear equipo
 if (isset($_POST['crearequipo'])) {
@@ -23,7 +24,7 @@ if (isset($_POST['crearequipo'])) {
 
     // Hacemos la consulta
     if (empty($equipo)) {
-        echo "<script type=\"text/javascript\">alert(\"Debes introducir los datos correctamente\");</script>";
+        $error = "";
     } else {
         try {
             $opc = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
@@ -62,6 +63,7 @@ if (isset($_POST['crearequipo'])) {
 
 <div class="container">
         <div class="row">
+        <div class="alert alert-warning <?php echo $error ?>" role="alert"><strong>Oh vaya!</strong> Parece que no has rellenado los datos correctamente.</div>
                 <form class="formcrear margin5" action="crearequipo.php" method="POST">
                     <div class="form-group">
                         <label for="equipo">Nombre del equipo:</label>

@@ -1,5 +1,7 @@
 <?php include 'includes/head.php';?>
 <?php
+$error = "d-none";
+
 // Comprobamos que el usuario se haya autentificado
 if (!isset($_SESSION['correo'])) {
     die("<h1>Error - debe <a href='Login.php'>identificarse</a>.</h1><br>");
@@ -37,7 +39,7 @@ if (isset($_POST['modificarequipo'])) {
     $dedicado = $_POST['dedicado']; 
 
     if (empty($equipo)) {
-        echo "<script type=\"text/javascript\">alert(\"Debes introducir los datos correctamente\");</script>";
+        $error = "";
     } else {
         try {
             $opc = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
@@ -58,7 +60,7 @@ if (isset($_POST['modificarequipo'])) {
 // Hacemos eliminar el equipo
 if (isset($_POST['eliminarequipo'])) {
     if (empty($id_equipo)) {
-        echo "<script type=\"text/javascript\">alert(\"Debes introducir los datos correctamente\");</script>";
+        $error = "";
     } else {
         try {
             $opc = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
@@ -83,7 +85,7 @@ if (isset($_POST['eliminarequipo'])) {
 if (isset($_POST['agregarjugador'])) {
     $jugador = $_POST['jugador'];
     if (empty($jugador)) {
-        echo "<script type=\"text/javascript\">alert(\"Debes introducir los datos correctamente\");</script>";
+        $error = "";
     } else {
         try {
             $opc = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
@@ -110,6 +112,7 @@ if (isset($_POST['agregarjugador'])) {
 
 <div class="container">
         <div class="row">
+        <div class="alert alert-warning <?php echo $error ?>" role="alert"><strong>Oh vaya!</strong> Parece que no has rellenado los datos correctamente.</div>
         <h2>Datos del equipo</h2>
                 <form class="formcrear margin5" action="gestionarequipo.php" method="POST">
                     <div class="form-group">

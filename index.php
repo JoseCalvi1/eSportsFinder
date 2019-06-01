@@ -1,6 +1,7 @@
 <?php include 'includes/head.php';?>
 
 <?php
+$error = "d-none";
 
     // Creamos un sistema de login haciendo consultas a la base de datos
     if (isset($_POST['enviar'])) {
@@ -8,7 +9,7 @@
         $clave = $_POST['clave'];
         
         if (empty($correo) || empty($clave)) {
-          echo "<script type=\"text/javascript\">alert(\"Debes introducir los datos correctamente\");</script>";
+          $error = "";
         } else {
             try {
                 $opc = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
@@ -31,7 +32,7 @@
                     $_SESSION['id_usuario'] = $id_usuario;
                     header("Location: juegos.php");
                 } else {
-                  echo "<script type=\"text/javascript\">alert(\"Usuario o contraseña inválidos\");</script>";
+                  $error = "";
                 }
                 unset($resultado);
             }
@@ -48,7 +49,8 @@
 </div>
 
 <div class="container">
-<div><span class="error"><?php if(isset($error)) echo $error; ?></span></div>
+<div class="alert alert-warning <?php echo $error ?>" role="alert"><strong>Oh vaya!</strong> Parece que no has rellenado los datos correctamente.</div>
+
   <!-- Button trigger modal -->
   <button type="button" class="btn btn-primary btn-raised btn-lg btn-block loginBTN" data-toggle="modal" data-target="#loginModal" name="iniciar">Inicia sesión</button>
   <a type="button" class="btn btn-primary btn-raised btn-lg btn-block loginBTN" href="registrar.php">Regístrate</a>
@@ -66,7 +68,6 @@
             <div class="form-group">
                 <label for="email" class="bmd-label-floating">Correo electrónico</label>
                 <input type="email" class="form-control" id="correo" name="correo">
-                <span class="bmd-help">Tu correo no se compartirá con nadie.</span>
             </div>
             <div class="form-group">
                 <label for="clave" class="bmd-label-floating">Contraseña</label>

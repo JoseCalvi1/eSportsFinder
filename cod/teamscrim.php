@@ -1,6 +1,7 @@
 <?php include 'includes/head.php';?>
 <?php
 $correo = $_SESSION['correo'];
+$error = "d-none";
 
 // Listamos las team scrims disponibles
 try {
@@ -25,7 +26,7 @@ if (isset($_POST['proponerts'])) {
 
     // Hacemos la consulta
     if (empty($fecha)) {
-        echo "<script type=\"text/javascript\">alert(\"Debes introducir los datos correctamente\");</script>";
+      $error = "";
     } else {
 
         // Obtenemos los datos del equipo según el id
@@ -52,6 +53,7 @@ if (isset($_POST['proponerts'])) {
         <div class="row margin-top-20">
         <button type="button" class="btn btn-primary btn-lg btn-block loginBTN" data-toggle="modal" data-target="#tsModal" name="teamscrim">Proponer TS</button>
         </div>
+        <div class="alert alert-warning <?php echo $error ?>" role="alert"><strong>Oh vaya!</strong> Parece que no has rellenado los datos correctamente.</div>
 
         <div class="row">
             <h3 class="h-align margin-top-20">Team Scrims disponibles</h3>
