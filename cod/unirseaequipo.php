@@ -1,5 +1,6 @@
+<?php include 'includes/head.php';?>
 <?php
-
+$correo = $_SESSION['correo'];
   // Creamos una consulta para listar todos los equipos disponibles
   try {
     $opc = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
@@ -11,11 +12,26 @@
       die("Error: ".$e->getMessage());
     }
 
-    $sql = $conex->prepare("SELECT nombre, team_tag, num_jugadores FROM equipo_cod");
+    $sql = $conex->prepare("SELECT * FROM equipo_cod");
     $sql->execute();
-?>
 
-<?php include 'includes/head.php';?>
+// Creamos una consulta para enviar mensajes
+if (isset($_POST['enviarmensaje'])) {
+  // Recogemos los datos necesarios
+  $destinatario = $_POST['destinatario'];
+  $mensaje = $_POST['mensaje'];
+
+
+  // Hacemos la consulta
+  if (empty($destinatario) || empty($mensaje)) {
+    $error = "";
+  } else {
+      // Insertamos el mensaje en la base de datos
+      $enviar = $conex->prepare("INSERT INTO `mensajes`(`send_from`, `send_to`, `mensaje`) VALUES ('".$correo."','".$destinatario."','".$mensaje."')");
+      $enviar->execute();
+  }
+}
+?>
 
 <body>
 
@@ -39,38 +55,44 @@
       </thead>
       <tbody id="tabla">
       <?php while($row = $sql->fetch(PDO::FETCH_ASSOC)) { ?>
+        <?php $send_to = $row['created_by'] ?>
         <tr>
             <td> <?php echo $row['nombre'] ?></td>
             <td> <?php echo $row['team_tag'] ?></td>
             <td> <?php echo $row['num_jugadores'] ?></td>
             <td>
-              <button type="button" class="btn btn-info btn-lg glyphicon glyphicon-user" data-toggle="modal" data-target="#contacta">C</button>
+              <button type="button" class="btn btn-info btn-lg glyphicon glyphicon-user" data-toggle="modal" data-target="#mensajeModal">C</button>
             </td>
         </tr>
         <?php } ?>
       </tbody>
     </table>
- <!-- Modal -->
- <div id="contacta" class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
+  <!-- Modal -->
+<div class="modal fade" id="mensajeModal" tabindex="-1" role="dialog" aria-labelledby="mensajeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Gracias por contactar!</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h5 class="modal-title" id="exampleModalLabel">¿Qué le quieres decir?</h5>
       </div>
       <div class="modal-body">
-      <p>Se le ha enviado una petición al capitán del club correspondiente, pronto se pondrá en contacto con usted.</p>
+        <form action="fa.php" method="POST">
+            <div class="form-group">
+                <label for="mensaje">Destinatario</label>
+                <input type="text" class="form-control" id="destinatario" name="destinatario" value="<?php echo $send_to ?>">
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje</label>
+                <textarea class="form-control" rows="3" name="mensaje"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-raised" name="enviarmensaje" value="enviarmensaje">Enviar mensaje</button>
+        </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Enviar</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
-  </div>
 
 
   <?php include '../includes/foot.php';?>

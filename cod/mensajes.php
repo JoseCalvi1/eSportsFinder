@@ -18,7 +18,7 @@ try {
     $listar->execute();
 
 
-// Creamos una consulta para crear equipo
+// Creamos una consulta para enviar mensajes
 if (isset($_POST['enviarmensaje'])) {
     // Recogemos los datos necesarios
     $destinatario = $_POST['destinatario'];
@@ -55,8 +55,8 @@ if (isset($_POST['enviarmensaje'])) {
 
         <div class="row">
         <?php while($row = $listar->fetch(PDO::FETCH_ASSOC)) { ?>
-            <div class="h-align margin-top-20 ts">
-                <p>El usuario: <b><?php echo $row['send_from'] ?></b> te ha scrito:<br><?php echo $row['mensaje'] ?></p>
+            <div class="col-12 h-align margin-top-20 ts">
+                <p>El usuario: <b><?php echo $row['send_from'] ?></b> te ha escrito:<br><?php echo $row['mensaje'] ?></p>
             </div>
         <?php } ?>
         </div>
