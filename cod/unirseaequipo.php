@@ -75,7 +75,7 @@ if (isset($_POST['enviarmensaje'])) {
         <h5 class="modal-title" id="exampleModalLabel">¿Qué le quieres decir?</h5>
       </div>
       <div class="modal-body">
-        <form action="fa.php" method="POST">
+        <form action="unirseaequipo.php" method="POST">
             <div class="form-group">
                 <label for="mensaje">Destinatario</label>
                 <input type="text" class="form-control" id="destinatario" name="destinatario" value="<?php echo $send_to ?>">

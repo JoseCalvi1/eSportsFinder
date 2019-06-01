@@ -52,7 +52,6 @@ if (isset($_POST['enviarmensaje'])) {
           <th>Jugador</th>
           <th>Posición</th>
           <th>Modo</th>
-          <th>Horario</th>
           <th>Contacta</th>
         </tr>
       </thead>
@@ -63,7 +62,6 @@ if (isset($_POST['enviarmensaje'])) {
             <td> <?php echo $row['nombre'] ?></td>
             <td> <?php echo $row['rol'] ?></td>
             <td> <?php echo $row['modo_pref'] ?></td>
-            <td> <?php echo $row['tiempo_juego'] ?></td>
             <td>
               <button type="button" class="btn btn-info btn-lg glyphicon glyphicon-user" data-toggle="modal" data-target="#mensajeModal">C</button>
             </td>
