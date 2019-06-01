@@ -4,7 +4,7 @@ $error = "d-none";
 
 // Comprobamos que el usuario se haya autentificado
 if (!isset($_SESSION['correo'])) {
-    die("<h1>Error - debe <a href='Login.php'>identificarse</a>.</h1><br>");
+    die("<h1>Error - debe <a href='index.php'>identificarse</a>.</h1><br>");
 } else {
   try {
     $correo = $_SESSION['correo'];

@@ -5,7 +5,7 @@
 <?php include 'includes/navbar.php';
 
 if (!isset($_SESSION['correo'])) {
-    die("<h1>Error - debe <a href='../Login.php'>identificarse</a>.</h1><br>");
+    die("<h1>Error - debe <a href='../index.php'>identificarse</a>.</h1><br>");
 } else {
   try {
     $correo = $_SESSION['correo'];
