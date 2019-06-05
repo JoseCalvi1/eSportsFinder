@@ -44,9 +44,9 @@ if (isset($_POST['enviarmensaje'])) {
     </div>
     <h2>Búsqueda de jugadores</h2>
     <p>Puedes buscar un jugador por su nombre, posición o modo preferido:</p>
-    <input class="form-control" id="buscar" type="text" placeholder="Buscar..">
+    <input class="form-control" id="search" type="text" placeholder="Buscar..">
     <br>
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped" id="mytable">
       <thead>
         <tr>
           <th>Jugador</th>
@@ -102,3 +102,18 @@ if (isset($_POST['enviarmensaje'])) {
 <?php include '../includes/foot.php';?>
 
   <?php include 'includes/footer.php';?>
+  <script>
+ // Buscará en el evento keyup
+ $(document).ready(function(){
+ $("#search").keyup(function(){
+ _this = this;
+ // Mostrará las filas que contengan lo escrito en el buscador
+ $.each($("#mytable tbody tr"), function() {
+ if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+ $(this).hide();
+ else
+ $(this).show();
+ });
+ });
+});
+</script>
