@@ -61,7 +61,15 @@ if (isset($_POST['enviarmensaje'])) {
             <td> <?php echo $row['team_tag'] ?></td>
             <td> <?php echo $row['num_jugadores'] ?></td>
             <td>
-              <button type="button" class="btn btn-info btn-lg glyphicon glyphicon-user" data-toggle="modal" data-target="#mensajeModal">C</button>
+            <form action="fa.php" method="POST">
+              <div class="form-group">
+                  <input type="hidden" class="form-control" id="destinatario" name="destinatario" value="<?php echo $send_to ?>">
+              </div>
+              <div class="form-group">
+                  <input type="hidden" class="form-control" id="mensaje" name="mensaje" value="Buenas! Me gustaría unirme a tu equipo.">
+              </div>
+              <button type="submit" class="btn btn-primary btn-raised" name="enviarmensaje" value="enviarmensaje">C</button>
+            </form>
             </td>
         </tr>
         <?php } ?>
