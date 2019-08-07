@@ -1,71 +1,90 @@
 <?php
-class EntidadBase{
+
+class EntidadBase
+{
     private $table;
+    private $fields;
+
     private $db;
     private $conectar;
- 
-    public function __construct($table, $adapter = '') {
-        $this->table=(string) $table;
-         
+
+    public function __construct($table, $fields = array())
+    {
+        $this->table = (string)$table;
+        $this->fields = $fields;
         require_once 'Conectar.php';
-        $this->conectar=new Conectar();
-        $this->db=$this->conectar->conexion();
+        $this->conectar = new Conectar();
+        $this->db = $this->conectar->conexion();
     }
-     
-    public function getConetar(){
+
+    public function getConetar()
+    {
         return $this->conectar;
     }
-     
-    public function db(){
+
+    public function db()
+    {
         return $this->db;
     }
-     
-    public function getAll(){
-        $query=$this->db->query("SELECT * FROM $this->table ORDER BY id_usuario DESC");
-          
+
+    public function getAll()
+    {
+        $query = $this->db->query("SELECT * FROM $this->table");
+
         //Devolvemos el resultset en forma de array de objetos
         while ($row = $query->fetch_object()) {
-           $resultSet[]=$row;
+            $resultSet[] = $row;
         }
-         
+
         return $resultSet;
     }
-     
-    public function getById($id){
-        $query=$this->db->query("SELECT * FROM $this->table WHERE id=$id");
- 
-        if($row = $query->fetch_object()) {
-           $resultSet=$row;
+
+    public function getById($id)
+    {
+        $query = $this->db->query("SELECT * FROM $this->table WHERE id=$id");
+
+        if ($row = $query->fetch_object()) {
+            $resultSet = $row;
         }
-         
+
         return $resultSet;
     }
-     
-    public function getBy($column,$value){
-        $query=$this->db->query("SELECT * FROM $this->table WHERE $column='$value'");
- 
-        while($row = $query->fetch_object()) {
-           $resultSet[]=$row;
+
+    public function getBy($column, $value)
+    {
+        $query = $this->db->query("SELECT * FROM $this->table WHERE $column='$value'");
+
+        while ($row = $query->fetch_object()) {
+            $resultSet[] = $row;
         }
-         
+
         return $resultSet;
     }
-     
-    public function deleteById($id){
-        $query=$this->db->query("DELETE FROM $this->table WHERE id=$id");
+
+    public function deleteById($id)
+    {
+        $query = $this->db->query("DELETE FROM $this->table WHERE id=$id");
         return $query;
     }
-     
-    public function deleteBy($column,$value){
-        $query=$this->db->query("DELETE FROM $this->table WHERE $column='$value'");
+
+    public function deleteBy($column, $value)
+    {
+        $query = $this->db->query("DELETE FROM $this->table WHERE $column='$value'");
         return $query;
     }
-     
- 
+
+    public function insert($values){
+        $columns = implode(',',$this->fields);
+        $values = implode(',',$values);
+        $query = $this->db->query("INSERT INTO {$this->table} ({$columns}) VALUES ({$values})");
+        return $this->db->insert_id;
+    }
+
     /*
      * Aquí podemos montarnos un montón de métodos que nos ayuden
      * a hacer operaciones con la base de datos de la entidad
      */
-     
+
 }
+
 ?>

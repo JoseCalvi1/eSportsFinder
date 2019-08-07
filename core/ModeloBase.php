@@ -1,13 +1,14 @@
 <?php
 class ModeloBase extends EntidadBase{
     private $table;
+    private $fields;
     private $fluent;
      
-    public function __construct($table) {
+    public function __construct($table, $fields = array()) {
         $this->table=(string) $table;
-        parent::__construct($table);
-         
-        $this->fluent=$this->getConetar()->startFluent();
+        $this->fields = $fields;
+        parent::__construct($table, $fields);
+        $this->fluent = $this->getConetar()->startFluent();
     }
      
     public function fluent(){
