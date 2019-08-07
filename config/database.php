@@ -4,7 +4,7 @@ return array(
     "host"      =>"localhost",
     "user"      =>"root",
     "pass"      =>"",
-    "database"  =>"esports_finder",
+    "database"  =>"esportsfinder_v2",
     "charset"   =>"utf8"
 );
 ?>
