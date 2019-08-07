@@ -12,15 +12,21 @@ class Conectar{
         $this->database=$db_cfg["database"];
         $this->charset=$db_cfg["charset"];
     }
-     
+
     public function conexion(){
-         
-        if($this->driver=="mysql" || $this->driver==null){
-            $con=new mysqli($this->host, $this->user, $this->pass, $this->database);
-            $con->query("SET NAMES '".$this->charset."'");
+        global $db;
+        if (empty($db)) {
+            if ($this->driver == "mysql" || $this->driver == null) {
+                $con = new mysqli($this->host, $this->user, $this->pass, $this->database);
+                $con->query("SET NAMES '" . $this->charset . "'");
+                $con->set_charset($this->charset);
+                $sql = "SET time_zone = 'GMT';";
+                $sentencia = $con->prepare($sql);
+                $sentencia->execute();
+                $db = $con;
+            }
         }
-         
-        return $con;
+        return $db;
     }
      
     public function startFluent(){
