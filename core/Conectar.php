@@ -28,16 +28,5 @@ class Conectar{
         }
         return $db;
     }
-     
-    public function startFluent(){
-        require_once "PDO/PDO.php";
-         
-        if($this->driver=="mysql" || $this->driver==null){
-            $pdo = new PDO($this->driver.":dbname=".$this->database, $this->user, $this->pass);
-            $fpdo = new FluentPDO($pdo);
-        }
-         
-        return $fpdo;
-    }
 }
 ?>

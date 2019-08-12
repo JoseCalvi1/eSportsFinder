@@ -2,29 +2,17 @@
 
 class EntidadBase
 {
-    private $table;
-    private $fields;
+    protected $db;
+    protected $table;
+    protected $fields;
 
-    private $db;
-    private $conectar;
 
     public function __construct($table, $fields = array())
     {
+        require_once 'Conectar.php';
+        $this->db = (new Conectar())->conexion();
         $this->table = (string)$table;
         $this->fields = $fields;
-        require_once 'Conectar.php';
-        $this->conectar = new Conectar();
-        $this->db = $this->conectar->conexion();
-    }
-
-    public function getConetar()
-    {
-        return $this->conectar;
-    }
-
-    public function db()
-    {
-        return $this->db;
     }
 
     public function getAll()
@@ -44,10 +32,13 @@ class EntidadBase
         $query = $this->db->query("SELECT * FROM $this->table WHERE id=$id");
 
         if ($row = $query->fetch_object()) {
-            $resultSet = $row;
+            foreach ($this->fields as $key => $value) {
+                $this->$key = $row->$key;
+            }
+            return true;
+        } else {
+            return false;
         }
-
-        return $resultSet;
     }
 
     public function getBy($column, $value)
@@ -73,11 +64,50 @@ class EntidadBase
         return $query;
     }
 
-    public function insert($values){
-        $columns = implode(',',$this->fields);
-        $values = implode(',',$values);
-        $query = $this->db->query("INSERT INTO {$this->table} ({$columns}) VALUES ({$values})");
-        return $this->db->insert_id;
+    public function insert()
+    {
+        $columns = array();
+        $values = array();
+        foreach ($this->fields as $key => $value) {
+            $value = $this->$key;
+            if (!empty($value)) {
+                $columns[] = $key;
+                $values[] = $value;
+            }
+        }
+        if (!empty($columns)) {
+            $columns = implode(",", $columns);
+            $values = "'" . implode("','", $values) . "'";
+            $sql = "INSERT INTO {$this->table} ({$columns}) VALUES ({$values})";
+            $query = $this->db->query($sql);
+            if ($query) {
+                $this->id = $this->db->insert_id;
+                return $this->id;
+            }
+        }
+        return false;
+
+    }
+
+    public function update()
+    {
+        $sets = array();
+        foreach ($this->fields as $key => $value) {
+            $value = $this->$key;
+            if (!empty($value) && $key != 'id') {
+                $sets[] = " {$key} = '{$value}' ";
+            }
+        }
+        if (!empty($columns)) {
+            $sets = implode(',',$sets);
+            $sql = "UPDATE {$this->table} SET {$sets} WHERE id = '{$this->id}'";
+            $query = $this->db->query($sql);
+            if ($query) {
+                $this->id = $this->db->insert_id;
+                return $this->id;
+            }
+        }
+        return false;
     }
 
     /*
