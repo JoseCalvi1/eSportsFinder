@@ -7,18 +7,19 @@ class ModeloBase extends EntidadBase
     {
         $this->table = (string)$table;
         $this->fields = $fields;
-        parent::__construct($table, $fields);
-        if (!empty($id)) $this->getById($id);
-
+        parent::__construct($table, $fields, $id);
     }
 
     public function save()
     {
+        global $current_user;
         if (!empty($this->id)) {
+            $this->modified_by = $current_user->id;
             if ($this->update()) {
                 return true;
             }
         } else {
+            $this->created_by = $current_user->id;
             if ($this->insert()) {
                 return true;
             }
@@ -48,10 +49,7 @@ class ModeloBase extends EntidadBase
         return $resultSet;
     }
 
-    public function lastError()
-    {
-        return $this->db->error;
-    }
+
 
 }
 
