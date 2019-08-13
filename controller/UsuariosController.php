@@ -10,7 +10,7 @@ class UsuariosController extends ControladorBase
 
     public function index()
     {
-        $user = new UserModel(3);
+        $user = new UserModel();
 
         //Conseguimos todos los usuarios
         $allusers = $user->getAll();
