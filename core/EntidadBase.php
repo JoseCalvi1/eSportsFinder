@@ -7,18 +7,24 @@ class EntidadBase
     protected $fields;
 
 
-    public function __construct($table, $fields = array())
+    public function __construct($table, $fields = array(), $id)
     {
         require_once 'Conectar.php';
         $this->db = (new Conectar())->conexion();
         $this->table = (string)$table;
         $this->fields = $fields;
+        $this->fields['created_by'] = '';
+        $this->fields['date_entered'] = '';
+        $this->fields['modified_by'] = '';
+        $this->fields['date_modified'] = '';
+        $this->fields['deleted'] = 0;
+        if (!empty($id)) $this->getById($id);
     }
 
     public function getAll()
     {
         $query = $this->db->query("SELECT * FROM $this->table");
-
+throw new Exception("alsdkfjaslkdj", 991);
         //Devolvemos el resultset en forma de array de objetos
         while ($row = $query->fetch_object()) {
             $resultSet[] = $row;
@@ -110,6 +116,10 @@ class EntidadBase
         return false;
     }
 
+    public function lastError()
+    {
+        return $this->db->error;
+    }
     /*
      * Aquí podemos montarnos un montón de métodos que nos ayuden
      * a hacer operaciones con la base de datos de la entidad
