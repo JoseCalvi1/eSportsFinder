@@ -16,7 +16,11 @@ function cargarControlador($controller){
  
 function cargarAccion($controllerObj,$action){
     $accion=$action;
-    $controllerObj->$accion();
+    try {
+        $controllerObj->$accion();
+    }catch (Exception $e){
+        $controllerObj->error($e);
+    }
 }
  
 function lanzarAccion($controllerObj){

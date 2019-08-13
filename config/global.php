@@ -6,4 +6,5 @@ define("ACCION_HOME_DEFECTO", "index");
 //Más constantes de configuración
 $db = '';
 $cliente = '';
+$current_user = '';
 ?>

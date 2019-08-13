@@ -66,19 +66,14 @@ class ControladorBase
     }
 
     //Métodos para los controladores
-    public function error()
+    public function error($e)
     {
-        require_once 'core/Util.php';
-        $helper = new Util();
-        $number = !empty($_REQUEST['number']) ? $_REQUEST['number'] : 500;
-        $message = !empty($_REQUEST['message']) ? $_REQUEST['message'] : $helper->translate('LBL_UNEXPECTED_ERROR');
-        $referer = $_SERVER['HTTP_REFERER'];
         //Cargamos la vista index y le pasamos valores
         $this->view("Global/error", array(
             'title' => 'Error',
-            'number' => $number,
-            'message' => $message,
-            'referer' => $referer
+            'number' => $e->getCode(),
+            'message' => $e->getMessage(),
+            'referer' => $_SERVER['HTTP_REFERER'],
         ), true);
         die;
     }
