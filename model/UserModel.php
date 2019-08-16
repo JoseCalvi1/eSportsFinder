@@ -5,17 +5,15 @@ class UserModel extends ModeloBase
 
     public function __construct($id = '')
     {
-        $this->table = "usuarios";
+        $this->table = "esf_users";
         $this->fields = array(
             'id' => '',
-            'nombre' => '',
-            'correo' => '',
-            'usuario' => '',
-            'clave' => '',
-            'created_by' => '',
-            'modified_by' => '',
-            'date_entered' => '',
-            'date_modified' => '',
+            'name' => '',
+            'email' => '',
+            'user_name' => '',
+            'password' => '',
+            'active' => '',
+            'last_visit_date' => '',
         );
         parent::__construct($this->table, $this->fields, $id);
     }
