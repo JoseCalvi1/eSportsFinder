@@ -1,10 +1,13 @@
-<div class="bmd-layout-container bmd-drawer-f-l bmd-drawer-overlay">
-    <main class="bmd-layout-content">
-        <div class="container pt-3">
-            <div class="row mt-3 align-items-center justify-content-center">
-                <div class=" col-12 text-center"><h1 class="error-number"><?php echo $number; ?></h1></div>
-                <div class=" col-12 text-center"><h6 class="error-message"><?php echo $message; ?></h6></div>
-            </div>
-        </div>
-    </main>
+<div class="container-fluid h-100">
+    <div class="row justify-content-center align-items-center h-100">
+        <div class=" col-12 text-center">
+            <?php if ($this->config['debug']): ?>
+                <h1 class="error-number"><?php echo $number; ?></h1>
+            <?php else: ?>
+                <h1 class="error-number">Oops!</h1>
+                <img src="assets/images/error.png"
+                     alt="<?php $this->helper->translate('LBL_ERROR_SOMETHING_WENT_WRONG'); ?>" class="img-fluid">
+            <?php endif; ?>
+        <h6 class="error-message"><?php echo $this->config['debug'] ? $message : $this->helper->translate('LBL_ERROR_SOMETHING_WENT_WRONG') . ' ' . $this->helper->translate('LBL_ERROR_TRY_AGAIN'); ?></h6>
+    </div>
 </div>

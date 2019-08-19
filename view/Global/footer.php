@@ -4,6 +4,6 @@
         <div class="circle circle_red"></div>
     </div>
 </div>
-<script src="javascript/global.js"></script>
+<script src="view/Global/javascript/global.js"></script>
 </body>
 </html>

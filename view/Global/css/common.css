@@ -7,10 +7,11 @@ body {
     overflow: auto;
     left: 0;
     top: 0;
+    background-color: #f6f7f9;
 }
 
 .error-number{
-    font-size: 15vw;
+    font-size: 10vw;
 }
 .error-message{
     font-size: 20px;
