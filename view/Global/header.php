@@ -5,21 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Material Design for Bootstrap fonts and icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
-    <title>eSportsFinder <?php echo !empty($title) ?  ' - '.$title : '' ?></title>
-        <link rel="icon" type="image/png" href="assets/images/favicon.png">
-        <link href="vendor/bootstrap-material-design/bootstrap-material-design.css" rel="stylesheet" type="text/css"/>
-
-
+    <title>eSportsFinder <?php echo !empty($title) ? ' - ' . $title : '' ?></title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link href="vendor/bootstrap-material-design/bootstrap-material-design.css" rel="stylesheet" type="text/css"/>
     <link href="vendor/rippler/rippler.min.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/common.css" rel="stylesheet" type="text/css"/>
     <script src="vendor/jQuery/jquery.min.js"></script>
     <script src="vendor/bootstrap-material-design/js/popper.js"></script>
     <script src="vendor/bootstrap-material-design/js/snackbar.min.js"></script>
     <script src="vendor/bootstrap-material-design/js/bootstrap-material-design.js"></script>
     <script src="vendor/rippler/jquery.rippler.min.js"></script>
+    <!-- Adding css styles -->
+    <link href="view/Global/css/common.css" rel="stylesheet" type="text/css"/>
     <style>
-        .custom-file-label::after{
-            content: "<?php echo $helper->translate('LBL_BROWSE');?>";
+        .custom-file-label::after {
+            content: "<?php echo $this->helper->translate('LBL_BROWSE');?>";
         }
     </style>
 </head>
@@ -40,7 +39,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary btn-raised mr-3" data-dismiss="modal">Cancelar</button>
-                <a href="<?php echo $helper->url("User", "logout"); ?>" class="btn btn-primary btn-raised showLoader rippler rippler-default">Salir</a>
+                <a href="<?php echo $this->helper->url("User", "logout"); ?>"
+                   class="btn btn-primary btn-raised showLoader rippler rippler-default">Salir</a>
             </div>
         </div>
     </div>

@@ -2,20 +2,22 @@
 
 class ControladorBase
 {
+    public $config;
     public $helper;
 
     public function __construct()
     {
-        require_once 'EntidadBase.php';
-        require_once 'ModeloBase.php';
-        require_once 'core/Util.php';
+        $config = array();
+        require dirname(__FILE__).'/../config/config.php';
+        $this->config = $config;
+        require_once dirname(__FILE__).'/EntidadBase.php';
+        require_once dirname(__FILE__).'/ModeloBase.php';
+        require_once dirname(__FILE__).'/Util.php';
         $this->helper = new Util();
         //Incluir todos los modelos
         foreach (glob("model/*.php") as $file) {
             require_once $file;
         }
-
-
     }
 
     //Plugins y funcionalidades
@@ -29,20 +31,15 @@ class ControladorBase
     */
     public function view($vista, $datos, $markup = false)
     {
-        $config = array();
-        require 'config/config.php';
         foreach ($datos as $id_assoc => $valor) {
             ${$id_assoc} = $valor;
         }
-
-        require_once 'core/Util.php';
-        $helper = new Util();
         if ($markup) {
-            require_once 'view/Global/header.php';
+            require_once dirname(__FILE__).'/../view/Global/header.php';
         }
-        require_once 'view/' . $vista . 'View.php';
+        require_once dirname(__FILE__).'/../view/' . $vista . 'View.php';
         if ($markup) {
-            require_once 'view/Global/footer.php';
+            require_once dirname(__FILE__).'/../view/Global/footer.php';
         }
     }
 
