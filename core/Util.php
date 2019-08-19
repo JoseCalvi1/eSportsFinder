@@ -16,32 +16,28 @@ class Util
     public function translate($module = '', $label = '')
     {
         $language = $_SESSION['current_user']->language;
-        if(empty($language)){
+        if (empty($language)) {
             $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
             $lang = ($lang == 'es') ? 'es_ES' : $lang;
             $lang = ($lang == 'en') ? 'en_us' : $lang;
             $acceptLang = ['es_ES', 'en_us'];
             $language = in_array($lang, $acceptLang) ? $lang : 'es_ES';
         }
-        require 'language/' . $language . '.php';
+        require dirname(__FILE__).'/../language/' . $language . '.php';
         $traduccion = $label;
         if (empty($label)) {
             $traduccion = $language[$module] ? $language[$module] : $module;
-        } else {
-
-            if(!empty($language[$module][$label])) {
-                $traduccion = $language[$module][$label] ? $language[$module][$label] : $label;
-            }else{
-
-                $traduccion = $_SESSION['current_user']->app_list_strings->$module->$label ? $_SESSION['current_user']->app_list_strings->$module->$label : $label;
-            }
+        } elseif (!empty($language[$module][$label])) {
+            $traduccion = $language[$module][$label] ? $language[$module][$label] : $label;
         }
         return $traduccion;
     }
+
     public function dropdown($name = '')
     {
         return $_SESSION['current_user']->app_list_strings->$name;
     }
+
     public function getManagerUrl()
     {
         $config = array();
