@@ -1,6 +1,6 @@
 <?php
 
-class UserModel extends ModeloBase
+class game_profiles extends ModeloBase
 {
 
     public function __construct($id = '')
