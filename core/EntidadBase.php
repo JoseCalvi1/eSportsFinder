@@ -21,16 +21,19 @@ class EntidadBase
         if (!empty($id)) $this->getById($id);
     }
 
+    // TODO Función a revisar
     public function getAll()
     {
         $query = $this->db->query("SELECT * FROM $this->table");
-throw new Exception("alsdkfjaslkdj", 991);
-        //Devolvemos el resultset en forma de array de objetos
-        while ($row = $query->fetch_object()) {
-            $resultSet[] = $row;
-        }
 
-        return $resultSet;
+        if ($row = $query->fetch_object()) {
+            foreach ($this->fields as $key => $value) {
+                $this->$key = $row->$key;
+            }
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function getById($id)
@@ -50,6 +53,18 @@ throw new Exception("alsdkfjaslkdj", 991);
     public function getBy($column, $value)
     {
         $query = $this->db->query("SELECT * FROM $this->table WHERE $column='$value'");
+
+        while ($row = $query->fetch_object()) {
+            $resultSet[] = $row;
+        }
+
+        return $resultSet;
+    }
+
+    // TODO Función a revisar
+    public function getList($where, $order, $limit, $campos)
+    {
+        $query = $this->db->query("SELECT $campos FROM $this->table WHERE $where ORDER BY $order DESC LIMIT $limit");
 
         while ($row = $query->fetch_object()) {
             $resultSet[] = $row;
@@ -105,7 +120,7 @@ throw new Exception("alsdkfjaslkdj", 991);
             }
         }
         if (!empty($columns)) {
-            $sets = implode(',',$sets);
+            $sets = implode(',', $sets);
             $sql = "UPDATE {$this->table} SET {$sets} WHERE id = '{$this->id}'";
             $query = $this->db->query($sql);
             if ($query) {
