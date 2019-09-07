@@ -131,6 +131,20 @@ class EntidadBase
         return false;
     }
 
+    // TODO Función a revisar
+    public function deleteFake()
+    {
+        if (!empty($columns)) {
+            $sql = "UPDATE {$this->table} SET deleted='1' WHERE id = '{$this->id}'";
+            $query = $this->db->query($sql);
+            if ($query) {
+                $this->id = $this->db->insert_id;
+                return $this->id;
+            }
+        }
+        return false;
+    }
+
     public function lastError()
     {
         return $this->db->error;
