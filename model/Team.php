@@ -1,6 +1,6 @@
 <?php
 
-class Teams extends ModeloBase
+class Team extends ModeloBase
 {
 
     public function __construct($id = '')

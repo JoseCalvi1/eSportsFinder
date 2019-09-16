@@ -53,24 +53,22 @@ class EntidadBase
     public function getBy($column, $value)
     {
         $query = $this->db->query("SELECT * FROM $this->table WHERE $column='$value'");
-
+        $resultSet = array();
         while ($row = $query->fetch_object()) {
             $resultSet[] = $row;
         }
-
-        return $resultSet;
+        return count($resultSet) ? $resultSet : false;
     }
 
     // TODO Función a revisar
     public function getList($where, $order, $limit, $campos)
     {
         $query = $this->db->query("SELECT $campos FROM $this->table WHERE $where ORDER BY $order DESC LIMIT $limit");
-
+        $resultSet = array();
         while ($row = $query->fetch_object()) {
             $resultSet[] = $row;
         }
-
-        return $resultSet;
+        return count($resultSet) ? $resultSet : false;
     }
 
     public function deleteById($id)

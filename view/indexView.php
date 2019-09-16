@@ -17,7 +17,7 @@
         </style>
     </head>
     <body>
-        <form action="<?php echo $helper->url("usuarios","crear"); ?>" method="post" class="col-lg-5">
+        <form action="<?php echo $this->helper->url("usuarios","crear"); ?>" method="post" class="col-lg-5">
             <h3>Añadir usuario</h3>
             <hr/>
             Nombre: <input type="text" name="nombre" class="form-control"/>
@@ -37,7 +37,7 @@
                 <?php echo $user->nombre; ?> -
                 <?php echo $user->usuario; ?>
                 <div class="right">
-                    <a href="<?php echo $helper->url("usuarios","borrar"); ?>&id=<?php echo $user->id; ?>" class="btn btn-danger">Borrar</a>
+                    <a href="<?php echo $this->helper->url("usuarios","borrar"); ?>&id=<?php echo $user->id; ?>" class="btn btn-danger">Borrar</a>
                 </div>
                 <hr/>
             <?php } ?>

@@ -68,6 +68,7 @@ class ControladorBase
         //Cargamos la vista index y le pasamos valores
         $this->view("Global/error", array(
             'title' => 'Error',
+            'error' => $e,
             'number' => $e->getCode(),
             'message' => $e->getMessage(),
             'referer' => $_SERVER['HTTP_REFERER'],

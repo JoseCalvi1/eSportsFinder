@@ -1,6 +1,6 @@
 <?php
 
-class Users extends ModeloBase
+class User extends ModeloBase
 {
 
     public function __construct($id = '')
@@ -30,11 +30,19 @@ class Users extends ModeloBase
         return crypt(strtolower($password_md5), $user_hash) == $user_hash;
     }
 
-    public function login(){
+    public function login($user_name, $password){
         global $current_user;
+        $user_hash_md5 = md5($password);
 
-
-        // todo: hacer loguin y retrieve del user logueado
-        $current_user = $this;
+        $users = $this->getBy('user_name', $user_name);
+        foreach ($users as $user){
+            if($this->checkPasswordMD5($user_hash_md5,$user->password)) {
+                $current_user = $user;
+                $_SESSION['current_user'] = $user;
+            }else{
+                return false;
+            }
+        }
+        return false;
     }
 }
