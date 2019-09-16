@@ -1,6 +1,6 @@
 <?php
 
-class UserModel extends ModeloBase
+class Users extends ModeloBase
 {
 
     public function __construct($id = '')
@@ -18,20 +18,16 @@ class UserModel extends ModeloBase
         parent::__construct($this->table, $this->fields, $id);
     }
 
-    public function save()
+    private function checkPasswordMD5($password_md5, $user_hash)
     {
-        global $current_user;
-        if (!empty($this->id)) {
-            $this->modified_by = $current_user->id;
-            if ($this->update()) {
-                return true;
-            }
-        } else {
-            if ($this->insert()) {
-                return true;
-            }
+        if (empty($user_hash)) {
+            return false;
         }
-        return false;
+        if ($user_hash[0] != '$' && strlen($user_hash) == 32) {
+            // Old way - just md5 password
+            return strtolower($password_md5) == $user_hash;
+        }
+        return crypt(strtolower($password_md5), $user_hash) == $user_hash;
     }
 
     public function login(){

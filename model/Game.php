@@ -1,20 +1,19 @@
 <?php
 
-class game_profiles extends ModeloBase
+class Games extends ModeloBase
 {
 
     public function __construct($id = '')
     {
-        $this->table = "esf_game_profiles";
+        $this->table = "esf_games";
         $this->fields = array(
             'id' => '',
-            'id_user' => '',
-            'id_game' => '',
-            'id_team' => '',
             'name' => '',
             'description' => '',
-            'play_time' => '',
-            'availability' => '',
+            'media' => '',
+            'status' => '',
+            'crossplay' => '',
+            'platform' => '',
         );
         parent::__construct($this->table, $this->fields, $id);
     }
