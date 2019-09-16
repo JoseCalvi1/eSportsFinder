@@ -314,3 +314,8 @@ a.rippler:link,
     text-decoration: none !important;
 }
 
+.card-img-top{
+    width: auto;
+    height: auto;
+    margin: 10px auto;
+}
