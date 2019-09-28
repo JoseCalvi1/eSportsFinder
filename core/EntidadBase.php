@@ -25,15 +25,12 @@ class EntidadBase
     public function getAll()
     {
         $query = $this->db->query("SELECT * FROM $this->table");
+        $resultSet = array();
 
-        if ($row = $query->fetch_object()) {
-            foreach ($this->fields as $key => $value) {
-                $this->$key = $row->$key;
-            }
-            return true;
-        } else {
-            return false;
+        while ($row = $query->fetch_object()) {
+            $resultSet[] = $row;
         }
+        return count($resultSet) ? $resultSet : false;
     }
 
     public function getById($id)
