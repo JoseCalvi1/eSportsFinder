@@ -13,7 +13,7 @@ $config['passwordsetting'] =
     array(
         'generatepasswordtmpl' => 'generatepassword',
         'lostpasswordtmpl' => 'lostpassword',
-        'linkexpiration' => '1', // habilitar
+        'linkexpiration' => '1', // habilitar caducidad de tokens
         'linkexpirationtime' => '30', // 30 minutos
         'linkexpirationtype' => '1', // minutos
     );

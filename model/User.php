@@ -60,7 +60,7 @@ class User extends ModeloBase
         if ($this->config['passwordsetting']['linkexpiration'] == '1') {
             $sql = "SELECT * FROM esf_users_password_link WHERE id = '{$id}' AND date_generated >= NOW() LIMIT 1;";
         } else {
-            $sql = "SELECT * FROM users_password_link WHERE id = '{$id}' LIMIT 1;";
+            $sql = "SELECT * FROM esf_users_password_link WHERE id = '{$id}' LIMIT 1;";
         }
         $gui = $this->ejecutarSql($sql);
         if (!empty($gui) && is_object($gui)) {
@@ -79,6 +79,8 @@ class User extends ModeloBase
             if($this->save()){
                 $result = true;
                 $this->login($this->user_name,$password);
+                $sql = "DELETE FROM esf_users_password_link WHERE email = '{$this->email}';";
+                $this->ejecutarSql($sql);
             }
         }
         return $result;

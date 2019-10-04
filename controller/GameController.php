@@ -1,7 +1,7 @@
 <?php
 
 // Controlador de localizaciones importantes para el proyecto
-class HomeController extends ControladorBase
+class GameController extends ControladorBase
 {
 
     public function __construct()
