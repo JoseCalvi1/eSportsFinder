@@ -3,8 +3,9 @@
 register_shutdown_function("fatal_handler");
 function fatal_handler()
 {
+
     $error = error_get_last();
-    if ($error !== NULL) {
+    if ($error !== NULL && $error['type'] != 8 && $error['type'] != 2) {
         $exception = new Exception("{$error['message']}<br> {$error['file']} at line {$error['line']}.", $error['type']);
         // Cargamos el controlador
         $controllerObj = new ControladorBase();

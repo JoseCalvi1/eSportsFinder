@@ -4,11 +4,11 @@
             <!--<img class="card-img-top" src="assets/images/company_logo.png">-->
             <div class="card-body">
 
-                <h5 class="card-title <?php echo $error ? 'text-danger': '';?>"><?php echo $msg; ?></h5>
+                <h5 class="card-title <?php echo $error ? 'text-danger' : ''; ?>"><?php echo $error ? $error : $msg; ?></h5>
                 <div style="" class="panel-body">
                     <?php if (!$error) { ?>
                         <form id="loginform" class="form-horizontal mb-0" role="form" method="post"
-                              action="<?php echo $this->helper->url("User", "reset",array('gui'=> $token)); ?>">
+                              action="<?php echo $this->helper->url("User", "reset", array('gui' => $token)); ?>">
 
                             <fieldset class="form-group">
                                 <input type="hidden" name="token" id="token" value="<?php echo $token; ?>">
@@ -31,5 +31,4 @@
                 </div>
             </div>
         </div>
-    </div>
 <?php include_once "footer.php"; ?>

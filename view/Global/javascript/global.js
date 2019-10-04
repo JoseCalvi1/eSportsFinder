@@ -14,12 +14,14 @@ $(document).ready(function () {
         });
     }, 5000);
 
+    // Si el formulario tiene esta clase validamos
     $('.needs-validation').on('submit', function (event) {
         if ($(this)[0].checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
         }
         $(this).addClass('was-validated');
+        $('#loader_container').show();
     });
 
     $('input[type="reset"]').on('click',function () {
@@ -39,14 +41,6 @@ $(document).ready(function () {
         if($target.attr('id') == 'd-actions') {
             $('.collapse-layout-backdrop').toggleClass('fixed-top');
         }
-    });
-
-
-    $(".rippler").rippler({
-        effectClass      :  'rippler-effect'
-        ,effectSize      :  0      // Default size (width & height)
-        ,addElement      :  'div'   // e.g. 'svg'(feature)
-        ,duration        :  400
     });
 
 });

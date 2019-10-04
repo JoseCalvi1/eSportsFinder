@@ -17,4 +17,6 @@ $language = array(
     'LBL_OPTIONS' => 'Opciones',
     'LBL_ERROR_SOMETHING_WENT_WRONG' => 'Algo ha ido mal.',
     'LBL_ERROR_TRY_AGAIN' => 'Intentalo de nuevo o <a href="">contacta con nuestro equipo de soporte</a>.',
+
+    'User' => array(),
 );

@@ -14,7 +14,7 @@
         <h6 class="error-message"><?php echo $this->config['debug'] ? $message : $this->helper->translate('LBL_ERROR_SOMETHING_WENT_WRONG') . ' ' . $this->helper->translate('LBL_ERROR_TRY_AGAIN'); ?></h6>
             <?php 
             if($this->config['debug']):
-            die('<pre>'.print_r($this->error,true).'</pre>');
+                //die('<pre>'.print_r($this->error,true).'</pre>');
             endif;
             ?>
     </div>

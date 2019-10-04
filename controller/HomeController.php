@@ -16,7 +16,17 @@ class HomeController extends ControladorBase
     public function index()
     {
         global $current_user;
-        die('<pre>'.print_r($current_user->name,true).'</pre>');
+        $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
+        $game = new Game();
+        $games = $game->getAll();
+
+        //Cargamos la vista index y le pasamos valores
+        $this->view("Game/list", array(
+            'title' => 'Game list',
+            'error' => $error,
+            'games' => $games,
+        ),true);
+
     }
 
 

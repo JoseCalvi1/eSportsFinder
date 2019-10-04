@@ -10,7 +10,7 @@ class EntidadBase
     public function __construct($table, $fields = array(), $id)
     {
         $config = array();
-        require dirname(__FILE__).'/../config/config.php';
+        require dirname(__FILE__) . '/../config/config.php';
         $this->config = $config;
         require_once 'Conectar.php';
         $this->db = (new Conectar())->conexion();
@@ -44,7 +44,7 @@ class EntidadBase
             foreach ($this->fields as $key => $value) {
                 if (!empty($row->$key)) {
                     $this->$key = $row->$key;
-                }else{
+                } else {
                     $this->$key = null;
                 }
             }
@@ -61,11 +61,11 @@ class EntidadBase
         while ($row = $query->fetch_object()) {
             $resultSet[] = $row;
         }
-        if(count($resultSet) == 1){
+        if (count($resultSet) == 1) {
             foreach ($this->fields as $key => $value) {
                 if (!empty($resultSet[0]->$key)) {
                     $this->$key = $resultSet[0]->$key;
-                }else{
+                } else {
                     $this->$key = null;
                 }
             }
@@ -131,28 +131,25 @@ class EntidadBase
                 $sets[] = " {$key} = '{$value}' ";
             }
         }
-        if (!empty($columns)) {
+        if (!empty($sets)) {
             $sets = implode(',', $sets);
             $sql = "UPDATE {$this->table} SET {$sets} WHERE id = '{$this->id}'";
             $query = $this->db->query($sql);
             if ($query) {
-                $this->id = $this->db->insert_id;
                 return $this->id;
             }
         }
         return false;
     }
 
-    // TODO Función a revisar
+    // TODO: falta comprobar que el this->id existe
     public function deleteFake()
     {
-        if (!empty($columns)) {
-            $sql = "UPDATE {$this->table} SET deleted='1' WHERE id = '{$this->id}'";
-            $query = $this->db->query($sql);
-            if ($query) {
-                $this->id = $this->db->insert_id;
-                return $this->id;
-            }
+        $sql = "UPDATE {$this->table} SET deleted='1' WHERE id = '{$this->id}'";
+        $query = $this->db->query($sql);
+        if ($query) {
+            $this->id = $this->db->insert_id;
+            return $this->id;
         }
         return false;
     }
