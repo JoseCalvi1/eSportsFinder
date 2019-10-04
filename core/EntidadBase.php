@@ -5,10 +5,13 @@ class EntidadBase
     protected $db;
     protected $table;
     protected $fields;
-
+    public $config;
 
     public function __construct($table, $fields = array(), $id)
     {
+        $config = array();
+        require dirname(__FILE__).'/../config/config.php';
+        $this->config = $config;
         require_once 'Conectar.php';
         $this->db = (new Conectar())->conexion();
         $this->table = (string)$table;
@@ -39,7 +42,11 @@ class EntidadBase
 
         if ($row = $query->fetch_object()) {
             foreach ($this->fields as $key => $value) {
-                $this->$key = $row->$key;
+                if (!empty($row->$key)) {
+                    $this->$key = $row->$key;
+                }else{
+                    $this->$key = null;
+                }
             }
             return true;
         } else {
@@ -53,6 +60,16 @@ class EntidadBase
         $resultSet = array();
         while ($row = $query->fetch_object()) {
             $resultSet[] = $row;
+        }
+        if(count($resultSet) == 1){
+            foreach ($this->fields as $key => $value) {
+                if (!empty($resultSet[0]->$key)) {
+                    $this->$key = $resultSet[0]->$key;
+                }else{
+                    $this->$key = null;
+                }
+            }
+            return true;
         }
         return count($resultSet) ? $resultSet : false;
     }
