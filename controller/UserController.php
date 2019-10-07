@@ -23,6 +23,19 @@ class UserController extends ControladorBase
         ));
     }
 
+    public function register(){
+        global $current_user;
+        if (!empty($current_user)) {
+            $this->redirect(CONTROLADOR_HOME_DEFECTO, 'index');
+        }
+        $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
+        //Cargamos la vista
+        $this->view("User/register", array(
+            'title' => $this->helper->translate('User','LBL_REGISTER_TITLE'),
+            'error' => $error,
+        ));
+    }
+
     public function login()
     {
         global $current_user;

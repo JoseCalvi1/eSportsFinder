@@ -65,6 +65,7 @@ class ControladorBase
     //Métodos para los controladores
     public function page404($e)
     {
+        // todo: hacer una página de 404
         //Cargamos la vista index y le pasamos valores
         $this->view("Global/error", array(
             'title' => 'Error',
