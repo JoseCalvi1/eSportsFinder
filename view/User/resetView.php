@@ -12,18 +12,18 @@
 
                             <fieldset class="form-group">
                                 <input type="hidden" name="token" id="token" value="<?php echo $token; ?>">
-                                <label for="login-username" class="bmd-label-floating">Nueva contraseña</label>
+                                <label for="login-username" class="bmd-label-floating"><?php echo $this->helper->translate('User','LBL_NEW_PASSWORD');?></label>
                                 <input id="login-password" type="password" class="form-control" name="password">
                             </fieldset>
                             <div class="text-center">
                                 <button id="btn-login" type="submit"
                                         class="btn btn-raised btn-primary showLoader btn-cstm-primary">
-                                    Resetear clave
+                                    <?php echo $this->helper->translate('User','LBL_RESET_PASSWORD');?>
                                 </button>
 
                                 <div>
                                     <a href="<?php echo $this->helper->url("User", "index"); ?>"
-                                       class="forgot-button showLoader">Volver al login</a>
+                                       class="forgot-button showLoader"><?php echo $this->helper->translate('User','LBL_BACK_TO_LOGIN');?></a>
                                 </div>
                             </div>
                         </form>

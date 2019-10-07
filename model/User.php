@@ -103,14 +103,14 @@ class User extends ModeloBase
         $email_path = dirname(__FILE__) . '/../assets/emails/' . $this->config['passwordsetting']['lostpasswordtmpl'] . '.html';
         $email_template = file_get_contents($email_path);
         if (empty($email_template)) {
-            throw new Exception("Error al recuperar el Email template {$email_path}", 500);
+            throw new Exception("{$this->helper->translate('User','LBL_ERROR_RETRIEVING_TEMPLATE')} {$email_path}", 500);
         }
         if (empty($this->id)) {
-            throw new Exception("Error al recuperar el usuario", 500);
+            throw new Exception("{$this->helper->translate('User','LBL_ERROR_RETRIEVING_USER')}", 500);
         }
         $guid = $this->generateResetToken();
         if (!$guid) {
-            throw new Exception("Error al generar el token de recuperación de password", 500);
+            throw new Exception("{$this->helper->translate('User','LBL_ERROR_CREATING_TOKEN')}", 500);
         }
         $link = '<a href="' . $this->config['site_url'] . '/index.php?controller=User&action=reset&gui=' . $guid . '">' . $this->config['site_url'] . '/index.php?controller=User&action=reset&gui=' . $guid . '</a>';
         // aromero: creo el registro del link temporal
@@ -129,9 +129,9 @@ class User extends ModeloBase
         $email_template = str_replace('{link_guid}', $link, $email_template);
         $email_subject = 'Reseteo de contraseña solicitado';
         if($this->sendMail($this,$email_subject,$email_template)){
-            return array('success' => true, 'msg' => 'Hemos enviado un enlace de recuperación a tu dirección de email:');
+            return array('success' => true, 'msg' => "{$this->helper->translate('User','LBL_RESET_LINK_SENT')}");
         }else{
-            return array('success' => false, 'error' => 'No se ha podido enviar el email.');
+            return array('success' => false, 'error' => "{$this->helper->translate('User','LBL_ERROR_SENDING_MAIL')}");
         }
     }
 }

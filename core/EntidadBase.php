@@ -12,6 +12,8 @@ class EntidadBase
         $config = array();
         require dirname(__FILE__) . '/../config/config.php';
         $this->config = $config;
+        require_once dirname(__FILE__).'/Util.php';
+        $this->helper = new Util();
         require_once 'Conectar.php';
         $this->db = (new Conectar())->conexion();
         $this->table = (string)$table;
