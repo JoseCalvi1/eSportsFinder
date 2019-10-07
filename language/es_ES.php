@@ -16,7 +16,7 @@ $language = array(
     'LBL_OPTIONS' => 'Opciones',
     'LBL_ERROR_SOMETHING_WENT_WRONG' => 'Algo ha ido mal.',
     'LBL_ERROR_TRY_AGAIN' => 'Intentalo de nuevo o <a href="">contacta con nuestro equipo de soporte</a>.',
-
+    'LBL_404' => 'Página no encontrada',
     'User' => array(
         'LBL_INIT_SESSION' => 'Iniciar sesión',
         'LBL_USERNAME' => 'Nombre de usuario',

@@ -34,9 +34,8 @@ function cargarControlador($controller)
 
 function cargarAccion($controllerObj, $action)
 {
-    $accion = $action;
     try {
-        $controllerObj->$accion();
+        $controllerObj->$action();
     } catch (Throwable $e) {
         $controllerObj->error($e);
     }
@@ -46,6 +45,9 @@ function lanzarAccion($controllerObj)
 {
     if (isset($_GET["action"]) && method_exists($controllerObj, $_GET["action"])) {
         cargarAccion($controllerObj, $_GET["action"]);
+    } else if (isset($_GET["action"]) && !method_exists($controllerObj, $_GET["action"])) {
+        $e = new Exception($controllerObj->helper->translate('LBL_404'), 404);
+        $controllerObj->page404($e);
     } else {
         cargarAccion($controllerObj, ACCION_DEFECTO);
     }
