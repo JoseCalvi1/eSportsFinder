@@ -28,7 +28,14 @@ function cargarControlador($controller)
     }
 
     require_once $strFileController;
-    $controllerObj = new $controlador();
+    try {
+        $controllerObj = new $controlador();
+    }catch (Throwable $e){
+        $controller = ucwords(CONTROLADOR_DEFECTO). 'Controller';
+        $controllerObj = new $controller();
+        $e = new Exception($controllerObj->helper->translate('LBL_404'), 404);
+        $controllerObj->page404($e);
+    }
     return $controllerObj;
 }
 
