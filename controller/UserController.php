@@ -29,6 +29,9 @@ class UserController extends ControladorBase
             $this->redirect(CONTROLADOR_HOME_DEFECTO, 'index');
         }
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
+        if (!empty($_REQUEST['email'])) {
+
+        }
         //Cargamos la vista
         $this->view("User/register", array(
             'title' => $this->helper->translate('User','LBL_REGISTER_TITLE'),
