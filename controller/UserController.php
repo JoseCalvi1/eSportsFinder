@@ -30,7 +30,7 @@ class UserController extends ControladorBase
         }
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
         if (!empty($_REQUEST['email'])) {
-
+            
         }
         //Cargamos la vista
         $this->view("User/register", array(
