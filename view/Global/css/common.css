@@ -319,3 +319,20 @@ a.rippler:link,
     height: auto;
     margin: 10px auto;
 }
+
+/* LIST GAMES */
+.card-title {
+    text-align: center;
+    padding: 20px 0;
+}
+.link-title {
+    text-decoration: none;
+    color: black;
+}
+.link-title:hover {
+    text-decoration: none;
+    color: black;
+}
+.title {
+    font-weight: bold;
+}

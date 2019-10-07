@@ -4,9 +4,12 @@
     <div class="row">
 
         <?php foreach($games as $game) { ?>
-            <div class="col-6 col-md-3  padding-5">
-                <a href="cod/index.php">
-                    <img class="imgElegir" src="/assets/images/reunion1.jpg">
+            <div class="col-6 col-md-3 card-title">
+                <a href="#" class="link-title">
+                    <img class="title-img" width="180" height="250" src="assets/images/<?php echo strtolower($game->media); ?>.jpg"><br>
+                    <span class="title"><?php echo $game->name; ?> / <?php echo ($game->crossplay) ? "All platforms" : $game->platform; ?></span>
+                    <span class="platform"></span><br>
+                    <span><?php echo $game->description; ?></span>
                 </a>
             </div>
         <?php } ?>
