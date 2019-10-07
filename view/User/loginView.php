@@ -7,7 +7,7 @@
             <img class="card-img-top" src="assets/images/company_logo.png">
             <div class="card-body">
 
-                <h5 class="card-title">Iniciar sesión</h5>
+                <h5 class="card-title"><?php echo $this->helper->translate('User','LBL_INIT_SESSION')?></h5>
                 <div style="" class="panel-body">
 
                     <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
@@ -16,22 +16,27 @@
                           action="<?php echo $this->helper->url("User", "login"); ?>">
 
                         <fieldset class="form-group">
-                            <label for="login-username" class="bmd-label-floating">Nombre de usuario</label>
+                            <label for="login-username" class="bmd-label-floating"><?php echo $this->helper->translate('User','LBL_USERNAME');?></label>
                             <input type="text" class="form-control" id="login-username" name="username"
                                    value="" autofocus>
                             <span class="bmd-help"></span>
                         </fieldset>
                         <fieldset class="form-group">
-                            <label for="login-username" class="bmd-label-floating">Contraseña</label>
+                            <label for="login-username" class="bmd-label-floating"><?php echo $this->helper->translate('User','LBL_PASSWORD');?></label>
                             <input id="login-password" type="password" class="form-control" name="password">
                         </fieldset>
                         <div style="margin-top:10px" class="form-group">
                             <button id="btn-login" type="submit"
-                                    class="btn btn-raised btn-primary showLoader btn-cstm-primary">
-                                Entrar
+                                    class="btn btn-raised btn-primary showLoader">
+                                <?php echo $this->helper->translate('User','LBL_ENTER');?>
                             </button>
-                            <a href="<?php echo $this->helper->url("User", "forgot"); ?>"
-                               class="float-right forgot-button showLoader">¿No puedes ingresar?</a>
+                            <a href="<?php echo $this->helper->url("User", "register"); ?>"
+                               class="float-right btn btn-raised btn-secondary showLoader"><?php echo $this->helper->translate('User','LBL_REGISTER');?></a>
+
+                        </div>
+                        <div class="form-group text-center">
+                        <a href="<?php echo $this->helper->url("User", "forgot"); ?>"
+                           class="forgot-button showLoader"><?php echo $this->helper->translate('User','LBL_FORGOT_PASS');?></a>
                         </div>
                     </form>
                 </div>

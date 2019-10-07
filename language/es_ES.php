@@ -2,7 +2,6 @@
 $language = array(
     'LBL_HOME' => 'Inicio',
     'LBL_PROFILE' => 'Perfil',
-    'LBL_TRIPS' => 'Viajes',
     'LBL_SETTINGS' => 'Opciones',
     'LBL_EXIT' => 'Salir',
     'LBL_UNDEFINED' => 'No definido',
@@ -18,5 +17,13 @@ $language = array(
     'LBL_ERROR_SOMETHING_WENT_WRONG' => 'Algo ha ido mal.',
     'LBL_ERROR_TRY_AGAIN' => 'Intentalo de nuevo o <a href="">contacta con nuestro equipo de soporte</a>.',
 
-    'User' => array(),
+    'User' => array(
+        'LBL_INIT_SESSION' => 'Iniciar sesión',
+        'LBL_USERNAME' => 'Nombre de usuario',
+        'LBL_PASSWORD' => 'Contraseña',
+        'LBL_ENTER' => 'Entrar',
+        'LBL_REGISTER' => 'Registro',
+        'LBL_FORGOT_PASS' => '¿No puedes ingresar?',
+
+    ),
 );
