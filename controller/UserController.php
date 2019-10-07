@@ -18,7 +18,7 @@ class UserController extends ControladorBase
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
         //Cargamos la vista index y le pasamos valores
         $this->view("User/login", array(
-            'title' => 'Acceso',
+            'title' => $this->helper->translate('User','LBL_INIT_SESSION'),
             'error' => $error,
         ));
     }
@@ -30,7 +30,7 @@ class UserController extends ControladorBase
         if ($user->login($_REQUEST['username'], $_REQUEST['password'])) {
             $this->redirect(CONTROLADOR_HOME_DEFECTO, ACCION_HOME_DEFECTO);
         } else {
-            $this->redirect('User', 'index', array('error' => 'Usuario o contraseña incorrectos'));
+            $this->redirect('User', 'index', array('error' => $this->helper->translate('User','')));
         }
     }
 
@@ -52,27 +52,27 @@ class UserController extends ControladorBase
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
         $guid = $_REQUEST['gui'];
         if (empty($guid)) {
-            $error = 'El enlace no es correcto.';
+            $error = $this->helper->translate('User','LBL_ERROR_INVALID_TOKEN');
         } else {
             $user = new User();
             $user->retrieveByToken($guid);
             if (empty($user->id)) {
-                $error = 'El enlace no es correcto.';
+                $error = $this->helper->translate('User','LBL_ERROR_INVALID_TOKEN');
             }
             if (!empty($_REQUEST['password'])) {
                 if($user->resetPassword($_REQUEST['password'])) {
                     $this->redirect(CONTROLADOR_HOME_DEFECTO, 'index');
                 }else{
-                    $error = 'No se ha podido resetear su contraseña, por favor intentelo de nuevo en otro momento.';
+                    $error = $this->helper->translate('User','LBL_ERROR_RESET_PASSWORD');
                 }
             }
         }
         //Cargamos la vista index y le pasamos valores
         $this->view("User/reset", array(
-            'title' => 'Recuperación de contraseña',
+            'title' => $this->helper->translate('User','LBL_NEW_PASSWORD'),
             'token' => $_REQUEST['gui'],
             'error' => $error,
-            'msg' => 'Introduzca su nueva contraseña',
+            'msg' => $this->helper->translate('User','LBL_RESET_TITLE'),
         ));
     }
 
@@ -93,7 +93,7 @@ class UserController extends ControladorBase
                     $msg = $result['msg'] ? $result['msg'] : '';
                     //Cargamos la vista index y le pasamos valores
                     $this->view("User/emailSent", array(
-                        'title' => '¿No puedes ingresar?',
+                        'title' => $this->helper->translate('User','LBL_FORGOT_TITLE'),
                         'email' => $_REQUEST['useremail'],
                         'error' => $error,
                         'msg' => $msg,
@@ -103,12 +103,12 @@ class UserController extends ControladorBase
                     $error = $result['error'];
                 }
             } else {
-                $error = 'El email proporcionado no se corresponde con ningun usuario registrado';
+                $error = $this->helper->translate('User','LBL_ERROR_EMAIL_NOT_VALID');
             }
         }
         //Cargamos la vista index y le pasamos valores
         $this->view("User/forgot", array(
-            'title' => '¿No puedes ingresar?',
+            'title' => $this->helper->translate('User','LBL_FORGOT_TITLE'),
             'error' => $error,
         ));
     }
