@@ -1,4 +1,5 @@
 <?php
+
 class User extends ModeloBase
 {
 
@@ -34,7 +35,7 @@ class User extends ModeloBase
         global $current_user;
         $user_hash_md5 = md5($password);
         $users = $this->getBy('user_name', $user_name);
-        if(is_array($users)) {
+        if (is_array($users)) {
             foreach ($users as $user) {
                 if ($this->checkPasswordMD5($user_hash_md5, $user->password)) {
                     $current_user = $user;
@@ -43,7 +44,7 @@ class User extends ModeloBase
                     return false;
                 }
             }
-        }else if($users){
+        } else if ($users) {
             if ($this->checkPasswordMD5($user_hash_md5, $this->password)) {
                 $current_user = $this;
                 $_SESSION['current_user'] = $this;
@@ -54,7 +55,8 @@ class User extends ModeloBase
         return false;
     }
 
-    public function retrieveByToken($id){
+    public function retrieveByToken($id)
+    {
 
         $return = false;
         if ($this->config['passwordsetting']['linkexpiration'] == '1') {
@@ -64,26 +66,46 @@ class User extends ModeloBase
         }
         $gui = $this->ejecutarSql($sql);
         if (!empty($gui) && is_object($gui)) {
-            $this->getBy('email',$gui->email);
+            $this->getBy('email', $gui->email);
             $return = true;
         }
         return $return;
 
     }
 
-    public function resetPassword($password){
+    public function resetPassword($password)
+    {
         $result = false;
         $user_hash = @crypt(strtolower(md5($password)));
         if (!empty($this->id)) {
             $this->password = $user_hash;
-            if($this->save()){
+            if ($this->save()) {
                 $result = true;
-                $this->login($this->user_name,$password);
+                $this->login($this->user_name, $password);
                 $sql = "DELETE FROM esf_users_password_link WHERE email = '{$this->email}';";
                 $this->ejecutarSql($sql);
             }
         }
         return $result;
+    }
+
+    public function validateUser($data)
+    {
+        $data['user'] = array(
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'user_name' => $data['user_name'],
+            'password' => $data['password']
+        );
+        $user = $data['user'];
+        foreach ($user as $campo => $dato) {
+            if(!$dato) {
+                $error = 'El campo '.$campo.' esta vacío';
+                return $error;
+            }
+        }
+        die('<pre>' . print_r($user, true) . '</pre>');
+        $user->save();
     }
 
     private function generateResetToken()
@@ -99,7 +121,8 @@ class User extends ModeloBase
         }
     }
 
-    public function sendResetPasswordMail($email) {
+    public function sendResetPasswordMail($email)
+    {
         $email_path = dirname(__FILE__) . '/../assets/emails/' . $this->config['passwordsetting']['lostpasswordtmpl'] . '.html';
         $email_template = file_get_contents($email_path);
         if (empty($email_template)) {
@@ -114,23 +137,23 @@ class User extends ModeloBase
         }
         $link = '<a href="' . $this->config['site_url'] . '/index.php?controller=User&action=reset&gui=' . $guid . '">' . $this->config['site_url'] . '/index.php?controller=User&action=reset&gui=' . $guid . '</a>';
         // aromero: creo el registro del link temporal
-        $timezone = !empty($this->default_timezone ) ? $this->default_timezone : $this->config['default_timezone'];
-        $date_format = !empty($this->default_date_format ) ? $this->default_date_format : $this->config['default_date_format'];
-        $time_format = !empty($this->default_time_format ) ? $this->default_time_format : $this->config['default_time_format'];
+        $timezone = !empty($this->default_timezone) ? $this->default_timezone : $this->config['default_timezone'];
+        $date_format = !empty($this->default_date_format) ? $this->default_date_format : $this->config['default_date_format'];
+        $time_format = !empty($this->default_time_format) ? $this->default_time_format : $this->config['default_time_format'];
 
         // Reemplazar las variables en el email template
         foreach ($this->fields as $key => $value) {
             if (!empty($this->$key)) {
-                $email_template = str_replace('{'.$key.'}', $this->$key, $email_template);
+                $email_template = str_replace('{' . $key . '}', $this->$key, $email_template);
             }
         }
         $pwd_last_changed = new DateTime('now', new DateTimeZone($timezone));
         $email_template = str_replace('{pwd_last_changed}', $pwd_last_changed->format($date_format . ' ' . $time_format), $email_template);
         $email_template = str_replace('{link_guid}', $link, $email_template);
         $email_subject = 'Reseteo de contraseña solicitado';
-        if($this->sendMail($this,$email_subject,$email_template)){
+        if ($this->sendMail($this, $email_subject, $email_template)) {
             return array('success' => true, 'msg' => "{$this->helper->translate('User','LBL_RESET_LINK_SENT')}");
-        }else{
+        } else {
             return array('success' => false, 'error' => "{$this->helper->translate('User','LBL_ERROR_SENDING_MAIL')}");
         }
     }
