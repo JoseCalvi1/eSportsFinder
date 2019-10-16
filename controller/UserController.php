@@ -37,6 +37,7 @@ class UserController extends ControladorBase
                 $user->user_name = $_REQUEST['user']['user_name'];
                 $user->password = @crypt(strtolower(md5($_REQUEST['user']['password'])));
                 $user->save();
+                // TODO: redirect to "we send you a confirmation email and send the email"
                 $this->redirect(CONTROLADOR_HOME_DEFECTO, 'index');
             }
         }
@@ -48,7 +49,9 @@ class UserController extends ControladorBase
         ));
     }
 
-
+    public function confirmation(){
+        // TODO: confirmar el registro, activar el usuario y mostrar un mensaje y un enlace al login
+    }
 
     public function login()
     {
