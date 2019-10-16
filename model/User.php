@@ -89,23 +89,39 @@ class User extends ModeloBase
         return $result;
     }
 
-    public function validateUser($data)
+    public function validateRegister($data)
     {
-        $data['user'] = array(
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'user_name' => $data['user_name'],
-            'password' => $data['password']
-        );
-        $user = $data['user'];
-        foreach ($user as $campo => $dato) {
-            if(!$dato) {
-                $error = 'El campo '.$campo.' esta vacío';
-                return $error;
+        $errores = array();
+        // Validación de contraseñas
+        if(!empty($data['password']) && !empty($data['rep_password'])){
+            if($data['password'] != $data['rep_password']){
+                $errores['rep_password'] = $this->helper->translate('User','LBL_PASSWORD_NOT_EQUAL');
+            }
+            if(!preg_match('/[A-Za-z0-9!?-_]{8,12}/',$data['password'])){
+                $errores['password'] = $this->helper->translate('User','LBL_PASSWORD_NOT_EQUAL');
             }
         }
-        die('<pre>' . print_r($user, true) . '</pre>');
-        $user->save();
+
+        if(!empty($data['email']) && !preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i',$data['email'])){
+            $errores['email'] = $this->helper->translate('User', 'LBL_EMAIL_REGEX');
+        }
+
+        if(empty($errores['email'])){
+            $sql = "SELECT email from esf_users WHERE email = '{$data['email']}'";
+            $res = $this->ejecutarSql($sql);
+            if(!empty($res->email)){
+                $errores['email'] = $this->helper->translate('User', 'LBL_EMAIL_EXISTING');
+            }
+        }
+
+        // Validación de required
+        foreach ($data as $campo => $dato) {
+            if(!$dato) {
+                $errores[$campo] = $this->helper->translate('LBL_REQUIRED');
+            }
+        }
+
+        return $errores;
     }
 
     private function generateResetToken()

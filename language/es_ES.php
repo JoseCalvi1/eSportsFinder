@@ -17,6 +17,7 @@ $language = array(
     'LBL_ERROR_SOMETHING_WENT_WRONG' => 'Algo ha ido mal.',
     'LBL_ERROR_TRY_AGAIN' => 'Intentalo de nuevo o <a href="">contacta con nuestro equipo de soporte</a>.',
     'LBL_404' => 'Página no encontrada',
+    'LBL_REQUIRED' => 'Completa este campo',
     'User' => array(
         'LBL_INIT_SESSION' => 'Iniciar sesión',
         'LBL_REGISTER_TITLE' => 'Registrar usuario',
@@ -44,5 +45,9 @@ $language = array(
         'LBL_ERROR_EMAIL_NOT_VALID' => 'El email proporcionado no se corresponde con ningun usuario registrado',
         'LBL_ERROR_RETRIEVING_USER' => 'Error al recuperar el usuario',
         'LBL_ERROR_RETRIEVING_TEMPLATE' => 'Error al recuperar el Email template',
+        'LBL_EMAIL_EXISTING' => 'Este email ya está en uso',
+        'LBL_EMAIL_REGEX' => 'Correo electrónico no válido',
+        'LBL_PASSWORD_REGEX' => 'Debe contener letras mayúsculas, minúsculas, números y alguno de los caracteres !?-_ <br>Tamaño: entre 8 y 12 caracteres',
+        'LBL_PASSWORD_NOT_EQUAL' => 'Debe repetir la contraseña, los valores no son iguales.',
     ),
 );

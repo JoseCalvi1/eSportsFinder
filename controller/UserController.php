@@ -28,15 +28,23 @@ class UserController extends ControladorBase
         global $current_user;
         if (!empty($current_user)) {
             $this->redirect(CONTROLADOR_HOME_DEFECTO, 'index');
-        } else {
+        } else if(!empty($_REQUEST['user'])){
             $user = new User();
-            $user->validateUser($_REQUEST);
+            $error = $user->validateRegister($_REQUEST['user']);
+            if(empty($error)){
+                $user->name = $_REQUEST['user']['name'];
+                $user->email = $_REQUEST['user']['email'];
+                $user->user_name = $_REQUEST['user']['user_name'];
+                $user->password = @crypt(strtolower(md5($_REQUEST['user']['password'])));
+                $user->save();
+                $this->redirect(CONTROLADOR_HOME_DEFECTO, 'index');
+            }
         }
-        $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
         //Cargamos la vista
         $this->view("User/register", array(
             'title' => $this->helper->translate('User', 'LBL_REGISTER_TITLE'),
             'error' => $error,
+            'user' => $_REQUEST['user'],
         ));
     }
 
