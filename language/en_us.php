@@ -51,5 +51,9 @@ $language = array(
     ),
     'Game' => array(
         'LBL_GAMES' => 'Games',
+        'LBL_MANAGE' => 'Manage your team',
+        'LBL_CHAT' => 'Chat',
+        'LBL_FA' => 'Free agent list',
+        'LBL_TS' => 'Team scrims',
     ),
 );

@@ -38,6 +38,17 @@ class EntidadBase
         return count($resultSet) ? $resultSet : false;
     }
 
+    public function getAllLimit($limit)
+    {
+        $query = $this->db->query("SELECT * FROM $this->table LIMIT $limit");
+        $resultSet = array();
+
+        while ($row = $query->fetch_object()) {
+            $resultSet[] = $row;
+        }
+        return count($resultSet) ? $resultSet : false;
+    }
+
     public function getById($id)
     {
         $query = $this->db->query("SELECT * FROM $this->table WHERE id=$id");

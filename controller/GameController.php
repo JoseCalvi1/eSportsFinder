@@ -33,12 +33,15 @@ class GameController extends ControladorBase
     {
         global $current_user;
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
+        $team = new Team();
+        $teams = $team->getAllLimit(3);
 
 
         //Cargamos la vista index y le pasamos valores
         $this->view("Game/home", array(
             'title' => 'Game home',
             'error' => $error,
+            'teams' => $teams,
         ),true);
 
     }
