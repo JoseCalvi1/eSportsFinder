@@ -29,5 +29,19 @@ class GameController extends ControladorBase
 
     }
 
+    public function home()
+    {
+        global $current_user;
+        $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
+
+
+        //Cargamos la vista index y le pasamos valores
+        $this->view("Game/home", array(
+            'title' => 'Game home',
+            'error' => $error,
+        ),true);
+
+    }
+
 
 }

@@ -49,5 +49,9 @@ $language = array(
         'LBL_EMAIL_REGEX' => 'Correo electrónico no válido',
         'LBL_PASSWORD_REGEX' => 'Debe contener letras mayúsculas, minúsculas, números y alguno de los caracteres !?-_ <br>Tamaño: entre 8 y 12 caracteres',
         'LBL_PASSWORD_NOT_EQUAL' => 'Debe repetir la contraseña, los valores no son iguales.',
+        'LBL_LOGOUT' => 'Cerrar sesión',
+    ),
+    'Game' => array(
+        'LBL_GAMES' => 'Juegos',
     ),
 );
