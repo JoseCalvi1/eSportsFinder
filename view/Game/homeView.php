@@ -1,7 +1,5 @@
 <?php include_once "header.php"; ?>
 
-<?php include_once "navbar.php"; ?>
-
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-8 card-title padding-5">
@@ -28,7 +26,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="col-6 col-md-4 card-title padding-5">
+            <div class="col-12 col-md-4 card-title padding-5">
                 <a href="#" class="link-title">
                     <div class="info info-card">
                         <img src="assets/img/manage.jpg">
@@ -38,7 +36,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-6 col-md-4 card-title padding-5">
+            <div class="col-12 col-md-4 card-title padding-5">
                 <a href="#" class="link-title">
                     <div class="info info-card">
                         <img src="assets/img/users.jpg">
@@ -48,7 +46,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-6 col-md-4 card-title padding-5">
+            <div class="col-12 col-md-4 card-title padding-5">
                 <a href="#" class="link-title">
                     <div class="info info-card">
                         <img src="assets/img/ts.jpg">
@@ -58,7 +56,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-6 col-md-4 card-title padding-5">
+            <div class="col-12 col-md-4 card-title padding-5">
                 <a href="#" class="link-title">
                     <div class="info info-card">
                         <img src="assets/img/chat.jpg">

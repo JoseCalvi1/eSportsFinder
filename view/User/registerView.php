@@ -65,7 +65,8 @@
                     </div>
                     <button type="submit" class="btn btn-primary btn-raised" name="registrar"
                             value="Registrar"><?php echo $this->helper->translate('User', 'LBL_SUBMIT'); ?></button>
-                    <p>Ir a <a href="index.php">Inicio</a></p>
+                    <a href="<?php echo $this->helper->url("User", "index"); ?>" class="forgot-button showLoader">
+                        <?php echo $this->helper->translate('User','LBL_BACK_TO_LOGIN');?></a>
                 </form>
             </div>
         </div>

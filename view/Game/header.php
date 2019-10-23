@@ -24,9 +24,11 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 </head>
-<body>
+<body class="sidebar-collapse">
+<?php include_once "navbar.php"; ?>
+
 <div id="loader_container" class="loader_container">
     <div class="loader"></div>
 </div>
 <div class="container-fluid h-100 transparency">
-    <div class="row justify-content-center align-items-center h-100">
+    <div class="row justify-content-center align-items-center">
