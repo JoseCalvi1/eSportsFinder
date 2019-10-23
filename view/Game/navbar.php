@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg" style="width: 100%">
     <div class="container">
         <div class="navbar-translate">
-            <a class="navbar-brand" href="https://demos.creative-tim.com/material-kit/index.html">
+            <a class="navbar-brand" href="<?php echo $this->helper->url("Game", "index"); ?>">
                 eSports Finder </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="sr-only">Toggle navigation</span>
