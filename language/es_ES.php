@@ -18,6 +18,7 @@ $language = array(
     'LBL_ERROR_TRY_AGAIN' => 'Intentalo de nuevo o <a href="">contacta con nuestro equipo de soporte</a>.',
     'LBL_404' => 'Página no encontrada',
     'LBL_REQUIRED' => 'Completa este campo',
+    'LBL_SEE_MORE' => 'Ver más',
     'User' => array(
         'LBL_INIT_SESSION' => 'Iniciar sesión',
         'LBL_REGISTER_TITLE' => 'Registrar usuario',
@@ -57,5 +58,17 @@ $language = array(
         'LBL_CHAT' => 'Chat',
         'LBL_FA' => 'Listado de jugadores libres',
         'LBL_TS' => 'Partidas de entrenamiento',
+    ),
+    'Team' => array(
+        'LBL_NAME' => 'Nombre',
+        'LBL_DESCRIPTION' => 'Team tag',
+        'LBL_PLAY_TIME' => 'Horas de juego',
+        'LBL_AVAILABILITY' => 'Disponibilidad',
+    ),
+    'GameProfile' => array(
+        'LBL_NAME' => 'Nombre',
+        'LBL_DESCRIPTION' => 'Team tag',
+        'LBL_PLAY_TIME' => 'Horas de juego',
+        'LBL_AVAILABILITY' => 'Disponibilidad',
     ),
 );

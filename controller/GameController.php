@@ -25,7 +25,7 @@ class GameController extends ControladorBase
             'title' => 'Game list',
             'error' => $error,
             'games' => $games,
-        ),true);
+        ), true);
 
     }
 
@@ -37,12 +37,46 @@ class GameController extends ControladorBase
         $teams = $team->getAllLimit(3);
 
 
-        //Cargamos la vista index y le pasamos valores
+        //Cargamos la vista home y le pasamos valores
         $this->view("Game/home", array(
             'title' => 'Game home',
             'error' => $error,
             'teams' => $teams,
-        ),true);
+        ), true);
+
+    }
+
+    public function teamList()
+    {
+        global $current_user;
+        $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
+        $team = new Team();
+        $teams = $team->getAll();
+
+
+        //Cargamos la vista teamlist y le pasamos valores
+        $this->view("Game/teamlist", array(
+            'title' => 'Team list',
+            'error' => $error,
+            'teams' => $teams,
+        ), true);
+
+    }
+
+    public function userList()
+    {
+        global $current_user;
+        $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
+        $user = new GameProfile();
+        $users = $user->getAll();
+
+
+        //Cargamos la vista teamlist y le pasamos valores
+        $this->view("Game/falist", array(
+            'title' => 'Free agents list',
+            'error' => $error,
+            'users' => $users,
+        ), true);
 
     }
 

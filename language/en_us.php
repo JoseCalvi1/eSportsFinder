@@ -18,6 +18,7 @@ $language = array(
     'LBL_ERROR_TRY_AGAIN' => 'Try again later or <a href="">contact us to get support</a>.',
     'LBL_404' => 'Page not found',
     'LBL_REQUIRED' => 'Complete this field',
+    'LBL_SEE_MORE' => 'See more',
     'User' => array(
         'LBL_INIT_SESSION' => 'Login',
         'LBL_REGISTER_TITLE' => 'User register',
@@ -55,5 +56,17 @@ $language = array(
         'LBL_CHAT' => 'Chat',
         'LBL_FA' => 'Free agent list',
         'LBL_TS' => 'Team scrims',
+    ),
+    'Team' => array(
+        'LBL_NAME' => 'Name',
+        'LBL_DESCRIPTION' => 'Team tag',
+        'LBL_PLAY_TIME' => 'Play time',
+        'LBL_AVAILABILITY' => 'Availability',
+    ),
+    'GameProfile' => array(
+        'LBL_NAME' => 'Name',
+        'LBL_DESCRIPTION' => 'Team tag',
+        'LBL_PLAY_TIME' => 'Play time',
+        'LBL_AVAILABILITY' => 'Availability',
     ),
 );
