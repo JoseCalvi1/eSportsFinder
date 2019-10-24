@@ -46,7 +46,7 @@ class User extends ModeloBase
             }
         } else if ($users) {
             if ($this->checkPasswordMD5($user_hash_md5, $this->password)) {
-                $current_user = $this;
+                $current_user = new User($this->id);
                 $_SESSION['current_user'] = $this;
             } else {
                 return false;

@@ -18,7 +18,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?php echo $this->helper->url("Message", "inbox"); ?>" class="nav-link">
+                    <a href="<?php echo $this->helper->url("Message", "index"); ?>" class="nav-link">
                         <?php echo $this->helper->translate('Message','LBL_MESSAGES');?>
                     </a>
                 </li>

@@ -87,11 +87,22 @@ class EntidadBase
         return count($resultSet) ? $resultSet : false;
     }
 
-    // TODO Función a revisar
-    public function getList($where, $order, $limit, $campos)
+    public function getList($where, $order)
     {
-        $query = $this->db->query("SELECT $campos FROM $this->table WHERE $where ORDER BY $order DESC LIMIT $limit");
+        $query = $this->db->query("SELECT * FROM $this->table WHERE $where ORDER BY $order ASC");
         $resultSet = array();
+
+        while ($row = $query->fetch_object()) {
+            $resultSet[] = $row;
+        }
+        return count($resultSet) ? $resultSet : false;
+    }
+
+    public function getMessages($where, $order)
+    {
+        $query = $this->db->query("SELECT m.*, u.name FROM $this->table AS m INNER JOIN esf_users AS u ON m.id_user_from = u.id WHERE $where ORDER BY $order ASC");
+        $resultSet = array();
+
         while ($row = $query->fetch_object()) {
             $resultSet[] = $row;
         }

@@ -1,4 +1,8 @@
 <?php
+//Base para los controladores
+require_once 'core/EntidadBase.php';
+require_once 'core/ModeloBase.php';
+require_once 'model/User.php';
 // server should keep session data for AT LEAST 1 hour
 ini_set('session.gc_maxlifetime', 3600);
 // each client should remember their session id for EXACTLY 1 hour

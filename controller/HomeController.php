@@ -12,8 +12,6 @@ class HomeController extends ControladorBase
 
     public function index()
     {
-
-
         //Cargamos la vista index y le pasamos valores
         $this->view("Home/landing", array(
             'title' => 'Home',
