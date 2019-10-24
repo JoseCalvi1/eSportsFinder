@@ -11,3 +11,8 @@
     width: 100%;
     height: auto;
 }
+
+/* TAB PANEL */
+.nav-tabs .nav-item .nav-link {
+    color: #000 !important;
+}

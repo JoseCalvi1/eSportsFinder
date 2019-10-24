@@ -49,6 +49,7 @@ $language = array(
         'LBL_PASSWORD_REGEX' => 'Debe contener letras mayúsculas, minúsculas, números y alguno de los caracteres !?-_ <br>Tamaño: entre 8 y 12 caracteres',
         'LBL_PASSWORD_NOT_EQUAL' => 'Debe repetir la contraseña, los valores no son iguales.',
         'LBL_LOGOUT' => 'Logout',
+
     ),
     'Game' => array(
         'LBL_GAMES' => 'Games',
@@ -68,5 +69,11 @@ $language = array(
         'LBL_DESCRIPTION' => 'Team tag',
         'LBL_PLAY_TIME' => 'Play time',
         'LBL_AVAILABILITY' => 'Availability',
+    ),
+    'Message' => array(
+        'LBL_MESSAGES' => 'Messages',
+        'LBL_INBOX' => 'Inbox',
+        'LBL_INVITES' => 'Invites',
+        'LBL_SENT_MESSAGE' => 'Send message',
     ),
 );

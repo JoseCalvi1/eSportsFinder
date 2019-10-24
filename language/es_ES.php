@@ -71,4 +71,10 @@ $language = array(
         'LBL_PLAY_TIME' => 'Horas de juego',
         'LBL_AVAILABILITY' => 'Disponibilidad',
     ),
+    'Message' => array(
+        'LBL_MESSAGES' => 'Mensajes',
+        'LBL_INBOX' => 'Mensajes entrantes',
+        'LBL_INVITES' => 'Invitaciones',
+        'LBL_SENT_MESSAGE' => 'Enviar mensaje',
+    ),
 );
