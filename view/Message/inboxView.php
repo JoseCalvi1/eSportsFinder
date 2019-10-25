@@ -39,7 +39,7 @@
         <div class="row">
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><?php include_once "inbox.php"; ?></div>
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><?php include_once "send_message.php"; ?></div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><?php include_once "sent_messages.php"; ?></div>
                 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><?php include_once "invites.php"; ?></div>
             </div>
         </div>

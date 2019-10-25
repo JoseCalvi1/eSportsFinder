@@ -1,11 +1,7 @@
-<footer>
-    <hr/>
-    <center>
+<footer style="justify-content: center;">
     <a class="showLoader" href="<?php echo $this->config['site_url']; ?>"><?php echo $this->config['app_name']; ?></a> -
     Copyright
     &copy; <?php echo date("Y"); ?>
-    <br><br>
-    </center>
 </footer>
 
 <!-- Optional JavaScript -->

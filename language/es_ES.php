@@ -77,6 +77,6 @@ $language = array(
         'LBL_MESSAGES' => 'Mensajes',
         'LBL_INBOX' => 'Mensajes entrantes',
         'LBL_INVITES' => 'Invitaciones',
-        'LBL_SENT_MESSAGE' => 'Enviar mensaje',
+        'LBL_SENT_MESSAGE' => 'Mensajes enviados',
     ),
 );
