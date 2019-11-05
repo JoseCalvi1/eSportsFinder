@@ -68,7 +68,7 @@ class GameController extends ControladorBase
         global $current_user;
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
         $user = new GameProfile();
-        $users = $user->getAll();
+        $users = $user->getList('id_team IS NULL',"id");
 
 
         //Cargamos la vista teamlist y le pasamos valores
