@@ -100,7 +100,7 @@ class EntidadBase
 
     public function getMessages($where, $order)
     {
-        $query = $this->db->query("SELECT m.*, u.name FROM $this->table AS m INNER JOIN esf_users AS u ON m.id_user_from = u.id WHERE $where ORDER BY $order ASC");
+        $query = $this->db->query("SELECT m.*, u.name FROM $this->table AS m INNER JOIN esf_users AS u ON m.id_user_from = u.id WHERE $where ORDER BY $order DESC");
         $resultSet = array();
 
         while ($row = $query->fetch_object()) {

@@ -19,9 +19,9 @@ class MessageController extends ControladorBase
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
 
         $message = new Message();
-        $messages = $message->getMessages("id_user_to='{$current_user->id}'",'date_entered');
-        $sent_messages = $message->getMessages("id_user_from='{$current_user->id}'",'date_entered');
-        $invitations = $message->getMessages("id_user_to='{$current_user->id}' AND status='INV'",'date_entered');
+        $messages = $message->getMessages("id_user_to='{$current_user->id}'", 'date_entered');
+        $sent_messages = $message->getMessages("id_user_from='{$current_user->id}'", 'date_entered');
+        $invitations = $message->getMessages("id_user_to='{$current_user->id}' AND status='INV'", 'date_entered');
         //Cargamos la vista index y le pasamos valores
 
         $this->view("Message/inbox", array(
@@ -31,6 +31,22 @@ class MessageController extends ControladorBase
             'invitations' => $invitations,
             'error' => $error,
         ));
+    }
+
+    public function sendMessage()
+    {
+        global $current_user;
+        $message = new Message();
+
+        $message->id_user_from = $current_user->id;
+        $message->id_user_to = $_REQUEST['message']['id_user_to'];
+        $message->subject = $_REQUEST['message']['subject'];
+        $message->message = $_REQUEST['message']['description'];
+        $message->created_by = $current_user->id;
+        $message->modified_by = $current_user->id;
+        $message->save();
+
+        $this->redirect('Message', 'index');
     }
 
 }
