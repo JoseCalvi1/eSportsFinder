@@ -3,9 +3,9 @@
     <div class="container">
         <div class="col-sm-12 equipo">
         </div>
-        <h2>Búsqueda de jugadores</h2>
-        <p>Puedes buscar un jugador por su nombre, posición o modo preferido:</p>
-        <input class="form-control" id="search" type="text" placeholder="Buscar..">
+        <h2><?php echo $this->helper->translate('GameProfile', 'LBL_FA_TITLE') ?></h2>
+        <p><?php echo $this->helper->translate('GameProfile', 'LBL_SEARCH') ?></p>
+        <input class="form-control" id="search" type="text" placeholder="<?php echo $this->helper->translate('LBL_SEARCH') ?>...">
         <br>
         <table class="table table-bordered table-striped" id="mytable">
             <thead>

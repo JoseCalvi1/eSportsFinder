@@ -21,12 +21,14 @@ class MessageController extends ControladorBase
         $message = new Message();
         $messages = $message->getMessages("id_user_to='{$current_user->id}'",'date_entered');
         $sent_messages = $message->getMessages("id_user_from='{$current_user->id}'",'date_entered');
+        $invitations = $message->getMessages("id_user_to='{$current_user->id}' AND status='INV'",'date_entered');
         //Cargamos la vista index y le pasamos valores
 
         $this->view("Message/inbox", array(
             'title' => $this->helper->translate('Message', 'LBL_MESSAGES'),
             'messages' => $messages,
             'sent_messages' => $sent_messages,
+            'invitations' => $invitations,
             'error' => $error,
         ));
     }

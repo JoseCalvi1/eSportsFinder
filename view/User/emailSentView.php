@@ -18,11 +18,11 @@
                             </fieldset>
                             <div class="text-center">
                                 <div>
-                                    <a href="<?php echo $this->helper->url("User", "forgot",array('useremail'=> $email)); ?>" class="forgot-button showLoader">Reenviar enlace de recuperación</a>
+                                    <a href="<?php echo $this->helper->url("User", "forgot",array('useremail'=> $email)); ?>" class="forgot-button showLoader"><?php echo $this->helper->translate('User','LBL_RESEND_FORGOT');?></a>
                                 </div>
 
                                 <div>
-                                    <a href="<?php echo $this->helper->url("User", "index"); ?>" class="forgot-button showLoader">Volver al login</a>
+                                    <a href="<?php echo $this->helper->url("User", "index"); ?>" class="forgot-button showLoader"><?php echo $this->helper->translate('User','LBL_BACK_TO_LOGIN');?></a>
                                 </div>
                             </div>
 
