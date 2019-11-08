@@ -6,7 +6,7 @@
 
         <?php foreach($games as $game) { ?>
             <div class="col-6 col-md-3 card-title">
-                <a href="<?php echo ($game->status)=='READY' ? $this->helper->url("Game", "home") : '#'; ?>" class="link-title">
+                <a href="<?php echo ($game->status)=='READY' ? $this->helper->url("Game", "home").'&id='.$game->id : '#'; ?>" class="link-title">
                     <img class="title-img" width="180" height="250" src="assets/images/<?php echo strtolower($game->media); ?>.jpg"><br>
                     <span class="title"><?php echo $game->name; ?> / <?php echo ($game->crossplay) ? "All platforms" : $game->platform; ?></span>
                     <span class="platform"></span><br>

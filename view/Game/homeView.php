@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-8 card-title padding-5">
-                <a href="<?php echo $this->helper->url("Game", "teamlist") ?>"><?php echo $this->helper->translate('LBL_SEE_MORE') ?></a>
+                <a href="<?php echo $this->helper->url("Game", "teamlist").'&id='.$_GET['id'] ?>"><?php echo $this->helper->translate('LBL_SEE_MORE') ?></a>
                 <table class="table table-bordered table-striped" id="mytable">
                     <thead>
                     <tr>
@@ -37,7 +37,7 @@
                 </a>
             </div>
             <div class="col-12 col-md-4 card-title padding-5">
-                <a href="<?php echo $this->helper->url("Game", "userlist") ?>" class="link-title">
+                <a href="<?php echo $this->helper->url("Game", "userlist").'&id='.$_GET['id'] ?>" class="link-title">
                     <div class="info info-card">
                         <img src="assets/img/users.jpg">
                         <h4 class="info-title"><?php echo $this->helper->translate('Game', 'LBL_FA') ?></h4>

@@ -87,9 +87,10 @@ class EntidadBase
         return count($resultSet) ? $resultSet : false;
     }
 
-    public function getList($where, $order)
+    public function getList($where, $order, $limit)
     {
-        $query = $this->db->query("SELECT * FROM $this->table WHERE $where ORDER BY $order ASC");
+        $sql = "SELECT * FROM $this->table WHERE $where ORDER BY $order ASC LIMIT $limit";
+        $query = $this->db->query($sql);
         $resultSet = array();
 
         while ($row = $query->fetch_object()) {

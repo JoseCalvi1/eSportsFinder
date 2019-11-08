@@ -34,7 +34,8 @@ class GameController extends ControladorBase
         global $current_user;
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
         $team = new Team();
-        $teams = $team->getAllLimit(3);
+        $id_game = $_GET['id'];
+        $teams = $team->getList("id_game='{$id_game}'", 'id', 4);
 
 
         //Cargamos la vista home y le pasamos valores
@@ -51,7 +52,8 @@ class GameController extends ControladorBase
         global $current_user;
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
         $team = new Team();
-        $teams = $team->getAll();
+        $id_game = $_GET['id'];
+        $teams = $team->getList("id_game='{$id_game}'", 'id', 20);
 
 
         //Cargamos la vista teamlist y le pasamos valores
@@ -68,7 +70,8 @@ class GameController extends ControladorBase
         global $current_user;
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
         $user = new GameProfile();
-        $users = $user->getList('id_team IS NULL',"id");
+        $id_game = $_GET['id'];
+        $users = $user->getList("id_team IS NULL AND id_game='{$id_game}'","id", 20);
 
 
         //Cargamos la vista teamlist y le pasamos valores
