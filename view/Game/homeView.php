@@ -29,7 +29,7 @@
             <div class="col-12 col-md-4 card-title padding-5">
                 <a href="#" class="link-title">
                     <div class="info info-card">
-                        <img src="assets/img/manage.jpg">
+                        <img src="assets/images/manage.jpg">
                         <h4 class="info-title"><?php echo $this->helper->translate('Game', 'LBL_MANAGE') ?></h4>
                         <p>Divide details about your product or agency work into parts. Write a few lines about each
                             one. A paragraph describing a feature will be enough.</p>
@@ -39,7 +39,7 @@
             <div class="col-12 col-md-4 card-title padding-5">
                 <a href="<?php echo $this->helper->url("Game", "userlist").'&id='.$_GET['id'] ?>" class="link-title">
                     <div class="info info-card">
-                        <img src="assets/img/users.jpg">
+                        <img src="assets/images/users.jpg">
                         <h4 class="info-title"><?php echo $this->helper->translate('Game', 'LBL_FA') ?></h4>
                         <p>Divide details about your product or agency work into parts. Write a few lines about each
                             one. A paragraph describing a feature will be enough.</p>
@@ -49,7 +49,7 @@
             <div class="col-12 col-md-4 card-title padding-5">
                 <a href="#" class="link-title">
                     <div class="info info-card">
-                        <img src="assets/img/ts.jpg">
+                        <img src="assets/images/ts.jpg">
                         <h4 class="info-title"><?php echo $this->helper->translate('Game', 'LBL_TS') ?></h4>
                         <p>Divide details about your product or agency work into parts. Write a few lines about each
                             one. A paragraph describing a feature will be enough.</p>
@@ -59,7 +59,7 @@
             <div class="col-12 col-md-4 card-title padding-5">
                 <a href="#" class="link-title">
                     <div class="info info-card">
-                        <img src="assets/img/chat.jpg">
+                        <img src="assets/images/chat.jpg">
                         <h4 class="info-title"><?php echo $this->helper->translate('Game', 'LBL_CHAT') ?></h4>
                         <p>Divide details about your product or agency work into parts. Write a few lines about each
                             one. A paragraph describing a feature will be enough.</p>

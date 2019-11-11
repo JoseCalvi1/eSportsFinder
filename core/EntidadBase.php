@@ -26,10 +26,20 @@ class EntidadBase
         if (!empty($id)) $this->getById($id);
     }
 
-    // TODO Función a revisar
     public function getAll()
     {
         $query = $this->db->query("SELECT * FROM $this->table");
+        $resultSet = array();
+
+        while ($row = $query->fetch_object()) {
+            $resultSet[] = $row;
+        }
+        return count($resultSet) ? $resultSet : false;
+    }
+
+    public function getAllorder($order1, $order2)
+    {
+        $query = $this->db->query("SELECT * FROM $this->table ORDER BY $order1 DESC, $order2 ASC");
         $resultSet = array();
 
         while ($row = $query->fetch_object()) {
@@ -147,7 +157,12 @@ class EntidadBase
 
     }
 
-    public function update()
+    public function updateInv($id) {
+        $query = $this->db->query("UPDATE {$this->table} SET accepted = 1 WHERE id = '{$id}'");
+        return $query;
+    }
+
+    public function update($id)
     {
         $sets = array();
         foreach ($this->fields as $key => $value) {
@@ -158,7 +173,7 @@ class EntidadBase
         }
         if (!empty($sets)) {
             $sets = implode(',', $sets);
-            $sql = "UPDATE {$this->table} SET {$sets} WHERE id = '{$this->id}'";
+            $sql = "UPDATE {$this->table} SET {$sets} WHERE id = '{$id}'";
             $query = $this->db->query($sql);
             if ($query) {
                 return $this->id;

@@ -21,6 +21,9 @@ $language = array(
     'LBL_SEE_MORE' => 'Ver más',
     'LBL_FROM' => 'de',
     'LBL_AT' => 'a las',
+    'LBL_ACCEPT' => 'Aceptar',
+    'LBL_REFUSE' => 'Denegar',
+    'LBL_IMSURE' => 'Estoy seguro',
     'User' => array(
         'LBL_INIT_SESSION' => 'Iniciar sesión',
         'LBL_REGISTER_TITLE' => 'Registrar usuario',
@@ -87,5 +90,7 @@ $language = array(
         'LBL_SUBJECT' => 'Asunto',
         'LBL_DESCRIPTION' => 'Mensaje',
         'LBL_REPLY' => 'Contestar',
+        'LBL_ACCEPT_INV' => '¿Estás seguro de que quieres aceptar la invitación?',
+        'LBL_REFUSE_INV' => '¿Estás seguro de que quieres denegar la invitación?',
     ),
 );

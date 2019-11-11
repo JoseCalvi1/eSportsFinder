@@ -49,4 +49,29 @@ class MessageController extends ControladorBase
         $this->redirect('Message', 'index');
     }
 
+    public function acceptInv()
+    {
+        global $current_user;
+        $message = new Message();
+
+        $message->id = $_REQUEST['message']['id'];
+        $message->accepted = 1;
+        $message->updateInv($message->id);
+        //todo Agregar el jugador al equipo correspondiente
+        $this->refuseInv();
+
+        $this->redirect('Message', 'index');
+    }
+
+    public function refuseInv()
+    {
+        global $current_user;
+        $message = new Message();
+
+        $message->id = $_REQUEST['message']['id'];
+        $message->deleteById($message->id);
+
+        $this->redirect('Message', 'index');
+    }
+
 }
