@@ -2,10 +2,10 @@
 
 <div class="container">
         <div class="row">
-                <form action="" method="POST">
+                <form action="<?php echo $this->helper->url("Game", "createTeam"); ?>" method="POST">
                     <div class="form-group">
                         <label for="name">Nombre del equipo:</label>
-                        <input id="name" type="text" class="form-control" placeholder="Nombre del equipo" name="name" required>
+                        <input id="name" type="text" class="form-control" placeholder="Nombre del equipo" name="team[name]" required>
                         <small class="form-text text-muted">Se podrá buscar el equipo por su nombre en el listado.</small>
                     </div>
                     <div class="form-group">
@@ -14,21 +14,12 @@
                         <small class="form-text text-muted">Máximo 4 letras.</small>
                     </div>
                     <div class="form-group">
-                        <label for="players">Jugadores en el equipo</label>
-                        <select class="form-control" name="players">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
                         <label for="description">Descripcion</label>
-                        <textarea class="form-control" rows="3" placeholder="Opcional" name="description"></textarea>
+                        <textarea class="form-control" rows="3" placeholder="Opcional" name="team[description]"></textarea>
                     </div>
                     <fieldset class="form-group">
                         <label for="play_time">Tiempo dedicado/día</label>
-                        <select class="form-control" name="play_time">
+                        <select class="form-control" name="team[play_time]">
                             <option>Menos de 2 horas</option>
                             <option>Entre 2 y 4 horas</option>
                             <option>Más de 4 horas</option>
@@ -38,13 +29,13 @@
                         <label for="availability">Disponibilidad</label>
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" name="availability[]" value="Mañana"> Mañana
+                                <input type="checkbox" class="form-check-input" name="team[availability]" value="Mañana"> Mañana
                             </label><br>
                             <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" name="availability[]" value="Tarde"> Tarde
+                                <input type="checkbox" class="form-check-input" name="team[availability]" value="Tarde"> Tarde
                             </label><br>
                             <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" name="availability[]" value="Noche"> Noche
+                                <input type="checkbox" class="form-check-input" name="team[availability]" value="Noche"> Noche
                             </label><br>
                         </div>
                     </fieldset>

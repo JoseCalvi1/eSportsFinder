@@ -84,4 +84,20 @@ class GameController extends ControladorBase
     }
 
 
+    public function manageTeam()
+    {
+        global $current_user;
+        $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
+        $team = new Team();
+        $teams = $team->getAll();
+
+        //Cargamos la vista index y le pasamos valores
+        $this->view("Game/createteam", array(
+            'title' => 'Game team',
+            'error' => $error,
+            'teams' => $teams,
+        ), true);
+    }
+
+
 }
