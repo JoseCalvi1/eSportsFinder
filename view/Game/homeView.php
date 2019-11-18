@@ -27,7 +27,7 @@
                 </table>
             </div>
             <div class="col-12 col-md-4 card-title padding-5">
-                <a href="<?php echo $this->helper->url("Game", "manageTeam").'&id='.$_GET['id'] ?>" class="link-title">
+                <a href="<?php echo $this->helper->url("Team", "manageTeam").'&id='.$_GET['id'] ?>" class="link-title">
                     <div class="info info-card">
                         <img src="assets/images/manage.jpg">
                         <h4 class="info-title"><?php echo $this->helper->translate('Game', 'LBL_MANAGE') ?></h4>

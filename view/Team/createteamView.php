@@ -1,9 +1,10 @@
-<?php include_once "header.php"; ?>
+<?php include_once "view/Game/header.php"; ?>
 
 <div class="container">
         <div class="row">
-                <form action="<?php echo $this->helper->url("Game", "createTeam"); ?>" method="POST">
+                <form action="<?php echo $this->helper->url("Team", "createTeam"); ?>" method="POST">
                     <div class="form-group">
+                        <input id="id_game" type="hidden" class="form-control" name="team[id_game]" value="<?php echo $id_game ?>" required>
                         <label for="name">Nombre del equipo:</label>
                         <input id="name" type="text" class="form-control" placeholder="Nombre del equipo" name="team[name]" required>
                         <small class="form-text text-muted">Se podrá buscar el equipo por su nombre en el listado.</small>
@@ -29,15 +30,16 @@
                         <label for="availability">Disponibilidad</label>
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" name="team[availability]" value="Mañana"> Mañana
+                                <input type="checkbox" name="team[availability][]" value="Mañana"> Mañana
                             </label><br>
                             <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" name="team[availability]" value="Tarde"> Tarde
+                                <input type="checkbox" name="team[availability][]" value="Tarde"> Tarde
                             </label><br>
                             <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" name="team[availability]" value="Noche"> Noche
+                                <input type="checkbox" name="team[availability][]" value="Noche"> Noche
                             </label><br>
                         </div>
+
                     </fieldset>
                     <button type="submit" class="btn btn-primary" name="createteam">Crear equipo</button>
                 </form>
@@ -46,4 +48,4 @@
         </div>
 </div>
 
-<?php include_once "footer.php"; ?>
+<?php include_once "view/Game/footer.php"; ?>

@@ -77,6 +77,18 @@ class EntidadBase
         }
     }
 
+    public function getOwnTeam($id, $id_game)
+    {
+        $query = $this->db->query("SELECT * FROM $this->table WHERE created_by=$id AND id_game=$id_game");
+
+        $resultSet = array();
+
+        while ($row = $query->fetch_object()) {
+            $resultSet[] = $row;
+        }
+        return count($resultSet) ? $resultSet : false;
+    }
+
     public function getBy($column, $value)
     {
         $query = $this->db->query("SELECT * FROM $this->table WHERE $column='$value'");
