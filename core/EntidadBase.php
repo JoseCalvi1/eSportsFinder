@@ -77,7 +77,7 @@ class EntidadBase
         }
     }
 
-    public function getOwnTeam($id, $id_game)
+    public function getProfile($id, $id_game)
     {
         $query = $this->db->query("SELECT * FROM $this->table WHERE created_by=$id AND id_game=$id_game");
 

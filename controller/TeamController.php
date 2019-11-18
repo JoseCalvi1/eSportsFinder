@@ -23,7 +23,9 @@ class TeamController extends ControladorBase
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
         $id_game = $_GET['id'];
         $team = new Team();
-        $teams = $team->getOwnTeam($current_user->id, $id_game);
+        $teams = $team->getProfile($current_user->id, $id_game);
+        $player = new GameProfile();
+        $players = $player->getList("id_team={$teams[0]->id}", 'id', '10');
 
         if($teams) {
             //Cargamos la vista index y le pasamos valores
@@ -31,6 +33,7 @@ class TeamController extends ControladorBase
                 'title' => 'Game team',
                 'error' => $error,
                 'teams' => $teams,
+                'players' => $players,
                 'id_game' => $id_game,
             ), true);
         } else {
