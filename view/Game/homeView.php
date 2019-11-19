@@ -8,14 +8,14 @@
                     <thead>
                     <tr>
                         <th><?php echo $this->helper->translate('Team', 'LBL_NAME') ?></th>
-                        <th><?php echo $this->helper->translate('Team', 'LBL_DESCRIPTION') ?></th>
+                        <th><?php echo $this->helper->translate('Team', 'LBL_TEAM_TAG') ?></th>
                         <th><?php echo $this->helper->translate('Team', 'LBL_PLAY_TIME') ?></th>
                         <th><?php echo $this->helper->translate('Team', 'LBL_AVAILABILITY') ?></th>
                     </tr>
                     <?php foreach ($teams as $team) { ?>
                         <tr>
                             <td><?php echo $team->name ?></td>
-                            <td><?php echo $team->description ?></td>
+                            <td><?php echo $team->team_tag ?></td>
                             <td><?php echo $team->play_time ?></td>
                             <td><?php echo $team->availability ?></td>
                         </tr>

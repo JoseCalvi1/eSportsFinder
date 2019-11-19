@@ -79,20 +79,12 @@ class EntidadBase
 
     public function getBy($column, $value)
     {
-        $query = $this->db->query("SELECT * FROM $this->table WHERE $column='$value'");
+        $sql = "SELECT * FROM $this->table WHERE $column='$value'";
+        $query = $this->db->query($sql);
         $resultSet = array();
+
         while ($row = $query->fetch_object()) {
             $resultSet[] = $row;
-        }
-        if (count($resultSet) == 1) {
-            foreach ($this->fields as $key => $value) {
-                if (!empty($resultSet[0]->$key)) {
-                    $this->$key = $resultSet[0]->$key;
-                } else {
-                    $this->$key = null;
-                }
-            }
-            return true;
         }
         return count($resultSet) ? $resultSet : false;
     }

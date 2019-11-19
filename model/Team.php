@@ -10,6 +10,7 @@ class Team extends ModeloBase
             'id' => '',
             'id_game' => '',
             'name' => '',
+            'team_tag' => '',
             'description' => '',
             'play_time' => '',
             'availability' => '',

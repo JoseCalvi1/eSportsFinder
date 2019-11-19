@@ -71,7 +71,7 @@ class GameController extends ControladorBase
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
         $user = new GameProfile();
         $id_game = $_GET['id'];
-        $users = $user->getList("id_team IS NULL AND id_game='{$id_game}'","id", 20);
+        $users = $user->getList("id_game='{$id_game}'","id", 20);
 
 
         //Cargamos la vista teamlist y le pasamos valores

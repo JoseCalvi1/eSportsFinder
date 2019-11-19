@@ -22,8 +22,10 @@ class TeamController extends ControladorBase
         global $current_user;
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
         $id_game = $_GET['id'];
+        $player = new GameProfile();
+        $players = $player->getList("id_user = {$current_user->id} AND id_game={$id_game}", 'id', '1');
         $team = new Team();
-        $teams = $team->getList("created_by={$current_user->id} AND id_game={$id_game}", 'id', '10');
+        $teams = $team->getList("id={$players[0]->id_team}", 'id', '10');
 
         if($teams) {
             $player = new GameProfile();
@@ -55,11 +57,11 @@ class TeamController extends ControladorBase
 
         $team->id_game = $_REQUEST['team']['id_game'];
         $team->name = $_REQUEST['team']['name'];
-        $team->name = $_REQUEST['team']['team_tag'];
+        $team->team_tag = $_REQUEST['team']['team_tag'];
         $team->description = $_REQUEST['team']['description'];
         $team->play_time = $_REQUEST['team']['play_time'];
         $team->save();
-        $player->updateN("id_team={$team->id}", "created_by = {$current_user->id}");
+        $player->updateN("id_team={$team->id}", "created_by = {$current_user->id} AND id_game={$_REQUEST['team']['id_game']}");
 
         // todo redirigir bien
         header("Location: index.php?controller=Team&action=manageTeam&id={$_REQUEST['team']['id_game']}");

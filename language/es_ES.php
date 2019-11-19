@@ -67,7 +67,8 @@ $language = array(
     ),
     'Team' => array(
         'LBL_NAME' => 'Nombre',
-        'LBL_DESCRIPTION' => 'Team tag',
+        'LBL_TEAM_TAG' => 'Team tag',
+        'LBL_DESCRIPTION' => 'Descripción',
         'LBL_PLAY_TIME' => 'Horas de juego',
         'LBL_AVAILABILITY' => 'Disponibilidad',
         'LBL_TEAM_TITLE' => 'Búsqueda de equipos',
@@ -76,7 +77,9 @@ $language = array(
     ),
     'GameProfile' => array(
         'LBL_NAME' => 'Nombre',
-        'LBL_DESCRIPTION' => 'Team tag',
+        'LBL_GAME_ROL' => 'Rol',
+        'LBL_DESCRIPTION' => 'Descripción',
+        'LBL_HAS_TEAM' => 'Equipo',
         'LBL_PLAY_TIME' => 'Horas de juego',
         'LBL_AVAILABILITY' => 'Disponibilidad',
         'LBL_FA_TITLE' => 'Búsqueda de jugadores',
