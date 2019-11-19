@@ -72,6 +72,7 @@ $language = array(
         'LBL_AVAILABILITY' => 'Disponibilidad',
         'LBL_TEAM_TITLE' => 'Búsqueda de equipos',
         'LBL_SEARCH' => 'Puedes buscar un equipo por su nombre, posición o modo preferido:',
+        'LBL_PLAYERS' => 'Jugadores',
     ),
     'GameProfile' => array(
         'LBL_NAME' => 'Nombre',

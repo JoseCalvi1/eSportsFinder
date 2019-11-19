@@ -77,18 +77,6 @@ class EntidadBase
         }
     }
 
-    public function getProfile($id, $id_game)
-    {
-        $query = $this->db->query("SELECT * FROM $this->table WHERE created_by=$id AND id_game=$id_game");
-
-        $resultSet = array();
-
-        while ($row = $query->fetch_object()) {
-            $resultSet[] = $row;
-        }
-        return count($resultSet) ? $resultSet : false;
-    }
-
     public function getBy($column, $value)
     {
         $query = $this->db->query("SELECT * FROM $this->table WHERE $column='$value'");
@@ -169,8 +157,9 @@ class EntidadBase
 
     }
 
-    public function updateInv($id) {
-        $query = $this->db->query("UPDATE {$this->table} SET accepted = 1 WHERE id = '{$id}'");
+    public function updateN($set ,$where) {
+        $sql = "UPDATE {$this->table} SET {$set} WHERE {$where}";
+        $query = $this->db->query($sql);
         return $query;
     }
 

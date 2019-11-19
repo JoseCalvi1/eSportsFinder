@@ -56,7 +56,7 @@ class MessageController extends ControladorBase
 
         $message->id = $_REQUEST['message']['id'];
         $message->accepted = 1;
-        $message->updateInv($message->id);
+        $message->updateN('accepted=1', "id = {$message->id}");
         //todo Agregar el jugador al equipo correspondiente
         $this->refuseInv();
 

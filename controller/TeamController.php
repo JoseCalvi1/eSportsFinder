@@ -23,11 +23,11 @@ class TeamController extends ControladorBase
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
         $id_game = $_GET['id'];
         $team = new Team();
-        $teams = $team->getProfile($current_user->id, $id_game);
-        $player = new GameProfile();
-        $players = $player->getList("id_team={$teams[0]->id}", 'id', '10');
+        $teams = $team->getList("created_by={$current_user->id} AND id_game={$id_game}", 'id', '10');
 
         if($teams) {
+            $player = new GameProfile();
+            $players = $player->getList("id_team={$teams[0]->id}", 'id', '10');
             //Cargamos la vista index y le pasamos valores
             $this->view("Team/manageteam", array(
                 'title' => 'Game team',
@@ -51,14 +51,19 @@ class TeamController extends ControladorBase
     {
         global $current_user;
         $team = new Team();
+        $player = new GameProfile();
 
         $team->id_game = $_REQUEST['team']['id_game'];
         $team->name = $_REQUEST['team']['name'];
+        $team->name = $_REQUEST['team']['team_tag'];
         $team->description = $_REQUEST['team']['description'];
         $team->play_time = $_REQUEST['team']['play_time'];
         $team->save();
+        $player->updateN("id_team={$team->id}", "created_by = {$current_user->id}");
 
-        $this->helper->url("Team", "manageTeam").'&id='.$_GET['id'];
-
+        // todo redirigir bien
+        header("Location: index.php?controller=Team&action=manageTeam&id={$_REQUEST['team']['id_game']}");
+        die();
     }
+
 }

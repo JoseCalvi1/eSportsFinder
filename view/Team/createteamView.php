@@ -11,7 +11,7 @@
                     </div>
                     <div class="form-group">
                         <label for="teamtag">Team Tag</label>
-                        <input type="text" class="form-control" placeholder="Tag del equipo" maxlength="4" name="teamtag" required>
+                        <input type="text" class="form-control" placeholder="Tag del equipo" maxlength="4" name="team[team_tag]" required>
                         <small class="form-text text-muted">Máximo 4 letras.</small>
                     </div>
                     <div class="form-group">
