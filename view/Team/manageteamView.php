@@ -5,7 +5,7 @@
     <h2><?php echo $this->helper->translate('Team', 'LBL_PLAYERS'); ?></h2>
     <div class="row">
         <?php foreach ($players as $player) { ?>
-            <div class="col-3">
+            <div class="col-12 col-md-3">
                 <div class="card-team">
                     <h4 class="info-title"><?php echo $player->name ?></h4>
                     <p><?php echo $player->description ?></p>
