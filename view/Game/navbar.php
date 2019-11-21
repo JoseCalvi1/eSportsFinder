@@ -17,6 +17,13 @@
                         <?php echo $this->helper->translate('Game','LBL_GAMES');?>
                     </a>
                 </li>
+                <?php if($_GET['id']) { ?>
+                <li class="nav-item">
+                    <a href="<?php echo $this->helper->url("Game", "home").'&id='.$_GET['id']; ?>" class="nav-link">
+                        <?php echo $this->helper->translate('LBL_HOME');?>
+                    </a>
+                </li>
+                <?php } ?>
                 <li class="nav-item">
                     <a href="<?php echo $this->helper->url("Message", "index"); ?>" class="nav-link">
                         <?php echo $this->helper->translate('Message','LBL_MESSAGES');?>
