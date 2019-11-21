@@ -10,9 +10,12 @@ class Message extends ModeloBase
             'id' => '',
             'id_user_from' => '',
             'id_user_to' => '',
+            'id_game' => '',
+            'id_team' => '',
             'subject' => '',
             'message' => '',
             'status' => '',
+            'accepted' => '',
         );
         parent::__construct($this->table, $this->fields, $id);
     }

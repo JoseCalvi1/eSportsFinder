@@ -24,6 +24,7 @@ $language = array(
     'LBL_ACCEPT' => 'Aceptar',
     'LBL_REFUSE' => 'Denegar',
     'LBL_IMSURE' => 'Estoy seguro',
+    'LBL_OPTIONAL' => 'Opcional',
     'User' => array(
         'LBL_INIT_SESSION' => 'Iniciar sesión',
         'LBL_REGISTER_TITLE' => 'Registrar usuario',
@@ -75,6 +76,7 @@ $language = array(
         'LBL_SEARCH' => 'Puedes buscar un equipo por su nombre, posición o modo preferido:',
         'LBL_PLAYERS' => 'Jugadores',
         'LBL_NEW_PLAYER' => 'Agregar nuevo jugador',
+        'LBL_TEAM_INVITE' => 'Invitación a equipo',
     ),
     'GameProfile' => array(
         'LBL_NAME' => 'Nombre',

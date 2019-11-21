@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `esf_game_profiles` (
 DELETE FROM `esf_game_profiles`;
 /*!40000 ALTER TABLE `esf_game_profiles` DISABLE KEYS */;
 INSERT INTO `esf_game_profiles` (`id`, `id_user`, `id_game`, `id_team`, `name`, `description`, `play_time`, `availability`, `created_by`, `date_entered`, `modified_by`, `date_modified`, `deleted`) VALUES
-	(1, 2, 1, 0, 'aromeroCoD', 'Slayer', '3h', 'Afternoon', 2, '2019-10-23 14:14:10', 0, '2019-11-21 09:18:29', 0),
+	(1, 2, 1, 31, 'aromeroCoD', 'Slayer', '3h', 'Afternoon', 2, '2019-10-23 14:14:10', 0, '2019-11-21 11:46:15', 0),
 	(2, 3, 1, 31, 'jcalviCoD', 'Objective', '2-4h', 'Afternoon', 3, '0000-00-00 00:00:00', 0, '2019-11-19 17:23:49', 0),
 	(5, 6, 1, 31, 'danieCoD', 'Objective', '2-4h', 'Afternoon', 6, '0000-00-00 00:00:00', 0, '2019-11-19 17:23:50', 0),
 	(6, 3, 2, 0, 'jcalviLoL', 'Support', '2-4h', 'Afternoon', 5, '0000-00-00 00:00:00', 0, '2019-11-19 17:23:00', 0),
@@ -114,6 +114,8 @@ CREATE TABLE IF NOT EXISTS `esf_messages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_user_from` int(11) NOT NULL DEFAULT '0',
   `id_user_to` int(11) NOT NULL DEFAULT '0',
+  `id_game` int(11) NOT NULL DEFAULT '0',
+  `id_team` int(11) NOT NULL DEFAULT '0',
   `subject` varchar(255) COLLATE utf8_bin NOT NULL,
   `message` text COLLATE utf8_bin,
   `status` varchar(255) COLLATE utf8_bin NOT NULL,
@@ -125,25 +127,25 @@ CREATE TABLE IF NOT EXISTS `esf_messages` (
   `deleted` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `Índice 2` (`id_user_from`,`id_user_to`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT;
 
 -- Volcando datos para la tabla esportsfinder_v2.esf_messages: ~13 rows (aproximadamente)
 DELETE FROM `esf_messages`;
 /*!40000 ALTER TABLE `esf_messages` DISABLE KEYS */;
-INSERT INTO `esf_messages` (`id`, `id_user_from`, `id_user_to`, `subject`, `message`, `status`, `accepted`, `created_by`, `date_entered`, `modified_by`, `date_modified`, `deleted`) VALUES
-	(5, 2, 2, 'Prueba', '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor ', '', 0, 0, '2019-10-24 13:39:23', 0, '2019-11-07 10:20:59', 0),
-	(6, 2, 3, 'Envio 1', '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor ', '', 0, 0, '2019-10-24 13:39:23', 0, '2019-11-07 10:20:58', 0),
-	(7, 3, 2, 'Prueba 2', '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."', '', 0, 0, '0000-00-00 00:00:00', 0, '2019-11-07 10:20:57', 0),
-	(8, 2, 3, 'Invitacion', '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."', 'INV', 0, 0, '2019-11-07 10:12:55', 0, '2019-11-11 16:20:01', 0),
-	(9, 3, 2, 'Invitacion a aromero', '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."', 'INV', 0, 0, '2019-11-07 10:12:55', 0, '2019-11-07 10:12:59', 0),
-	(17, 3, 5, 'Mensaje desde el listado', 'Hola, te estoy escribiendo este mensaje desde el listado para ver si funciona bien o tengo que cambiar algo mas vale crack?', '', 0, 3, '2019-11-07 13:23:33', 3, '2019-11-07 13:23:33', 0),
-	(18, 3, 2, 'Prueba de mensaje definitiva', 'Vale, esto ya tiene que funcionar bien, que ya he hecho demasiadas pruebas por favor.', '', 0, 3, '2019-11-07 13:27:19', 3, '2019-11-07 13:27:19', 0),
-	(19, 2, 3, 'RE: Prueba de mensaje definitiva', 'Te estoy contestando al mensaje, si esto funciona lo dejo ya porque estoy hasta el nabo', '', 0, 2, '2019-11-07 13:28:11', 2, '2019-11-07 13:28:11', 0),
-	(20, 3, 2, 'Prueba desde equipo', 'Estoy intentando enviar un mensaje al capitan del equipo', '', 0, 3, '2019-11-12 16:44:49', 3, '2019-11-12 16:44:49', 0),
-	(21, 3, 2, 'RE: RE: Prueba de mensaje definitiva', 'Hijo de puta', '', 0, 3, '2019-11-19 10:28:38', 3, '2019-11-19 10:28:38', 0),
-	(22, 3, 2, 'Asunto importante', 'Que pasa crack, dani deja de tocar callcenter.produccion que te lo cargas', '', 0, 3, '2019-11-19 13:12:18', 3, '2019-11-19 13:12:18', 0),
-	(23, 2, 3, 'RE: Asunto importante', 'OK fiera ya lo dejo', '', 0, 2, '2019-11-19 13:12:54', 2, '2019-11-19 13:12:54', 0),
-	(24, 3, 0, '', NULL, '', 0, 3, '2019-11-21 08:12:25', 3, '2019-11-21 08:12:25', 0);
+INSERT INTO `esf_messages` (`id`, `id_user_from`, `id_user_to`, `id_game`, `id_team`, `subject`, `message`, `status`, `accepted`, `created_by`, `date_entered`, `modified_by`, `date_modified`, `deleted`) VALUES
+	(5, 2, 2, 0, 0, 'Prueba', '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor ', '', 0, 0, '2019-10-24 13:39:23', 0, '2019-11-07 10:20:59', 0),
+	(6, 2, 3, 0, 0, 'Envio 1', '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor ', '', 0, 0, '2019-10-24 13:39:23', 0, '2019-11-07 10:20:58', 0),
+	(7, 3, 2, 0, 0, 'Prueba 2', '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."', '', 0, 0, '0000-00-00 00:00:00', 0, '2019-11-07 10:20:57', 0),
+	(8, 2, 3, 0, 0, 'Invitacion', '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."', 'INV', 0, 0, '2019-11-07 10:12:55', 0, '2019-11-11 16:20:01', 0),
+	(9, 3, 2, 0, 0, 'Invitacion a aromero', '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."', 'INV', 0, 0, '2019-11-07 10:12:55', 0, '2019-11-07 10:12:59', 0),
+	(17, 3, 5, 0, 0, 'Mensaje desde el listado', 'Hola, te estoy escribiendo este mensaje desde el listado para ver si funciona bien o tengo que cambiar algo mas vale crack?', '', 0, 3, '2019-11-07 13:23:33', 3, '2019-11-07 13:23:33', 0),
+	(18, 3, 2, 0, 0, 'Prueba de mensaje definitiva', 'Vale, esto ya tiene que funcionar bien, que ya he hecho demasiadas pruebas por favor.', '', 0, 3, '2019-11-07 13:27:19', 3, '2019-11-07 13:27:19', 0),
+	(19, 2, 3, 0, 0, 'RE: Prueba de mensaje definitiva', 'Te estoy contestando al mensaje, si esto funciona lo dejo ya porque estoy hasta el nabo', '', 0, 2, '2019-11-07 13:28:11', 2, '2019-11-07 13:28:11', 0),
+	(20, 3, 2, 0, 0, 'Prueba desde equipo', 'Estoy intentando enviar un mensaje al capitan del equipo', '', 0, 3, '2019-11-12 16:44:49', 3, '2019-11-12 16:44:49', 0),
+	(21, 3, 2, 0, 0, 'RE: RE: Prueba de mensaje definitiva', 'Hijo de puta', '', 0, 3, '2019-11-19 10:28:38', 3, '2019-11-19 10:28:38', 0),
+	(22, 3, 2, 0, 0, 'Asunto importante', 'Que pasa crack, dani deja de tocar callcenter.produccion que te lo cargas', '', 0, 3, '2019-11-19 13:12:18', 3, '2019-11-19 13:12:18', 0),
+	(23, 2, 3, 0, 0, 'RE: Asunto importante', 'OK fiera ya lo dejo', '', 0, 2, '2019-11-19 13:12:54', 2, '2019-11-19 13:12:54', 0),
+	(27, 3, 2, 1, 31, 'Invitación a equipo', 'Creo que esta es la definitiva', 'INV', 1, 3, '2019-11-21 11:44:53', 0, '2019-11-21 11:45:21', 0);
 /*!40000 ALTER TABLE `esf_messages` ENABLE KEYS */;
 
 -- Volcando estructura para tabla esportsfinder_v2.esf_teams

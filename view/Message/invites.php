@@ -24,12 +24,8 @@ foreach ($invitations as $invitation) { ?>
                       class="align-middle padding-5">
                     <input type="hidden" class="form-control" id="description" name="message[id]"
                            value="<?php echo $invitation->id ?>">
-                    <div class="form-group">
-                        <label for="subject"
-                               class="bmd-label-floating"><?php echo $this->helper->translate('Message', 'LBL_ACCEPT_INV'); ?></label>
-                        <input type="text" class="form-control" id="subject" name="message[subject]" required
-                               value="RE: <?php echo $invitation->subject ?>">
-                    </div>
+                    <input type="hidden" class="form-control" id="id_game" name="message[id_game]" value="<?php echo $invitation->id_game ?>">
+                    <input type="hidden" class="form-control" id="id_team" name="message[id_team]" value="<?php echo $invitation->id_team ?>">
                     <button type="submit" class="btn btn-primary btn-raised" name="registrar"
                             value="Registrar"><?php echo $this->helper->translate('User', 'LBL_SUBMIT'); ?></button>
                 </form>

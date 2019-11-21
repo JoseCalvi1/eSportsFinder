@@ -29,6 +29,7 @@ class MessageController extends ControladorBase
             'messages' => $messages,
             'sent_messages' => $sent_messages,
             'invitations' => $invitations,
+            'current_user' => $current_user,
             'error' => $error,
         ));
     }
@@ -53,14 +54,23 @@ class MessageController extends ControladorBase
     {
         global $current_user;
         $message = new Message();
+        $player1 = new GameProfile();
+        $players = $player1->getBy('id_user', "{$current_user->id}");
+        $player = new GameProfile();
 
         $message->id = $_REQUEST['message']['id'];
-        $message->accepted = 1;
         $message->updateN('accepted=1', "id = {$message->id}");
-        //todo Agregar el jugador al equipo correspondiente
-        $this->refuseInv();
 
-        $this->redirect('Message', 'index');
+        //todo Agregar el jugador al equipo correspondiente
+        $player->id_game = $_REQUEST['message']['id_game'];
+        $player->id_team = $_REQUEST['message']['id_team'];
+        $player->name = $players[0]->name;
+        $player->updateN("id_team={$player->id_team}", "name = '{$player->name}' AND id_game={$player->id_game}");
+
+        $this->refuseInv();
+        // todo redirigir bien
+        header("Location: index.php?controller=Team&action=manageTeam&id={$_REQUEST['message']['id_game']}");
+        die();
     }
 
     public function refuseInv()

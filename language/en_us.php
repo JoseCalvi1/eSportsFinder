@@ -24,6 +24,7 @@ $language = array(
     'LBL_ACCEPT' => 'Accept',
     'LBL_REFUSE' => 'Refuse',
     'LBL_IMSURE' => 'I\'m sure',
+    'LBL_OPTIONAL' => 'Optional',
     'User' => array(
         'LBL_INIT_SESSION' => 'Login',
         'LBL_REGISTER_TITLE' => 'User register',
@@ -74,6 +75,7 @@ $language = array(
         'LBL_SEARCH' => 'You can search for a team by name, position or preferred mode:',
         'LBL_PLAYERS' => 'Players',
         'LBL_NEW_PLAYER' => 'Add new player',
+        'LBL_TEAM_INVITE' => 'Team invite',
     ),
     'GameProfile' => array(
         'LBL_NAME' => 'Name',

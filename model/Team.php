@@ -9,6 +9,7 @@ class Team extends ModeloBase
         $this->fields = array(
             'id' => '',
             'id_game' => '',
+            'id_captain' => '',
             'name' => '',
             'team_tag' => '',
             'description' => '',

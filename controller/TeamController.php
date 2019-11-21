@@ -68,18 +68,22 @@ class TeamController extends ControladorBase
         die();
     }
 
-    public function addNewPlayer()
+    public function sendInvite()
     {
         global $current_user;
-        $player = new GameProfile();
+        $message = new Message();
+        $name = $_REQUEST['player']['name'];
+        $players = new GameProfile();
+        $player = $players->getBy('name', "{$name}");
+        $message->id_user_from = $current_user->id;
+        $message->id_user_to = $player[0]->id_user;
+        $message->subject = $_REQUEST['player']['subject'];
+        $message->message = $_REQUEST['player']['message'];
+        $message->id_game = $_REQUEST['player']['id_game'];
+        $message->id_team = $_REQUEST['player']['id_team'];
+        $message->status = "INV";
+        $message->save();
 
-        $player->id_game = $_REQUEST['player']['id_game'];
-        $player->id_team = $_REQUEST['player']['id_team'];
-        $player->name = $_REQUEST['player']['name'];
-
-        $player->updateN("id_team={$player->id_team}", "name = '{$player->name}' AND id_game={$_REQUEST['player']['id_game']}");
-
-        // todo redirigir bien
         header("Location: index.php?controller=Team&action=manageTeam&id={$_REQUEST['player']['id_game']}");
         die();
     }
