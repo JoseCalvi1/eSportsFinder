@@ -9,7 +9,7 @@
         <?php foreach ($players as $player) { ?>
             <div class="col-12 col-md-3">
                 <div class="card-team">
-                    <h4 class="info-title"><?php echo $player->name ?></h4>
+                    <h4 class="info-title"><?php echo ($player->id == $teams[0]->id_captain) ? "<i class=\"material-icons\">star_border</i>" : ""; ?><?php echo $player->name ?></h4>
                     <p><?php echo $player->description ?></p>
                     <p><?php echo $player->play_time ?></p>
                     <p><?php echo $player->availability ?></p>
