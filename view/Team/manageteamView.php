@@ -3,6 +3,8 @@
 <div class="container">
     <h1 class="info-title"><?php echo $teams[0]->name.' ['.$teams[0]->team_tag.']' ?></h1>
     <h2><?php echo $this->helper->translate('Team', 'LBL_PLAYERS'); ?></h2>
+    <a data-toggle="modal" href="#myModal" data-target="#new-player" style="float: right;">
+        <i class="material-icons">add_circle_outline</i><?php echo $this->helper->translate('Team', 'LBL_NEW_PLAYER'); ?></a>
     <div class="row">
         <?php foreach ($players as $player) { ?>
             <div class="col-12 col-md-3">
@@ -14,6 +16,31 @@
                 </div>
             </div>
         <?php } ?>
+    </div>
+</div>
+
+<div id="new-player" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="padding: 10px;">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel"><?php echo $this->helper->translate('Team', 'LBL_NEW_PLAYER'); ?></h4>
+            </div>
+            <form action="<?php echo $this->helper->url("Team", "addNewPlayer"); ?>" method="POST"
+                  class="align-middle padding-5">
+                <input type="hidden" class="form-control" id="id_game" name="player[id_game]" required value="<?php echo $id_game ?>">
+                <input type="hidden" class="form-control" id="id_team" name="player[id_team]" required value="<?php echo $teams[0]->id ?>">
+                <div class="form-group">
+                    <label for="name"
+                           class="bmd-label-floating"><?php echo $this->helper->translate('GameProfile', 'LBL_NAME'); ?></label>
+                    <input type="text" class="form-control" id="name" name="player[name]" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-raised" name="registrar"
+                        value="Registrar"><?php echo $this->helper->translate('User', 'LBL_SUBMIT'); ?></button>
+            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
 </div>
 

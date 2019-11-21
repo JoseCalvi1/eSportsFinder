@@ -73,6 +73,7 @@ $language = array(
         'LBL_TEAM_TITLE' => 'Team search',
         'LBL_SEARCH' => 'You can search for a team by name, position or preferred mode:',
         'LBL_PLAYERS' => 'Players',
+        'LBL_NEW_PLAYER' => 'Add new player',
     ),
     'GameProfile' => array(
         'LBL_NAME' => 'Name',

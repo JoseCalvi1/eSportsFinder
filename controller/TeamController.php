@@ -68,4 +68,20 @@ class TeamController extends ControladorBase
         die();
     }
 
+    public function addNewPlayer()
+    {
+        global $current_user;
+        $player = new GameProfile();
+
+        $player->id_game = $_REQUEST['player']['id_game'];
+        $player->id_team = $_REQUEST['player']['id_team'];
+        $player->name = $_REQUEST['player']['name'];
+
+        $player->updateN("id_team={$player->id_team}", "name = '{$player->name}' AND id_game={$_REQUEST['player']['id_game']}");
+
+        // todo redirigir bien
+        header("Location: index.php?controller=Team&action=manageTeam&id={$_REQUEST['player']['id_game']}");
+        die();
+    }
+
 }

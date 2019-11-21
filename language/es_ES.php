@@ -74,6 +74,7 @@ $language = array(
         'LBL_TEAM_TITLE' => 'Búsqueda de equipos',
         'LBL_SEARCH' => 'Puedes buscar un equipo por su nombre, posición o modo preferido:',
         'LBL_PLAYERS' => 'Jugadores',
+        'LBL_NEW_PLAYER' => 'Agregar nuevo jugador',
     ),
     'GameProfile' => array(
         'LBL_NAME' => 'Nombre',

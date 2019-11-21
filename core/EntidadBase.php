@@ -37,9 +37,9 @@ class EntidadBase
         return count($resultSet) ? $resultSet : false;
     }
 
-    public function getAllorder($order1, $order2)
+    public function getAllorder($order)
     {
-        $query = $this->db->query("SELECT * FROM $this->table ORDER BY $order1 DESC, $order2 ASC");
+        $query = $this->db->query("SELECT * FROM $this->table ORDER BY $order ASC");
         $resultSet = array();
 
         while ($row = $query->fetch_object()) {
