@@ -1,35 +1,44 @@
 <?php include_once "view/Game/header.php"; ?>
 
 <div class="container">
-    <h1 class="info-title"><?php echo $teams[0]->name.' ['.$teams[0]->team_tag.']' ?></h1>
-    <h2><?php echo $this->helper->translate('Team', 'LBL_PLAYERS'); ?></h2>
-    <a data-toggle="modal" href="#myModal" data-target="#new-player" style="float: right;">
-        <i class="material-icons">add_circle_outline</i><?php echo $this->helper->translate('Team', 'LBL_NEW_PLAYER'); ?></a>
-    <div class="row">
-        <?php foreach ($players as $player) { ?>
-            <div class="col-12 col-md-3">
-                <div class="card-team">
-                    <h4 class="info-title"><?php echo ($player->id == $teams[0]->id_captain) ? "<i class=\"material-icons\">star_border</i>" : ""; ?><?php echo $player->name ?></h4>
-                    <p><?php echo $player->description ?></p>
-                    <p><?php echo $player->play_time ?></p>
-                    <p><?php echo $player->availability ?></p>
-                </div>
-            </div>
-        <?php } ?>
+
+        <h1 class="info-title"><?php echo $teams[0]->name . ' [' . $teams[0]->team_tag . ']' ?></h1>
+        <h2><?php echo $this->helper->translate('Team', 'LBL_PLAYERS'); ?></h2>
+        <a data-toggle="modal" href="#myModal" data-target="#new-player">
+            <i class="material-icons">add_circle_outline</i><?php echo $this->helper->translate('Team', 'LBL_NEW_PLAYER'); ?>
+        </a>
+<div class="row">
+
+        <?php foreach ($players
+
+        as $player) { ?>
+        <div class="col-12 col-md-3">
+            <div class="card-team">
+                <h4 class="info-title"><?php echo ($player->id == $teams[0]->id_captain) ? "<i class=\"material-icons\">star_border</i>" : ""; ?><?php echo $player->name ?></h4>
+    <p><?php echo $player->description ?></p>
+    <p><?php echo $player->play_time ?></p>
+    <p><?php echo $player->availability ?></p>
     </div>
+    </div>
+<?php } ?>
+</div>
 </div>
 
 <div id="new-player" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content" style="padding: 10px;">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel"><?php echo $this->helper->translate('Team', 'LBL_NEW_PLAYER'); ?></h4>
+                <h4 class="modal-title"
+                    id="myModalLabel"><?php echo $this->helper->translate('Team', 'LBL_NEW_PLAYER'); ?></h4>
             </div>
             <form action="<?php echo $this->helper->url("Team", "sendInvite"); ?>" method="POST"
                   class="align-middle padding-5">
-                <input type="hidden" class="form-control" id="id_game" name="player[id_game]" required value="<?php echo $id_game ?>">
-                <input type="hidden" class="form-control" id="id_team" name="player[id_team]" required value="<?php echo $teams[0]->id ?>">
-                <input type="hidden" class="form-control" id="id_team" name="player[subject]" required value="<?php echo $this->helper->translate('Team', 'LBL_TEAM_INVITE'); ?>">
+                <input type="hidden" class="form-control" id="id_game" name="player[id_game]" required
+                       value="<?php echo $id_game ?>">
+                <input type="hidden" class="form-control" id="id_team" name="player[id_team]" required
+                       value="<?php echo $teams[0]->id ?>">
+                <input type="hidden" class="form-control" id="id_team" name="player[subject]" required
+                       value="<?php echo $this->helper->translate('Team', 'LBL_TEAM_INVITE'); ?>">
                 <div class="form-group">
                     <label for="name"
                            class="bmd-label-floating"><?php echo $this->helper->translate('GameProfile', 'LBL_NAME'); ?></label>
