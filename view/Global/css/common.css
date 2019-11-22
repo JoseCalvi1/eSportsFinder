@@ -323,7 +323,7 @@ a.rippler:link,
 /* LIST GAMES */
 .card-title {
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0px !important;
 }
 .link-title {
     text-decoration: none;
@@ -335,4 +335,8 @@ a.rippler:link,
 }
 .title {
     font-weight: bold;
+}
+/* THEME */
+.link-theme {
+    color: #9c27b0 !important;
 }
