@@ -26,31 +26,9 @@ class EntidadBase
         if (!empty($id)) $this->getById($id);
     }
 
-    public function getAll()
-    {
-        $query = $this->db->query("SELECT * FROM $this->table");
-        $resultSet = array();
-
-        while ($row = $query->fetch_object()) {
-            $resultSet[] = $row;
-        }
-        return count($resultSet) ? $resultSet : false;
-    }
-
-    public function getAllorder($order)
+    public function getAll($order)
     {
         $query = $this->db->query("SELECT * FROM $this->table ORDER BY $order ASC");
-        $resultSet = array();
-
-        while ($row = $query->fetch_object()) {
-            $resultSet[] = $row;
-        }
-        return count($resultSet) ? $resultSet : false;
-    }
-
-    public function getAllLimit($limit)
-    {
-        $query = $this->db->query("SELECT * FROM $this->table LIMIT $limit");
         $resultSet = array();
 
         while ($row = $query->fetch_object()) {
@@ -110,12 +88,6 @@ class EntidadBase
             $resultSet[] = $row;
         }
         return count($resultSet) ? $resultSet : false;
-    }
-
-    public function deleteById($id)
-    {
-        $query = $this->db->query("DELETE FROM $this->table WHERE id=$id");
-        return $query;
     }
 
     public function deleteBy($column, $value)
@@ -191,10 +163,6 @@ class EntidadBase
     {
         return $this->db->error;
     }
-    /*
-     * Aquí podemos montarnos un montón de métodos que nos ayuden
-     * a hacer operaciones con la base de datos de la entidad
-     */
 
 }
 

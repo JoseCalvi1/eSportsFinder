@@ -18,7 +18,7 @@ class GameController extends ControladorBase
         global $current_user;
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
         $game = new Game();
-        $games = $game->getAllorder('status DESC, name');
+        $games = $game->getAll('status DESC, name');
 
         //Cargamos la vista index y le pasamos valores
         $this->view("Game/list", array(

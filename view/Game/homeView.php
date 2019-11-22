@@ -4,27 +4,12 @@
         <div class="row">
             <div class="col-12 col-md-8 card-title padding-5">
                 <a href="<?php echo $this->helper->url("Game", "teamlist").'&id='.$_GET['id'] ?>"><?php echo $this->helper->translate('LBL_SEE_MORE') ?></a>
-                <table class="table table-bordered table-striped" id="mytable">
-                    <thead>
-                    <tr>
-                        <th><?php echo $this->helper->translate('Team', 'LBL_NAME') ?></th>
-                        <th><?php echo $this->helper->translate('Team', 'LBL_TEAM_TAG') ?></th>
-                        <th><?php echo $this->helper->translate('Team', 'LBL_PLAY_TIME') ?></th>
-                        <th><?php echo $this->helper->translate('Team', 'LBL_AVAILABILITY') ?></th>
-                    </tr>
-                    <?php foreach ($teams as $team) { ?>
-                        <tr>
-                            <td><?php echo $team->name ?></td>
-                            <td><?php echo $team->team_tag ?></td>
-                            <td><?php echo $team->play_time ?></td>
-                            <td><?php echo $team->availability ?></td>
-                        </tr>
-                    <?php } ?>
-                    </thead>
-                    <tbody id="tabla">
-
-                    </tbody>
-                </table>
+                <?php foreach ($teams as $team) { ?>
+                    <div class="border-bottom padding-5">
+                        <h4><b><?= $this->helper->translate('Team', 'LBL_NAME').': </b>'.$team->name.' <b>'.$this->helper->translate('Team', 'LBL_TEAM_TAG').': </b>' ?> [<?= $team->team_tag ?>]</h4>
+                        <p><b><?= $this->helper->translate('Team', 'LBL_PLAY_TIME').': </b>'.$team->play_time.' | <b>'.$this->helper->translate('Team', 'LBL_AVAILABILITY').': </b>'.$team->availability ?></p>
+                    </div>
+                <?php } ?>
             </div>
             <div class="col-12 col-md-4 card-title padding-5">
                 <a href="<?php echo $this->helper->url("Team", "manageTeam").'&id='.$_GET['id'] ?>" class="link-title">

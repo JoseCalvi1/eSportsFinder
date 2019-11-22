@@ -79,7 +79,7 @@ class MessageController extends ControladorBase
         $message = new Message();
 
         $message->id = $_REQUEST['message']['id'];
-        $message->deleteById($message->id);
+        $message->deleteBy('id', $message->id);
 
         $this->redirect('Message', 'index');
     }
