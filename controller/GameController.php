@@ -68,10 +68,13 @@ class GameController extends ControladorBase
     public function userList()
     {
         global $current_user;
-        $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
-        $user = new GameProfile();
         $id_game = $_GET['id'];
+        $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
+        $user_team = new GameProfile();
+        $id_team = $user_team->getList("id_user='{$current_user->id}' AND id_game='{$id_game}'", 'id', 1);
+        $user = new GameProfile();
         $users = $user->getList("id_game='{$id_game}'","id", 20);
+        //die('<pre>1: '.print_r($id_team[0]->id_team, true).'</rpe>');
 
 
         //Cargamos la vista teamlist y le pasamos valores
@@ -79,6 +82,8 @@ class GameController extends ControladorBase
             'title' => 'Free agents list',
             'error' => $error,
             'users' => $users,
+            'id_team' => $id_team[0]->id_team,
+            'id_game' => $id_game,
         ), true);
 
     }
