@@ -73,7 +73,7 @@ class GameController extends ControladorBase
         $user_team = new GameProfile();
         $id_team = $user_team->getList("id_user='{$current_user->id}' AND id_game='{$id_game}'", 'id', 1);
         $user = new GameProfile();
-        $users = $user->getList("id_game='{$id_game}'","id", 20);
+        $users = $user->getBy('id_game', $id_game);
         //die('<pre>1: '.print_r($id_team[0]->id_team, true).'</rpe>');
 
 

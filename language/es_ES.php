@@ -77,6 +77,8 @@ $language = array(
         'LBL_PLAYERS' => 'Jugadores',
         'LBL_NEW_PLAYER' => 'Agregar nuevo jugador',
         'LBL_TEAM_INVITE' => 'Invitación a equipo',
+        'LBL_KICK_OUT' => 'Expulsar',
+        'LBL_LEAVE_TEAM' => 'Abandonar',
     ),
     'GameProfile' => array(
         'LBL_NAME' => 'Nombre',

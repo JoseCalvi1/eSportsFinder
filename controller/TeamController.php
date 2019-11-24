@@ -26,6 +26,9 @@ class TeamController extends ControladorBase
         $players = $player->getList("id_user = {$current_user->id} AND id_game={$id_game}", 'id', '1');
         $team = new Team();
         $teams = $team->getList("id={$players[0]->id_team}", 'id', '10');
+        //$player1 = $players[0];
+        //$id_captain = $player->getBy('id_user', "{$teams[0]->id_captain}");
+        //die('<pre>2: '.print_r($id_captain, true).'</pre>');
 
         if($teams) {
             $player = new GameProfile();
@@ -37,11 +40,13 @@ class TeamController extends ControladorBase
                 'teams' => $teams,
                 'players' => $players,
                 'id_game' => $id_game,
+                'current_user' => $current_user,
+                //'id_captain' => $id_captain[0]->id,
             ), true);
         } else {
             //Cargamos la vista index y le pasamos valores
             $this->view("Team/createteam", array(
-                'title' => 'Game team',
+                'title' => 'Team create',
                 'error' => $error,
                 'id_game' => $id_game,
             ), true);

@@ -1,9 +1,14 @@
 <?php include_once "view/Game/header.php"; ?>
 
+<!-- todo pensar bien como hacer el background -->
+<!-- <div class="container-fluid" style="margin-top:-20px; background-image: url('assets/images/<?php echo strtolower($id_game); ?>/option1.jpg'); position:relative;">
+    <div class="container">
+        <h1 class="info-title" style="color: white; padding-top: 150px"><?php echo $teams[0]->name . ' [' . $teams[0]->team_tag . ']' ?></h1>
+    </div>
+</div> -->
 <div class="container">
-
-        <h1 class="info-title"><?php echo $teams[0]->name . ' [' . $teams[0]->team_tag . ']' ?></h1>
-        <h2><?php echo $this->helper->translate('Team', 'LBL_PLAYERS'); ?></h2>
+<h1 class="info-title"><?php echo $teams[0]->name . ' [' . $teams[0]->team_tag . ']' ?></h1>
+<h2><?php echo $this->helper->translate('Team', 'LBL_PLAYERS'); ?></h2>
         <a data-toggle="modal" href="#myModal" data-target="#new-player">
             <i class="material-icons">add_circle_outline</i><?php echo $this->helper->translate('Team', 'LBL_NEW_PLAYER'); ?>
         </a>
@@ -18,6 +23,15 @@
     <p><?php echo $player->description ?></p>
     <p><?php echo $player->play_time ?></p>
     <p><?php echo $player->availability ?></p>
+    <?php echo('<pre>2: '.print_r('-'.$current_user->id .'-'. $id_captain .'-'.$player->id_user . '-'.$current_user->id, true).'</rpe>'); if($current_user->id == $id_captain && $player->id_user != $current_user->id) { ?>
+        <a data-toggle="modal" href="#myModal" data-target="#new-player">
+            <i class="material-icons">clear</i><?php echo $this->helper->translate('Team', 'LBL_KICK_OUT'); ?>
+        </a>
+    <?php } elseif($player->id_user == $current_user->id) { ?>
+        <a data-toggle="modal" href="#myModal" data-target="#new-player">
+            <i class="material-icons">block</i><?php echo $this->helper->translate('Team', 'LBL_LEAVE_TEAM'); ?>
+        </a>
+    <?php } ?>
     </div>
     </div>
 <?php } ?>

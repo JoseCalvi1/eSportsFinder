@@ -64,6 +64,8 @@ $language = array(
         'LBL_CHAT' => 'Chat',
         'LBL_FA' => 'Free agent list',
         'LBL_TS' => 'Team scrims',
+        'LBL_KICK_OUT' => 'Kick out',
+        'LBL_LEAVE_TEAM' => 'Leave team',
     ),
     'Team' => array(
         'LBL_NAME' => 'Name',
