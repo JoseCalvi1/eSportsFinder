@@ -93,4 +93,9 @@ class TeamController extends ControladorBase
         die();
     }
 
+    public function leaveTeam($id) {
+        $players = new GameProfile();
+        $player = $players->updateN('id_team=0', "id_user='{$id}'");
+    }
+
 }

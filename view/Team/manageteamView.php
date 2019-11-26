@@ -7,35 +7,34 @@
     </div>
 </div> -->
 <div class="container">
-<h1 class="info-title"><?php echo $teams[0]->name . ' [' . $teams[0]->team_tag . ']' ?></h1>
-<h2><?php echo $this->helper->translate('Team', 'LBL_PLAYERS'); ?></h2>
-        <a data-toggle="modal" href="#myModal" data-target="#new-player">
-            <i class="material-icons">add_circle_outline</i><?php echo $this->helper->translate('Team', 'LBL_NEW_PLAYER'); ?>
-        </a>
-<div class="row">
+    <h1 class="info-title"><?php echo $teams[0]->name . ' [' . $teams[0]->team_tag . ']' ?></h1>
+    <h2><?php echo $this->helper->translate('Team', 'LBL_PLAYERS'); ?></h2>
+    <a data-toggle="modal" href="#myModal" data-target="#new-player">
+        <i class="material-icons">add_circle_outline</i><?php echo $this->helper->translate('Team', 'LBL_NEW_PLAYER'); ?>
+    </a>
+    <div class="row">
 
-        <?php foreach ($players
-
-        as $player) { ?>
-        <div class="col-12 col-md-3">
-            <div class="card-team">
-                <h4 class="info-title"><?php echo ($player->id == $teams[0]->id_captain) ? "<i class=\"material-icons\">star_border</i>" : ""; ?><?php echo $player->name ?></h4>
-    <p><?php echo $player->description ?></p>
-    <p><?php echo $player->play_time ?></p>
-    <p><?php echo $player->availability ?></p>
-    <?php echo('<pre>2: '.print_r('-'.$current_user->id .'-'. $id_captain .'-'.$player->id_user . '-'.$current_user->id, true).'</rpe>'); if($current_user->id == $id_captain && $player->id_user != $current_user->id) { ?>
-        <a data-toggle="modal" href="#myModal" data-target="#new-player">
-            <i class="material-icons">clear</i><?php echo $this->helper->translate('Team', 'LBL_KICK_OUT'); ?>
-        </a>
-    <?php } elseif($player->id_user == $current_user->id) { ?>
-        <a data-toggle="modal" href="#myModal" data-target="#new-player">
-            <i class="material-icons">block</i><?php echo $this->helper->translate('Team', 'LBL_LEAVE_TEAM'); ?>
-        </a>
-    <?php } ?>
+        <?php foreach ($players as $player) { ?>
+            <div class="col-12 col-md-3">
+                <div class="card-team">
+                    <h4 class="info-title"><?php echo ($player->id == $teams[0]->id_captain) ? "<i class=\"material-icons\">star_border</i>" : ""; ?><?php echo $player->name ?></h4>
+                    <p><?php echo $player->description ?></p>
+                    <p><?php echo $player->play_time ?></p>
+                    <p><?php echo $player->availability ?></p>
+                    <?php if ($player->id_user != $current_user->id && $current_user->id == $teams[0]->id_captain) { ?>
+                    <form action="<?php echo $this->helper->url("Team", "leaveTeam"); ?>" method="POST">
+                        <a data-toggle="modal" href="#myModal" data-target="#new-player">
+                            <i class="material-icons">clear</i><?php echo $this->helper->translate('Team', 'LBL_KICK_OUT'); ?>
+                        </a>
+                    <?php } elseif ($player->id_user == $current_user->id) { ?>
+                        <a data-toggle="modal" href="#myModal" data-target="#new-player">
+                            <i class="material-icons">block</i><?php echo $this->helper->translate('Team', 'LBL_LEAVE_TEAM'); ?>
+                        </a>
+                    <?php } ?>
+                </div>
+            </div>
+        <?php } ?>
     </div>
-    </div>
-<?php } ?>
-</div>
 </div>
 
 <div id="new-player" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
