@@ -23,7 +23,7 @@
                     <p><?php echo $player->play_time ?></p>
                     <p><?php echo $player->availability ?></p>
                     <?php if ($player->id_user != $current_user->id && $current_user->id == $teams[0]->id_captain) { ?>
-                        <form action="<?php echo $this->helper->url("Team", "leaveTeam"); ?>" method="POST" id="leaveForm">
+                        <form action="<?php echo $this->helper->url("Team", "leaveTeam"); ?>" method="POST" class="delete">
                             <input type="hidden" class="form-control" id="id_game" name="player[id]" required
                                    value="<?php echo $player->id ?>">
                             <input type="hidden" class="form-control" id="id_game" name="player[id_game]" required
@@ -33,7 +33,7 @@
                             </button>
                         </form>
                     <?php } elseif ($player->id_user == $current_user->id) { ?>
-                        <form action="<?php echo $this->helper->url("Team", "leaveTeam"); ?>" method="POST" id="leaveForm">
+                        <form action="<?php echo $this->helper->url("Team", "leaveTeam"); ?>" method="POST" class="delete">
                             <input type="hidden" class="form-control" id="id_game" name="player[id]" required
                                    value="<?php echo $player->id ?>">
                             <input type="hidden" class="form-control" id="id_game" name="player[id_game]" required
@@ -85,15 +85,11 @@
 </div>
 
 <script type="text/javascript">
-    (function() {
-        var form = document.getElementById('leaveForm');
-        form.addEventListener('submit', function(event) {
-            // si es false entonces que no haga el submit
-            if (!confirm('¿Realmente desea eliminar?')) {
-                event.preventDefault();
-            }
-        }, false);
-    })();
+    jQuery(document).ready(function () {
+        jQuery('.delete').click(function () {
+            return confirm("<?php echo $this->helper->translate('GameProfile', 'LBL_DELETE'); ?>");
+        });
+    });
 </script>
 
 <?php include_once "view/Game/footer.php"; ?>

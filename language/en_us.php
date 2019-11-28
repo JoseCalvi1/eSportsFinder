@@ -87,6 +87,7 @@ $language = array(
         'LBL_PLAY_TIME' => 'Play time',
         'LBL_AVAILABILITY' => 'Availability',
         'LBL_FA_TITLE' => 'Free agent search',
+        'LBL_DELETE' => 'Do you really want to delete this player?',
         'LBL_SEARCH' => 'You can search for a player by name, position or preferred mode:',
     ),
     'Message' => array(

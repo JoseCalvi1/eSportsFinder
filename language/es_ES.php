@@ -88,6 +88,7 @@ $language = array(
         'LBL_PLAY_TIME' => 'Horas de juego',
         'LBL_AVAILABILITY' => 'Disponibilidad',
         'LBL_FA_TITLE' => 'Búsqueda de jugadores',
+        'LBL_DELETE' => '¿De verdad quiere eliminar este jugador?',
         'LBL_SEARCH' => 'Puedes buscar un jugador por su nombre, posición o modo preferido:',
     ),
     'Message' => array(
