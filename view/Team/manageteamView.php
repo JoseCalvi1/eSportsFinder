@@ -15,7 +15,7 @@
     </a>
     <?php if($teams[0]->id_captain == $current_user->id) { ?>
     <a data-toggle="modal" href="#myModal" data-target="#edit-team">
-        <i class="material-icons">add_circle_outline</i><?php echo $this->helper->translate('Team', 'LBL_TEAM_EDIT'); ?>
+        <i class="material-icons">create</i><?php echo $this->helper->translate('Team', 'LBL_TEAM_EDIT'); ?>
     </a>
     <?php } ?>
     <div class="row">
