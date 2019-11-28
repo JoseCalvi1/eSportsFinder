@@ -79,6 +79,8 @@ $language = array(
         'LBL_TEAM_INVITE' => 'Invitación a equipo',
         'LBL_KICK_OUT' => 'Expulsar',
         'LBL_LEAVE_TEAM' => 'Abandonar',
+        'LBL_TEAM_DELETE' => 'Eliminar equipo',
+        'LBL_TEAM_EDIT' => 'Editar equipo',
     ),
     'GameProfile' => array(
         'LBL_NAME' => 'Nombre',
@@ -88,7 +90,7 @@ $language = array(
         'LBL_PLAY_TIME' => 'Horas de juego',
         'LBL_AVAILABILITY' => 'Disponibilidad',
         'LBL_FA_TITLE' => 'Búsqueda de jugadores',
-        'LBL_DELETE' => '¿De verdad quiere eliminar este jugador?',
+        'LBL_DELETE' => '¿De verdad quiere eliminar?',
         'LBL_SEARCH' => 'Puedes buscar un jugador por su nombre, posición o modo preferido:',
     ),
     'Message' => array(

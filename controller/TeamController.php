@@ -103,4 +103,29 @@ class TeamController extends ControladorBase
         die();
     }
 
+    public function deleteTeam() {
+        $id_team = $_REQUEST['player']['id_team'];
+        $id_game = $_REQUEST['player']['id_game'];
+        $players = new GameProfile();
+        $teams = new Team();
+
+        $teams->deleteBy('id', "{$id_team}");
+        $players->updateN("id_team=0", "id_team = {$id_team} AND id_game={$id_game}");
+        header("Location: index.php?controller=Game&action=home&id={$id_game}");
+        die();
+    }
+
+    public function editTeam() {
+        $id_game = $_REQUEST['team']['id_game'];
+        $id = $_REQUEST['team']['id'];
+        $name = $_REQUEST['team']['name'];
+        $team_tag = $_REQUEST['team']['team_tag'];
+        $description = $_REQUEST['team']['description'];
+        $teams = new Team();
+
+        $teams->updateN("name='{$name}', team_tag='{$team_tag}', description='{$description}'", "id={$id}");
+        header("Location: index.php?controller=Team&action=manageTeam&id={$id_game}");
+        die();
+    }
+
 }

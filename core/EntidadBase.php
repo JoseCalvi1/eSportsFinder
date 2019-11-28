@@ -92,7 +92,8 @@ class EntidadBase
 
     public function deleteBy($column, $value)
     {
-        $query = $this->db->query("DELETE FROM $this->table WHERE $column='$value'");
+        $sql = "DELETE FROM $this->table WHERE $column='$value'";
+        $query = $this->db->query($sql);
         return $query;
     }
 

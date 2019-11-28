@@ -78,6 +78,8 @@ $language = array(
         'LBL_PLAYERS' => 'Players',
         'LBL_NEW_PLAYER' => 'Add new player',
         'LBL_TEAM_INVITE' => 'Team invite',
+        'LBL_TEAM_DELETE' => 'Delete team',
+        'LBL_TEAM_EDIT' => 'Edit team',
     ),
     'GameProfile' => array(
         'LBL_NAME' => 'Name',
@@ -87,7 +89,7 @@ $language = array(
         'LBL_PLAY_TIME' => 'Play time',
         'LBL_AVAILABILITY' => 'Availability',
         'LBL_FA_TITLE' => 'Free agent search',
-        'LBL_DELETE' => 'Do you really want to delete this player?',
+        'LBL_DELETE' => 'Do you really want to delete?',
         'LBL_SEARCH' => 'You can search for a player by name, position or preferred mode:',
     ),
     'Message' => array(
