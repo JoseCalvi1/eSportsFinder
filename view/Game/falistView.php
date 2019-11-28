@@ -19,45 +19,48 @@
                 <a data-toggle="modal" href="#myModal" data-target="#edit-modal-<?php echo $user->id; ?>"
                    id="<?php echo $user->id; ?>">
                     <i class="material-icons">chat</i>Conactar</a>
-                <a data-toggle="modal" href="#myModal" data-target="#new-player">
-                <i class="material-icons">add_circle_outline</i><?php echo $this->helper->translate('Team', 'LBL_NEW_PLAYER'); ?>
-        </a>
+                <a data-toggle="modal" href="#myModal" data-target="#new-player-<?php echo $user->id; ?>">
+                    <i class="material-icons">add_circle_outline</i><?php echo $this->helper->translate('Team', 'LBL_NEW_PLAYER'); ?>
+                </a>
             </div>
 
-            <div id="new-player" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content" style="padding: 10px;">
-            <div class="modal-header">
-                <h4 class="modal-title"
-                    id="myModalLabel"><?php echo $this->helper->translate('Team', 'LBL_NEW_PLAYER'); ?></h4>
-            </div>
-            <form action="<?php echo $this->helper->url("Team", "sendInvite"); ?>" method="POST"
-                  class="align-middle padding-5">
-                <input type="hidden" class="form-control" id="id_game" name="player[id_game]" required
-                       value="<?php echo $id_game ?>">
-                <input type="hidden" class="form-control" id="id_team" name="player[id_team]" required
-                       value="<?php echo $id_team ?>">
-                <input type="hidden" class="form-control" id="id_team" name="player[subject]" required
-                       value="<?php echo $this->helper->translate('Team', 'LBL_TEAM_INVITE'); ?>">
-                <div class="form-group">
-                    <label for="name"
-                           class="bmd-label-floating"><?php echo $this->helper->translate('GameProfile', 'LBL_NAME'); ?></label>
-                    <input type="text" class="form-control" id="name" name="player[name]" value="<?php echo $user->name ?>" required readonly>
+            <div id="new-player-<?php echo $user->id; ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="padding: 10px;">
+                        <div class="modal-header">
+                            <h4 class="modal-title"
+                                id="myModalLabel"><?php echo $this->helper->translate('Team', 'LBL_NEW_PLAYER'); ?></h4>
+                        </div>
+                        <form action="<?php echo $this->helper->url("Team", "sendInvite"); ?>" method="POST"
+                              class="align-middle padding-5">
+                            <input type="hidden" class="form-control" id="id_game" name="player[id_game]" required
+                                   value="<?php echo $id_game ?>">
+                            <input type="hidden" class="form-control" id="id_team" name="player[id_team]" required
+                                   value="<?php echo $id_team ?>">
+                            <input type="hidden" class="form-control" id="id_team" name="player[subject]" required
+                                   value="<?php echo $this->helper->translate('Team', 'LBL_TEAM_INVITE'); ?>">
+                            <div class="form-group">
+                                <label for="name"
+                                       class="bmd-label-floating"><?php echo $this->helper->translate('GameProfile', 'LBL_NAME'); ?></label>
+                                <input type="text" class="form-control" id="name" name="player[name]"
+                                       value="<?php echo $user->name ?>" required readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="description"
+                                       class="bmd-label-floating"><?php echo $this->helper->translate('Message', 'LBL_DESCRIPTION'); ?></label>
+                                <textarea class="form-control" rows="3" id="description"
+                                          name="player[message]"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-raised" name="registrar"
+                                    value="Registrar"><?php echo $this->helper->translate('User', 'LBL_SUBMIT'); ?></button>
+                        </form>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="description"
-                           class="bmd-label-floating"><?php echo $this->helper->translate('Message', 'LBL_DESCRIPTION'); ?></label>
-                    <textarea class="form-control" rows="3" id="description" name="player[message]"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-raised" name="registrar"
-                        value="Registrar"><?php echo $this->helper->translate('User', 'LBL_SUBMIT'); ?></button>
-            </form>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
-        </div>
-    </div>
-</div>
 
 
             <div id="edit-modal-<?php echo $user->id; ?>" class="modal fade" tabindex="-1" role="dialog"

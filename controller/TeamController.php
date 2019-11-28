@@ -62,6 +62,7 @@ class TeamController extends ControladorBase
 
         $team->id_game = $_REQUEST['team']['id_game'];
         $team->name = $_REQUEST['team']['name'];
+        $team->id_captain = $current_user->id;
         $team->team_tag = $_REQUEST['team']['team_tag'];
         $team->description = $_REQUEST['team']['description'];
         $team->play_time = $_REQUEST['team']['play_time'];
@@ -93,9 +94,13 @@ class TeamController extends ControladorBase
         die();
     }
 
-    public function leaveTeam($id) {
+    public function leaveTeam() {
+        $id = $_REQUEST['player']['id'];
+        $id_game = $_REQUEST['player']['id_game'];
         $players = new GameProfile();
-        $player = $players->updateN('id_team=0', "id_user='{$id}'");
+        $players->updateN("id_team=0", "id = {$id} AND id_game={$id_game}");
+        header("Location: index.php?controller=Team&action=manageTeam&id={$id_game}");
+        die();
     }
 
 }
