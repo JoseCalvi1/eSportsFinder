@@ -55,15 +55,14 @@ class MessageController extends ControladorBase
         global $current_user;
         $message = new Message();
         $player1 = new GameProfile();
-        $players = $player1->getBy('id_user', "{$current_user->id}");
         $player = new GameProfile();
 
         $message->id = $_REQUEST['message']['id'];
         $message->updateN('accepted=1', "id = {$message->id}");
 
-        //todo Agregar el jugador al equipo correspondiente
         $player->id_game = $_REQUEST['message']['id_game'];
         $player->id_team = $_REQUEST['message']['id_team'];
+        $players = $player1->getList("id_user='{$current_user->id}' AND id_game='{$_REQUEST['message']['id_game']}'", 'id', 1);
         $player->name = $players[0]->name;
         $player->updateN("id_team={$player->id_team}", "name = '{$player->name}' AND id_game={$player->id_game}");
 

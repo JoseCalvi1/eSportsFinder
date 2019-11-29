@@ -34,17 +34,27 @@ class GameController extends ControladorBase
         global $current_user;
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
         $team = new Team();
+        $players = new GameProfile();
         $id_game = $_GET['id'];
+
         $teams = $team->getList("id_game='{$id_game}'", 'id', 4);
+        $player = $players->getList("id_user='{$current_user->id}' AND id_game='{$id_game}'", 'id', 1);
 
-
-        //Cargamos la vista home y le pasamos valores
-        $this->view("Game/home", array(
-            'title' => 'Game home',
-            'error' => $error,
-            'teams' => $teams,
-        ), true);
-
+        if($player) {
+            //Cargamos la vista home y le pasamos valores
+            $this->view("Game/home", array(
+                'title' => 'Game home',
+                'error' => $error,
+                'teams' => $teams,
+            ), true);
+        } else {
+            //Cargamos la vista index y le pasamos valores
+            $this->view("Game/createplayer", array(
+                'title' => 'Player create',
+                'error' => $error,
+                'id_game' => $id_game,
+            ), true);
+        }
     }
 
     public function teamList()
@@ -86,6 +96,24 @@ class GameController extends ControladorBase
             'id_game' => $id_game,
         ), true);
 
+    }
+
+    public function createPlayer()
+    {
+        global $current_user;
+        $player = new GameProfile();
+
+        $player->id_game = $_REQUEST['player']['id_game'];
+        $player->id_user = $current_user->id;
+        $player->name = $_REQUEST['player']['name'];
+        $player->description = $_REQUEST['player']['description'];
+        $player->play_time = $_REQUEST['player']['play_time'];
+        $player->availability = $_REQUEST['player']['availability'][0].' | '.$_REQUEST['player']['availability'][1].' | '.$_REQUEST['player']['availability'][2];
+        $player->save();
+
+        // todo redirigir bien
+        header("Location: index.php?controller=Game&action=home&id={$_REQUEST['player']['id_game']}");
+        die();
     }
 
 

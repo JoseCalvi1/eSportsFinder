@@ -23,7 +23,7 @@
         <?php foreach ($players as $player) { ?>
             <div class="col-12 col-md-3">
                 <div class="card-team">
-                    <h4 class="info-title"><?php echo ($player->id == $teams[0]->id_captain) ? "<i class=\"material-icons\">star_border</i>" : ""; ?><?php echo $player->name ?></h4>
+                    <h4 class="info-title"><?php echo ($player->id_user == $teams[0]->id_captain) ? "<i class=\"material-icons\">star_border</i>" : ""; ?><?php echo $player->name ?></h4>
                     <p><?php echo $player->description ?></p>
                     <p><?php echo $player->play_time ?></p>
                     <p><?php echo $player->availability ?></p>
@@ -74,7 +74,7 @@
                 <h4 class="modal-title"
                     id="myModalLabel"><?php echo $this->helper->translate('Team', 'LBL_NEW_PLAYER'); ?></h4>
             </div>
-            <form action="<?php echo $this->helper->url("Team", "editTeam"); ?>" method="POST"
+            <form action="<?php echo $this->helper->url("Team", "sendInvite"); ?>" method="POST"
                   class="align-middle padding-5">
                 <input type="hidden" class="form-control" id="id_game" name="player[id_game]" required
                        value="<?php echo $id_game ?>">
@@ -126,7 +126,7 @@
                 <div class="form-group">
                     <label for="name"
                            class="bmd-label-floating"><?php echo $this->helper->translate('Team', 'LBL_TEAM_TAG'); ?></label>
-                    <input type="text" class="form-control" id="team_tag" name="team[team_tag]" required
+                    <input type="text" class="form-control" id="team_tag" name="team[team_tag]" maxlength="4" required
                            value="<?php echo $teams[0]->team_tag ?>">
                 </div>
                 <div class="form-group">

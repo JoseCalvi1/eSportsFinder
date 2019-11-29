@@ -66,6 +66,7 @@ class TeamController extends ControladorBase
         $team->team_tag = $_REQUEST['team']['team_tag'];
         $team->description = $_REQUEST['team']['description'];
         $team->play_time = $_REQUEST['team']['play_time'];
+        $team->availability = $_REQUEST['team']['availability'][0].' | '.$_REQUEST['team']['availability'][1].' | '.$_REQUEST['team']['availability'][2];
         $team->save();
         $player->updateN("id_team={$team->id}", "created_by = {$current_user->id} AND id_game={$_REQUEST['team']['id_game']}");
 
