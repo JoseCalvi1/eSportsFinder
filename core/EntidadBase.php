@@ -79,9 +79,10 @@ class EntidadBase
         return count($resultSet) ? $resultSet : false;
     }
 
-    public function getMessages($where, $order)
+    public function getInnerJoin($select, $innerjoin, $where, $order)
     {
-        $query = $this->db->query("SELECT m.*, u.name FROM $this->table AS m INNER JOIN esf_users AS u ON m.id_user_from = u.id WHERE $where ORDER BY $order DESC");
+        $sql = "SELECT $select FROM $this->table $innerjoin WHERE $where ORDER BY $order DESC";
+        $query = $this->db->query($sql);
         $resultSet = array();
 
         while ($row = $query->fetch_object()) {

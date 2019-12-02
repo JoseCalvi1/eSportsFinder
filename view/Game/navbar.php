@@ -30,6 +30,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="<?php echo $this->helper->url("User", "profile"); ?>" class="nav-link">
+                        <?php echo $this->helper->translate('LBL_PROFILE');?>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="<?php echo $this->helper->url("User", "logout"); ?>" class="nav-link">
                         <?php echo $this->helper->translate('User','LBL_LOGOUT');?>
                     </a>

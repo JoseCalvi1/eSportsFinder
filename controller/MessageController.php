@@ -16,12 +16,15 @@ class MessageController extends ControladorBase
     public function index()
     {
         global $current_user;
+        if (!empty($current_user)) {
+            $this->redirect(CONTROLADOR_HOME_DEFECTO, 'index');
+        }
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
 
         $message = new Message();
-        $messages = $message->getMessages("id_user_to='{$current_user->id}'", 'date_entered');
-        $sent_messages = $message->getMessages("id_user_from='{$current_user->id}'", 'date_entered');
-        $invitations = $message->getMessages("id_user_to='{$current_user->id}' AND status='INV'", 'date_entered');
+        $messages = $message->getInnerJoin('m.*, u.name','AS m INNER JOIN esf_users AS u ON m.id_user_from = u.id',"id_user_to='{$current_user->id}'", 'date_entered');
+        $sent_messages = $message->getInnerJoin('m.*, u.name', 'AS m INNER JOIN esf_users AS u ON m.id_user_from = u.id',"id_user_from='{$current_user->id}'", 'date_entered');
+        $invitations = $message->getInnerJoin('m.*, u.name', 'AS m INNER JOIN esf_users AS u ON m.id_user_from = u.id',"id_user_to='{$current_user->id}' AND status='INV'", 'date_entered');
         //Cargamos la vista index y le pasamos valores
 
         $this->view("Message/inbox", array(

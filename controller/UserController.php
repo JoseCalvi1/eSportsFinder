@@ -143,4 +143,24 @@ class UserController extends ControladorBase
         ));
     }
 
+    public function profile()
+    {
+        global $current_user;
+        if (!empty($current_user)) {
+            $this->redirect(CONTROLADOR_HOME_DEFECTO, 'index');
+        }
+        $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
+        $players = new GameProfile();
+        $player = $players->getInnerJoin('p.*, g.name AS game_name', 'AS p INNER JOIN esf_games AS g ON p.id_game = g.id' ,"id_user='{$current_user->id}'", 'id');
+
+        //Cargamos la vista teamlist y le pasamos valores
+        $this->view("User/profile", array(
+            'title' => 'Profile',
+            'error' => $error,
+            'current_user' => $current_user,
+            'player' => $player,
+        ), true);
+
+    }
+
 }
