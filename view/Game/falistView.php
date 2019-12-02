@@ -8,6 +8,7 @@
         <input class="form-control" id="search" type="text"
                placeholder="<?php echo $this->helper->translate('LBL_SEARCH') ?>...">
         <br>
+        <?php if(!$users) { echo $this->helper->translate('LBL_NO_RECORD'); } ?>
         <?php foreach ($users as $user) { ?>
             <div class="border-bottom padding-5">
                 <h4>

@@ -7,14 +7,12 @@
                     <div class="form-group">
                         <input id="id_game" type="hidden" class="form-control" name="player[id_game]"
                                value="<?php echo $id_game ?>" required>
-                        <label for="name">Nombre de jugador:</label>
-                        <input id="name" type="text" class="form-control" placeholder="Nombre del jugador"
+                        <label for="name"><?= $this->helper->translate('GameProfile','LBL_NAME') ?>:</label>
+                        <input id="name" type="text" class="form-control" placeholder="<?= $this->helper->translate('GameProfile','LBL_NAME') ?>"
                                name="player[name]" required>
-                        <small class="form-text text-muted">Se podrá buscar el jugador por su nombre en el listado.
-                        </small>
                     </div>
                     <fieldset class="form-group">
-                        <label for="description">Descripción</label>
+                        <label for="description"><?= $this->helper->translate('GameProfile','LBL_GAME_ROL') ?></label>
                         <select class="form-control" name="player[description]">
                             <?php foreach ($role as $key => $item) { ?>
                                 <option><?= $role[$key]->name; ?></option>
@@ -22,24 +20,24 @@
                         </select>
                     </fieldset>
                     <fieldset class="form-group">
-                        <label for="play_time">Tiempo dedicado/día</label>
+                        <label for="play_time"><?= $this->helper->translate('GameProfile','LBL_PLAY_TIME') ?></label>
                         <select class="form-control" name="player[play_time]">
-                            <option>Menos de 2 horas</option>
-                            <option>Entre 2 y 4 horas</option>
-                            <option>Más de 4 horas</option>
+                            <option><?= $this->helper->translate('GameProfile','LBL_TWO') ?></option>
+                            <option><?= $this->helper->translate('GameProfile','LBL_TWO_FOUR') ?></option>
+                            <option><?= $this->helper->translate('GameProfile','LBL_FOUR') ?></option>
                         </select>
                     </fieldset>
                     <fieldset class="form-group">
-                        <label for="availability">Disponibilidad</label>
+                        <label for="availability"><?= $this->helper->translate('GameProfile','LBL_AVAILABILITY') ?></label>
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input type="checkbox" name="player[availability][]" value="Mañana"> Mañana
+                                <input type="checkbox" name="player[availability][]" value="<?= $this->helper->translate('GameProfile','LBL_MORNING') ?>"> <?= $this->helper->translate('GameProfile','LBL_MORNING') ?>
                             </label><br>
                             <label class="form-check-label">
-                                <input type="checkbox" name="player[availability][]" value="Tarde"> Tarde
+                                <input type="checkbox" name="player[availability][]" value="<?= $this->helper->translate('GameProfile','LBL_AFTERNOON') ?>"> <?= $this->helper->translate('GameProfile','LBL_AFTERNOON') ?>
                             </label><br>
                             <label class="form-check-label">
-                                <input type="checkbox" name="player[availability][]" value="Noche"> Noche
+                                <input type="checkbox" name="player[availability][]" value="<?= $this->helper->translate('GameProfile','LBL_NIGHT') ?>"> <?= $this->helper->translate('GameProfile','LBL_NIGHT') ?>
                             </label><br>
                         </div>
 

@@ -1,42 +1,49 @@
 <?php include_once "view/Game/header.php"; ?>
 
-<div class="container">
+    <div class="container">
         <div class="row">
+            <div class="col-12">
                 <form action="<?php echo $this->helper->url("Team", "createTeam"); ?>" method="POST">
                     <div class="form-group">
-                        <input id="id_game" type="hidden" class="form-control" name="team[id_game]" value="<?php echo $id_game ?>" required>
-                        <label for="name">Nombre del equipo:</label>
-                        <input id="name" type="text" class="form-control" placeholder="Nombre del equipo" name="team[name]" required>
-                        <small class="form-text text-muted">Se podrá buscar el equipo por su nombre en el listado.</small>
+                        <input id="id_game" type="hidden" class="form-control" name="team[id_game]"
+                               value="<?php echo $id_game ?>" required>
+                        <label for="name"><?= $this->helper->translate('GameProfile', 'LBL_NAME') ?>:</label>
+                        <input id="name" type="text" class="form-control"
+                               placeholder="<?= $this->helper->translate('GameProfile', 'LBL_NAME') ?>"
+                               name="team[name]" required>
                     </div>
                     <div class="form-group">
-                        <label for="teamtag">Team Tag</label>
-                        <input type="text" class="form-control" placeholder="Tag del equipo" maxlength="4" name="team[team_tag]" required>
-                        <small class="form-text text-muted">Máximo 4 letras.</small>
+                        <label for="teamtag"><?= $this->helper->translate('Team', 'LBL_TEAM_TAG') ?></label>
+                        <input type="text" class="form-control" placeholder="Tag del equipo" maxlength="4"
+                               name="team[team_tag]" required>
                     </div>
                     <div class="form-group">
-                        <label for="description">Descripcion</label>
-                        <textarea class="form-control" rows="3" placeholder="Opcional" name="team[description]"></textarea>
+                        <label for="description"><?= $this->helper->translate('Team', 'LBL_DESCRIPTION') ?></label>
+                        <textarea class="form-control" rows="3" placeholder="Opcional"
+                                  name="team[description]"></textarea>
                     </div>
                     <fieldset class="form-group">
-                        <label for="play_time">Tiempo dedicado/día</label>
+                        <label for="play_time"><?= $this->helper->translate('GameProfile', 'LBL_PLAY_TIME') ?></label>
                         <select class="form-control" name="team[play_time]">
-                            <option>Menos de 2 horas</option>
-                            <option>Entre 2 y 4 horas</option>
-                            <option>Más de 4 horas</option>
+                            <option><?= $this->helper->translate('GameProfile', 'LBL_TWO') ?></option>
+                            <option><?= $this->helper->translate('GameProfile', 'LBL_TWO_FOUR') ?></option>
+                            <option><?= $this->helper->translate('GameProfile', 'LBL_FOUR') ?></option>
                         </select>
                     </fieldset>
                     <fieldset class="form-group">
-                        <label for="availability">Disponibilidad</label>
+                        <label for="availability"><?= $this->helper->translate('Team', 'LBL_AVAILABILITY') ?></label>
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input type="checkbox" name="team[availability][]" value="Mañana"> Mañana
+                                <input type="checkbox" name="team[availability][]"
+                                       value="<?= $this->helper->translate('GameProfile', 'LBL_MORNING') ?>"> <?= $this->helper->translate('GameProfile', 'LBL_MORNING') ?>
                             </label><br>
                             <label class="form-check-label">
-                                <input type="checkbox" name="team[availability][]" value="Tarde"> Tarde
+                                <input type="checkbox" name="team[availability][]"
+                                       value="<?= $this->helper->translate('GameProfile', 'LBL_AFTERNOON') ?>"> <?= $this->helper->translate('GameProfile', 'LBL_AFTERNOON') ?>
                             </label><br>
                             <label class="form-check-label">
-                                <input type="checkbox" name="team[availability][]" value="Noche"> Noche
+                                <input type="checkbox" name="team[availability][]"
+                                       value="<?= $this->helper->translate('GameProfile', 'LBL_NIGHT') ?>"> <?= $this->helper->translate('GameProfile', 'LBL_NIGHT') ?>
                             </label><br>
                         </div>
 
@@ -46,6 +53,6 @@
                 <br>
             </div>
         </div>
-</div>
+    </div>
 
 <?php include_once "view/Game/footer.php"; ?>

@@ -56,7 +56,7 @@ $language = array(
         'LBL_PASSWORD_REGEX' => 'Debe contener letras mayúsculas, minúsculas, números y alguno de los caracteres !?-_ <br>Tamaño: entre 8 y 12 caracteres',
         'LBL_PASSWORD_NOT_EQUAL' => 'Debe repetir la contraseña, los valores no son iguales.',
         'LBL_LOGOUT' => 'Logout',
-
+        'LBL_NO_RECORD' => 'No records',
     ),
     'Game' => array(
         'LBL_GAMES' => 'Games',
@@ -88,6 +88,12 @@ $language = array(
         'LBL_HAS_TEAM' => 'Team',
         'LBL_PLAY_TIME' => 'Play time',
         'LBL_AVAILABILITY' => 'Availability',
+        'LBL_TWO' => 'Less than two hours',
+        'LBL_TWO_FOUR' => 'Between two and four hours',
+        'LBL_FOUR' => 'More than four hours',
+        'LBL_MORNING' => 'Morning',
+        'LBL_AFTERNOON' => 'Afternoon',
+        'LBL_NIGHT' => 'Night',
         'LBL_FA_TITLE' => 'Free agent search',
         'LBL_DELETE' => 'Do you really want to delete?',
         'LBL_SEARCH' => 'You can search for a player by name, position or preferred mode:',

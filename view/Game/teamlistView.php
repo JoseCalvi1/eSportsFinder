@@ -9,6 +9,8 @@
                placeholder="<?php echo $this->helper->translate('LBL_SEARCH') ?>...">
         <br>
 
+        <?php if(!$teams) { echo $this->helper->translate('LBL_NO_RECORD'); } ?>
+
         <?php foreach ($teams as $team) { ?>
 
             <div class="border-bottom padding-5">
