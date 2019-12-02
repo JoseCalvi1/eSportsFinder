@@ -19,9 +19,11 @@
                 <a data-toggle="modal" href="#myModal" data-target="#edit-modal-<?php echo $user->id; ?>"
                    id="<?php echo $user->id; ?>">
                     <i class="material-icons">chat</i>Conactar</a>
+                <?php if($id_team) { ?>
                 <a data-toggle="modal" href="#myModal" data-target="#new-player-<?php echo $user->id; ?>">
                     <i class="material-icons">add_circle_outline</i><?php echo $this->helper->translate('Team', 'LBL_NEW_PLAYER'); ?>
                 </a>
+                <?php } ?>
             </div>
 
             <div id="new-player-<?php echo $user->id; ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
