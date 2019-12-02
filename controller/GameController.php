@@ -35,10 +35,12 @@ class GameController extends ControladorBase
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
         $team = new Team();
         $players = new GameProfile();
+        $roles = new GameRole();
         $id_game = $_GET['id'];
 
         $teams = $team->getList("id_game='{$id_game}'", 'id', 4);
         $player = $players->getList("id_user='{$current_user->id}' AND id_game='{$id_game}'", 'id', 1);
+        $role = $roles->getList("id_game='{$id_game}'", 'id', 30);
 
         if($player) {
             //Cargamos la vista home y le pasamos valores
@@ -53,6 +55,7 @@ class GameController extends ControladorBase
                 'title' => 'Player create',
                 'error' => $error,
                 'id_game' => $id_game,
+                'role' => $role
             ), true);
         }
     }
