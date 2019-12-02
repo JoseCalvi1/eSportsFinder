@@ -97,6 +97,8 @@ $language = array(
         'LBL_FA_TITLE' => 'Free agent search',
         'LBL_DELETE' => 'Do you really want to delete?',
         'LBL_SEARCH' => 'You can search for a player by name, position or preferred mode:',
+        'LBL_PLAYER_EDIT' => 'Edit player',
+        'LBL_DELETE_PLAYER' => 'Delete',
     ),
     'Message' => array(
         'LBL_MESSAGES' => 'Messages',

@@ -16,9 +16,6 @@ class MessageController extends ControladorBase
     public function index()
     {
         global $current_user;
-        if (!empty($current_user)) {
-            $this->redirect(CONTROLADOR_HOME_DEFECTO, 'index');
-        }
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
 
         $message = new Message();

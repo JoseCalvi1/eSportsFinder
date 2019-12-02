@@ -99,6 +99,8 @@ $language = array(
         'LBL_FA_TITLE' => 'Búsqueda de jugadores',
         'LBL_DELETE' => '¿De verdad quiere eliminar?',
         'LBL_SEARCH' => 'Puedes buscar un jugador por su nombre, posición o modo preferido:',
+        'LBL_PLAYER_EDIT' => 'Editar jugador',
+        'LBL_DELETE_PLAYER' => 'Eliminar',
     ),
     'Message' => array(
         'LBL_MESSAGES' => 'Mensajes',

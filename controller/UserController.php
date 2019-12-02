@@ -146,9 +146,6 @@ class UserController extends ControladorBase
     public function profile()
     {
         global $current_user;
-        if (!empty($current_user)) {
-            $this->redirect(CONTROLADOR_HOME_DEFECTO, 'index');
-        }
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
         $players = new GameProfile();
         $player = $players->getInnerJoin('p.*, g.name AS game_name', 'AS p INNER JOIN esf_games AS g ON p.id_game = g.id' ,"id_user='{$current_user->id}'", 'id');
@@ -161,6 +158,30 @@ class UserController extends ControladorBase
             'player' => $player,
         ), true);
 
+    }
+
+    public function editPlayer() {
+        $player = new GameProfile();
+
+        $player->id = $_REQUEST['player']['id'];
+        $player->name = $_REQUEST['player']['name'];
+        $player->description = $_REQUEST['player']['description'];
+        $player->play_time = $_REQUEST['player']['play_time'];
+        $player->availability = $_REQUEST['player']['availability'][0].' | '.$_REQUEST['player']['availability'][1].' | '.$_REQUEST['player']['availability'][2];
+
+
+        $player->updateN("name='{$player->name}', play_time='{$player->play_time}', description='{$player->description}', availability='{$player->availability}'", "id={$player->id}");
+        header("Location: index.php?controller=User&action=profile");
+        die();
+    }
+
+    public function deleteProfile() {
+        $player = new GameProfile();
+        $player->id = $_REQUEST['player']['id'];
+
+        $player->deleteBy('id', "{$player->id}");
+        header("Location: index.php?controller=User&action=profile");
+        die();
     }
 
 }
