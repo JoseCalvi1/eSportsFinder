@@ -1,16 +1,21 @@
 <?php
+if (!$messages) {
+    echo $this->helper->translate('LBL_NO_RECORD');
+}
 foreach ($messages as $message) { ?>
     <div class="col-12">
         <div class="card-message">
             <h4 class="info-title"><?php echo $message->subject ?></h4>
             <h6><?php echo $this->helper->translate('LBL_FROM') . ' ' . $message->name . ' ' . $this->helper->translate('LBL_AT') . ' ' . $message->date_modified ?></h6>
             <p><?php echo $message->message ?></p>
-            <a data-toggle="modal" href="#myModal" data-target="#edit-modal-<?php echo $message->id; ?>" id="<?php echo $message->id; ?>">
+            <a data-toggle="modal" href="#myModal" data-target="#edit-modal-<?php echo $message->id; ?>"
+               id="<?php echo $message->id; ?>">
                 <i class="material-icons">chat</i><?php echo $this->helper->translate('Message', 'LBL_REPLY'); ?></a>
         </div>
     </div>
 
-    <div id="edit-modal-<?php echo $message->id; ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    <div id="edit-modal-<?php echo $message->id; ?>" class="modal fade" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel"
          aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content" style="padding: 10px;">

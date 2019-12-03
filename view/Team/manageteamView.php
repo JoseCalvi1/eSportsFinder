@@ -1,6 +1,6 @@
 <?php include_once "view/Game/header.php"; ?>
 
-<div class="container-fluid"
+<div class="container-fluid d-none d-sm-block"
      style="margin-top:-20px; background-image: url('assets/images/<?php echo strtolower($id_game); ?>/option1.jpg'); position:relative; background-size: cover; height: 100%; width: 100% ;">
     <div class="container">
         <h1 class="info-title"
@@ -8,7 +8,7 @@
     </div>
 </div>
 <div class="container">
-    <!-- <h1 class="info-title"><?php echo $teams[0]->name . ' [' . $teams[0]->team_tag . ']' ?></h1> -->
+    <h2 class="info-title d-block d-sm-none"><?php echo $teams[0]->name . ' [' . $teams[0]->team_tag . ']' ?></h2>
     <h2><?php echo $this->helper->translate('Team', 'LBL_PLAYERS'); ?></h2>
     <a data-toggle="modal" href="#myModal" data-target="#new-player">
         <i class="material-icons">add_circle_outline</i><?php echo $this->helper->translate('Team', 'LBL_NEW_PLAYER'); ?>
