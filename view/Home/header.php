@@ -15,5 +15,7 @@
     <link href="assets/css/material-kit.css?v=2.0.6" rel="stylesheet" />
     <!-- Custom CSS -->
     <link href="assets/css/custom.css" rel="stylesheet" />
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json">
 </head>
 <body>

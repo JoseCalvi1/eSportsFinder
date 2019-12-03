@@ -16,6 +16,8 @@
     <script src="vendor/rippler/jquery.rippler.min.js"></script>
     <!-- Adding css styles -->
     <link href="view/Global/css/common.css" rel="stylesheet" type="text/css"/>
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json">
     <style>
         .custom-file-label::after {
             content: "<?php echo $this->helper->translate('LBL_BROWSE');?>";

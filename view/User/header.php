@@ -16,6 +16,8 @@
     <script src="vendor/rippler/jquery.rippler.min.js"></script>
     <!-- Adding css styles -->
     <link href="view/Global/css/common.css" rel="stylesheet" type="text/css"/>
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json">
 </head>
 <body>
 <div id="loader_container" class="loader_container">
