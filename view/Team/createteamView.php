@@ -3,6 +3,19 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
+                <?php if ($error == 'true') { ?>
+                    <div class="alert alert-danger">
+                        <div class="container">
+                            <div class="alert-icon">
+                                <i class="material-icons">error_outline</i>
+                            </div>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                            </button>
+                            <b>Error Alert:</b> <?= $this->helper->translate('Team', 'LBL_NAME_EXISTING') ?>
+                        </div>
+                    </div>
+                <?php } ?>
                 <form action="<?php echo $this->helper->url("Team", "createTeam"); ?>" method="POST">
                     <div class="form-group">
                         <input id="id_game" type="hidden" class="form-control" name="team[id_game]"
@@ -25,6 +38,7 @@
                     <fieldset class="form-group">
                         <label for="play_time"><?= $this->helper->translate('GameProfile', 'LBL_PLAY_TIME') ?></label>
                         <select class="form-control" name="team[play_time]">
+                            <option>-- Select --</option>
                             <option><?= $this->helper->translate('GameProfile', 'LBL_TWO') ?></option>
                             <option><?= $this->helper->translate('GameProfile', 'LBL_TWO_FOUR') ?></option>
                             <option><?= $this->helper->translate('GameProfile', 'LBL_FOUR') ?></option>

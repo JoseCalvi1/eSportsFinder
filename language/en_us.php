@@ -80,6 +80,8 @@ $language = array(
         'LBL_TEAM_INVITE' => 'Team invite',
         'LBL_TEAM_DELETE' => 'Delete team',
         'LBL_TEAM_EDIT' => 'Edit team',
+        'LBL_NAME_EXISTING' => 'A team with that name already exists',
+        'LBL_NAME_EXISTING' => 'A player with that name already exists',
     ),
     'GameProfile' => array(
         'LBL_NAME' => 'Name',

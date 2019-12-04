@@ -82,6 +82,7 @@ $language = array(
         'LBL_LEAVE_TEAM' => 'Abandonar',
         'LBL_TEAM_DELETE' => 'Eliminar equipo',
         'LBL_TEAM_EDIT' => 'Editar equipo',
+        'LBL_NAME_EXISTING' => 'Ya existe un equipo con ese nombre',
     ),
     'GameProfile' => array(
         'LBL_NAME' => 'Nombre',
@@ -101,6 +102,7 @@ $language = array(
         'LBL_SEARCH' => 'Puedes buscar un jugador por su nombre, posición o modo preferido:',
         'LBL_PLAYER_EDIT' => 'Editar jugador',
         'LBL_DELETE_PLAYER' => 'Eliminar',
+        'LBL_NAME_EXISTING' => 'Ya existe un jugador con ese nombre',
     ),
     'Message' => array(
         'LBL_MESSAGES' => 'Mensajes',

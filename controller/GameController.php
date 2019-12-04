@@ -42,7 +42,7 @@ class GameController extends ControladorBase
         $player = $players->getList("id_user='{$current_user->id}' AND id_game='{$id_game}'", 'id', 1);
         $role = $roles->getList("id_game='{$id_game}'", 'id', 30);
 
-        if($player) {
+        if ($player) {
             //Cargamos la vista home y le pasamos valores
             $this->view("Game/home", array(
                 'title' => 'Game home',
@@ -104,16 +104,19 @@ class GameController extends ControladorBase
         global $current_user;
         $player = new GameProfile();
 
-        $player->id_game = $_REQUEST['player']['id_game'];
-        $player->id_user = $current_user->id;
-        $player->name = $_REQUEST['player']['name'];
-        $player->description = $_REQUEST['player']['description'];
-        $player->play_time = $_REQUEST['player']['play_time'];
-        $player->availability = $_REQUEST['player']['availability'][0].' | '.$_REQUEST['player']['availability'][1].' | '.$_REQUEST['player']['availability'][2];
-        $player->save();
+        $error = $player->validatePlayer($_REQUEST['player']['id_game'], $_REQUEST['player']['name']);
+        if (empty($error)) {
+            $player->id_game = $_REQUEST['player']['id_game'];
+            $player->id_user = $current_user->id;
+            $player->name = $_REQUEST['player']['name'];
+            $player->description = $_REQUEST['player']['description'];
+            $player->play_time = $_REQUEST['player']['play_time'];
+            $player->availability = $_REQUEST['player']['availability'][0] . ' | ' . $_REQUEST['player']['availability'][1] . ' | ' . $_REQUEST['player']['availability'][2];
+            $player->save();
+        }
 
         // todo redirigir bien
-        header("Location: index.php?controller=Game&action=home&id={$_REQUEST['player']['id_game']}");
+        header("Location: index.php?controller=Game&action=home&id={$_REQUEST['player']['id_game']}&error=true");
         die();
     }
 

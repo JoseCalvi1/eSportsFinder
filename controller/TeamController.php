@@ -26,9 +26,6 @@ class TeamController extends ControladorBase
         $players = $player->getList("id_user = {$current_user->id} AND id_game={$id_game}", 'id', '1');
         $team = new Team();
         $teams = $team->getList("id={$players[0]->id_team}", 'id', '10');
-        //$player1 = $players[0];
-        //$id_captain = $player->getBy('id_user', "{$teams[0]->id_captain}");
-        //die('<pre>2: '.print_r($id_captain, true).'</pre>');
 
         if($teams) {
             $player = new GameProfile();
@@ -60,18 +57,21 @@ class TeamController extends ControladorBase
         $team = new Team();
         $player = new GameProfile();
 
-        $team->id_game = $_REQUEST['team']['id_game'];
-        $team->name = $_REQUEST['team']['name'];
-        $team->id_captain = $current_user->id;
-        $team->team_tag = $_REQUEST['team']['team_tag'];
-        $team->description = $_REQUEST['team']['description'];
-        $team->play_time = $_REQUEST['team']['play_time'];
-        $team->availability = $_REQUEST['team']['availability'][0].' | '.$_REQUEST['team']['availability'][1].' | '.$_REQUEST['team']['availability'][2];
-        $team->save();
-        $player->updateN("id_team={$team->id}", "created_by = {$current_user->id} AND id_game={$_REQUEST['team']['id_game']}");
+        $error = $team->validateTeam($_REQUEST['team']['id_game'], $_REQUEST['team']['name']);
+        if(empty($error)){
+            $team->id_game = $_REQUEST['team']['id_game'];
+            $team->name = $_REQUEST['team']['name'];
+            $team->id_captain = $current_user->id;
+            $team->team_tag = $_REQUEST['team']['team_tag'];
+            $team->description = $_REQUEST['team']['description'];
+            $team->play_time = $_REQUEST['team']['play_time'];
+            $team->availability = $_REQUEST['team']['availability'][0] . ' | ' . $_REQUEST['team']['availability'][1] . ' | ' . $_REQUEST['team']['availability'][2];
+            $team->save();
+            $player->updateN("id_team={$team->id}", "created_by = {$current_user->id} AND id_game={$_REQUEST['team']['id_game']}");
+        } 
 
         // todo redirigir bien
-        header("Location: index.php?controller=Team&action=manageTeam&id={$_REQUEST['team']['id_game']}");
+        header("Location: index.php?controller=Team&action=manageTeam&id={$_REQUEST['team']['id_game']}&error=true");
         die();
     }
 
