@@ -21,18 +21,17 @@ class Team extends ModeloBase
 
     public function validateTeam($id_game, $team_name)
     {
-
-        $errores = array();
+        $error = '';
         // Validación de nombre
-        if (empty($errores['name'])) {
+        if (empty($error)) {
             $sql = "SELECT * from esf_teams WHERE id_game = '{$id_game}' AND name = '{$team_name}'";
             $res = $this->ejecutarSql($sql);
-            if (!empty($res)) {
-                $errores['name'] = $this->helper->translate('Team', 'LBL_NAME_EXISTING');
+            if (!empty($res->name)) {
+                return $error = 'true';
             }
         }
 
-        return $errores;
+        return $error;
     }
 
 }

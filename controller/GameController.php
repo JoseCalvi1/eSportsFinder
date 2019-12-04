@@ -113,6 +113,8 @@ class GameController extends ControladorBase
             $player->play_time = $_REQUEST['player']['play_time'];
             $player->availability = $_REQUEST['player']['availability'][0] . ' | ' . $_REQUEST['player']['availability'][1] . ' | ' . $_REQUEST['player']['availability'][2];
             $player->save();
+            header("Location: index.php?controller=Game&action=home&id={$_REQUEST['player']['id_game']}");
+            die();
         }
 
         // todo redirigir bien

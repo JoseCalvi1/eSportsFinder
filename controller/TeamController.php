@@ -27,7 +27,7 @@ class TeamController extends ControladorBase
         $team = new Team();
         $teams = $team->getList("id={$players[0]->id_team}", 'id', '10');
 
-        if($teams) {
+        if ($teams) {
             $player = new GameProfile();
             $players = $player->getList("id_team={$teams[0]->id}", 'id', '10');
             //Cargamos la vista index y le pasamos valores
@@ -58,7 +58,7 @@ class TeamController extends ControladorBase
         $player = new GameProfile();
 
         $error = $team->validateTeam($_REQUEST['team']['id_game'], $_REQUEST['team']['name']);
-        if(empty($error)){
+        if (empty($error)) {
             $team->id_game = $_REQUEST['team']['id_game'];
             $team->name = $_REQUEST['team']['name'];
             $team->id_captain = $current_user->id;
@@ -68,7 +68,9 @@ class TeamController extends ControladorBase
             $team->availability = $_REQUEST['team']['availability'][0] . ' | ' . $_REQUEST['team']['availability'][1] . ' | ' . $_REQUEST['team']['availability'][2];
             $team->save();
             $player->updateN("id_team={$team->id}", "created_by = {$current_user->id} AND id_game={$_REQUEST['team']['id_game']}");
-        } 
+            header("Location: index.php?controller=Team&action=manageTeam&id={$_REQUEST['team']['id_game']}");
+            die();
+        }
 
         // todo redirigir bien
         header("Location: index.php?controller=Team&action=manageTeam&id={$_REQUEST['team']['id_game']}&error=true");
@@ -95,7 +97,8 @@ class TeamController extends ControladorBase
         die();
     }
 
-    public function leaveTeam() {
+    public function leaveTeam()
+    {
         $id = $_REQUEST['player']['id'];
         $id_game = $_REQUEST['player']['id_game'];
         $id_team = $_REQUEST['player']['id_team'];
@@ -114,7 +117,8 @@ class TeamController extends ControladorBase
         die();
     }
 
-    public function deleteTeam() {
+    public function deleteTeam()
+    {
         $id_team = $_REQUEST['player']['id_team'];
         $id_game = $_REQUEST['player']['id_game'];
         $players = new GameProfile();
@@ -126,7 +130,8 @@ class TeamController extends ControladorBase
         die();
     }
 
-    public function editTeam() {
+    public function editTeam()
+    {
         $id_game = $_REQUEST['team']['id_game'];
         $id = $_REQUEST['team']['id'];
         $name = $_REQUEST['team']['name'];

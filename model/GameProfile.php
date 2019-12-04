@@ -21,18 +21,17 @@ class GameProfile extends ModeloBase
 
     public function validatePlayer($id_game, $player_name)
     {
-
-        $errores = array();
+        $error = '';
         // Validación de nombre
-        if (empty($errores['name'])) {
+        if (empty($error)) {
             $sql = "SELECT * from esf_game_profiles WHERE id_game = '{$id_game}' AND name = '{$player_name}'";
             $res = $this->ejecutarSql($sql);
-            if (!empty($res)) {
-                $errores['name'] = $this->helper->translate('Team', 'LBL_NAME_EXISTING');
+            if (!empty($res->name)) {
+                return $error = 'true';
             }
         }
 
-        return $errores;
+        return $error;
     }
 
 }
