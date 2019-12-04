@@ -98,7 +98,17 @@ class TeamController extends ControladorBase
     public function leaveTeam() {
         $id = $_REQUEST['player']['id'];
         $id_game = $_REQUEST['player']['id_game'];
+        $id_team = $_REQUEST['player']['id_team'];
         $players = new GameProfile();
+        $trades = new Trade();
+
+
+        $trades->id_user = $id;
+        $trades->id_team = $id_team;
+        $trades->id_game = $id_game;
+        $trades->action = 'OUT';
+        $trades->save();
+
         $players->updateN("id_team=0", "id = {$id} AND id_game={$id_game}");
         header("Location: index.php?controller=Team&action=manageTeam&id={$id_game}");
         die();

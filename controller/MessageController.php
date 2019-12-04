@@ -56,6 +56,7 @@ class MessageController extends ControladorBase
         $message = new Message();
         $player1 = new GameProfile();
         $player = new GameProfile();
+        $trades = new Trade();
 
         $message->id = $_REQUEST['message']['id'];
         $message->updateN('accepted=1', "id = {$message->id}");
@@ -65,6 +66,12 @@ class MessageController extends ControladorBase
         $players = $player1->getList("id_user='{$current_user->id}' AND id_game='{$_REQUEST['message']['id_game']}'", 'id', 1);
         $player->name = $players[0]->name;
         $player->updateN("id_team={$player->id_team}", "name = '{$player->name}' AND id_game={$player->id_game}");
+
+        $trades->id_user = $players[0]->id;
+        $trades->id_team = $player->id_team;
+        $trades->id_game = $player->id_game;
+        $trades->action = 'IN';
+        $trades->save();
 
         $this->refuseInv();
         // todo redirigir bien

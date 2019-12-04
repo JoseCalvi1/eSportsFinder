@@ -30,21 +30,21 @@
                             <div class="info info-card">
                                 <img width="350" height="180"  src="assets/images/chat.jpg">
                                 <h4 class="info-title"><?php echo $this->helper->translate('Game','LBL_CHAT')?></h4>
-                                <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                                <p class="padding-5">Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="info info-card">
                                 <img width="350" height="180" src="assets/images/users.jpg">
                                 <h4 class="info-title"><?php echo $this->helper->translate('Game','LBL_FA')?></h4>
-                                <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                                <p class="padding-5">Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="info info-card">
                                 <img width="350" height="180"  src="assets/images/manage.jpg">
                                 <h4 class="info-title"><?php echo $this->helper->translate('Game','LBL_MANAGE')?></h4>
-                                <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                                <p class="padding-5">Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
                             </div>
                         </div>
 
@@ -52,21 +52,21 @@
                             <div class="info info-card">
                                 <img width="350" height="180"  src="assets/images/teams.jpg">
                                 <h4 class="info-title">Signing</h4>
-                                <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                                <p class="padding-5">Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="info info-card">
                                 <img width="350" height="180"  src="assets/images/ts.jpg">
                                 <h4 class="info-title"><?php echo $this->helper->translate('Game','LBL_TS')?></h4>
-                                <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                                <p class="padding-5">Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="info info-card">
                                 <img width="350" height="180"  src="assets/images/chat.jpg">
                                 <h4 class="info-title">Fingerprint</h4>
-                                <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                                <p class="padding-5">Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
                             </div>
                         </div>
                     </div>

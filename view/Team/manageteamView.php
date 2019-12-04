@@ -41,10 +41,12 @@
                     <?php } elseif ($player->id_user == $current_user->id) { ?>
                         <form action="<?php echo $this->helper->url("Team", "leaveTeam"); ?>" method="POST"
                               class="delete">
-                            <input type="hidden" class="form-control" id="id_game" name="player[id]" required
+                            <input type="hidden" class="form-control" id="id" name="player[id]" required
                                    value="<?php echo $player->id ?>">
                             <input type="hidden" class="form-control" id="id_game" name="player[id_game]" required
                                    value="<?php echo $id_game ?>">
+                            <input type="hidden" class="form-control" id="id_team" name="player[id_team]" required
+                                   value="<?php echo $teams[0]->id ?>">
                             <button type="submit" class="btn btn-danger btn-raised">
                                 <i class="material-icons">block</i><?php echo $this->helper->translate('Team', 'LBL_LEAVE_TEAM'); ?>
                             </button>

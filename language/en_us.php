@@ -112,4 +112,9 @@ $language = array(
         'LBL_ACCEPT_INV' => 'Are you sure you want to accept the invitation?',
         'LBL_REFUSE_INV' => 'Are you sure you want to refuse the invitation?',
     ),
+    'Trade' => array(
+        'LBL_TRADE_TITLE' => 'Player movements',
+        'LBL_IN' => 'has become part of',
+        'LBL_OUT' => 'has ceased to belong to',
+    ),
 );
