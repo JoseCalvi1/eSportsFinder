@@ -26,6 +26,7 @@ $language = array(
     'LBL_IMSURE' => 'I\'m sure',
     'LBL_OPTIONAL' => 'Optional',
     'LBL_ALL' => 'All',
+    'LBL_SOON' => 'Coming soon',
     'User' => array(
         'LBL_INIT_SESSION' => 'Login',
         'LBL_REGISTER_TITLE' => 'User register',
@@ -102,6 +103,7 @@ $language = array(
         'LBL_SEARCH' => 'You can search for a player by name, position or preferred mode:',
         'LBL_PLAYER_EDIT' => 'Edit player',
         'LBL_DELETE_PLAYER' => 'Delete',
+        'LBL_VERSATILE' => 'Versatile',
     ),
     'Message' => array(
         'LBL_MESSAGES' => 'Messages',

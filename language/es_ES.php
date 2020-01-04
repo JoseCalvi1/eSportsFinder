@@ -27,6 +27,7 @@ $language = array(
     'LBL_OPTIONAL' => 'Opcional',
     'LBL_NO_RECORD' => 'No hay registros',
     'LBL_ALL' => 'Todo',
+    'LBL_SOON' => 'Próximamente',
     'User' => array(
         'LBL_INIT_SESSION' => 'Iniciar sesión',
         'LBL_REGISTER_TITLE' => 'Registrar usuario',
@@ -104,6 +105,7 @@ $language = array(
         'LBL_PLAYER_EDIT' => 'Editar jugador',
         'LBL_DELETE_PLAYER' => 'Eliminar',
         'LBL_NAME_EXISTING' => 'Ya existe un jugador con ese nombre',
+        'LBL_VERSATILE' => 'Polivalente',
     ),
     'Message' => array(
         'LBL_MESSAGES' => 'Mensajes',

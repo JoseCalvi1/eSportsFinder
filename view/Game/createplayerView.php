@@ -24,14 +24,17 @@
                         <input id="name" type="text" class="form-control" placeholder="<?= $this->helper->translate('GameProfile','LBL_NAME') ?>"
                                name="player[name]" required>
                     </div>
-                    <fieldset class="form-group">
-                        <label for="description"><?= $this->helper->translate('GameProfile','LBL_GAME_ROL') ?></label>
-                        <select class="form-control" name="player[description]">
-                            <?php foreach ($role as $key => $item) { ?>
-                                <option><?= $role[$key]->name; ?></option>
-                            <?php } ?>
-                        </select>
-                    </fieldset>
+                    <?php if ($role) { ?>
+                        <fieldset class="form-group">
+                            <label for="description"><?= $this->helper->translate('GameProfile','LBL_GAME_ROL') ?></label>
+                            <select class="form-control" name="player[description]">
+                            <option><?= $this->helper->translate('GameProfile','LBL_VERSATILE') ?></option>
+                                <?php foreach ($role as $key => $item) { ?>
+                                    <option><?= $role[$key]->name; ?></option>
+                                <?php } ?>
+                            </select>
+                        </fieldset>
+                    <?php } ?>
                     <fieldset class="form-group">
                         <label for="play_time"><?= $this->helper->translate('GameProfile','LBL_PLAY_TIME') ?></label>
                         <select class="form-control" name="player[play_time]">

@@ -8,9 +8,13 @@
             <div class="col-6 col-md-3 card-title">
                 <a href="<?php echo ($game->status)=='READY' ? $this->helper->url("Game", "home").'&id='.$game->id : '#'; ?>" class="link-title">
                     <img class="title-img" width="150" height="230" src="assets/images/<?php echo strtolower($game->media); ?>.jpg"><br>
+                    <?php if(($game->status)=='READY') { ?>
                     <span class="title"><?php echo $game->name; ?> / <?php echo ($game->crossplay) ? "All platforms" : $game->platform; ?></span>
                     <span class="platform"></span><br>
                     <span><?php echo $game->description; ?></span>
+                    <?php } elseif (($game->status)=='PENDING') { ?>
+                        <span><?= $this->helper->translate('LBL_SOON'); ?></span>
+                    <?php } ?>
                 </a>
             </div>
         <?php } ?>
