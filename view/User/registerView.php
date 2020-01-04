@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-7 d-none d-sm-none d-md-block"
-                 style="background-image: url('assets/images/mut_body_bg.jpg'); background-size: cover; min-height: calc(100vh - 130px);">
+                 style="background-image: url('assets/images/esports.jpg'); background-size: cover; min-height: calc(100vh - 130px);">
             </div>
             <div class="col-sm-5">
                 <div class="padding-5"><h3><?php echo $this->helper->translate('User', 'LBL_REGISTER_TITLE'); ?></h3>
