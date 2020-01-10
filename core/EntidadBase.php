@@ -129,8 +129,10 @@ class EntidadBase
         return $query;
     }
 
-    public function update($id)
+    public function update($id = '')
     {
+        if(empty($id)) $id = $this->id;
+
         $sets = array();
         foreach ($this->fields as $key => $value) {
             $value = $this->$key;

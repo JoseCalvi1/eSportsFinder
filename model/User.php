@@ -66,7 +66,8 @@ class User extends ModeloBase
         }
         $gui = $this->ejecutarSql($sql);
         if (!empty($gui) && is_object($gui)) {
-            $this->getBy('email', $gui->email);
+            $dataUser = $this->getBy('email', $gui->email);
+            $this->getById($dataUser[0]->id);
             $return = true;
         }
         return $return;

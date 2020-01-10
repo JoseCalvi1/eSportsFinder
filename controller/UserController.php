@@ -115,8 +115,10 @@ class UserController extends ControladorBase
         }
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
         if (!empty($_REQUEST['useremail'])) {
+            
             $user = new User();
             $user_exist = $user->getBy('email', $_REQUEST['useremail']);
+            $user->getById($user_exist[0]->id);
             if ($user_exist) {
                 $result = $user->sendResetPasswordMail($_REQUEST['useremail']);
                 if ($result['success']) {
