@@ -20,53 +20,53 @@
             <div class="section text-center">
                 <div class="row">
                     <div class="col-md-8 ml-auto mr-auto">
-                        <h2 class="title">Let&apos;s talk product</h2>
-                        <h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn&apos;t scroll to get here. Add a button if you want the user to see more.</h5>
+                        <h2 class="title"><?php echo $this->helper->translate('Game','LBL_CHAT')?></h2>
+                        <h5 class="description"><?php echo $this->helper->translate('Game','LBL_CHAT')?></h5>
                     </div>
                 </div>
                 <div class="features">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="info info-card">
-                                <img width="350" height="180"  src="assets/images/chat.jpg">
-                                <h4 class="info-title"><?php echo $this->helper->translate('Game','LBL_CHAT')?></h4>
-                                <p class="padding-5">Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="info info-card">
                                 <img width="350" height="180" src="assets/images/users.jpg">
                                 <h4 class="info-title"><?php echo $this->helper->translate('Game','LBL_FA')?></h4>
-                                <p class="padding-5">Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                                <p class="padding-5"><?php echo $this->helper->translate('Game','LBL_FA_DESC')?></p>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="info info-card">
                                 <img width="350" height="180"  src="assets/images/manage.jpg">
                                 <h4 class="info-title"><?php echo $this->helper->translate('Game','LBL_MANAGE')?></h4>
-                                <p class="padding-5">Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                                <p class="padding-5"><?php echo $this->helper->translate('Game','LBL_MANAGE_DESC')?></p>
                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="info info-card">
                                 <img width="350" height="180"  src="assets/images/teams.jpg">
-                                <h4 class="info-title">Signing</h4>
-                                <p class="padding-5">Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                                <h4 class="info-title"><?php echo $this->helper->translate('Game','LBL_SIGN')?></h4>
+                                <p class="padding-5"><?php echo $this->helper->translate('Game','LBL_SIGN_DESC')?></p>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="info info-card">
                                 <img width="350" height="180"  src="assets/images/ts.jpg">
                                 <h4 class="info-title"><?php echo $this->helper->translate('Game','LBL_TS')?></h4>
-                                <p class="padding-5">Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                                <p class="padding-5"><?php echo $this->helper->translate('Game','LBL_TS_DESC')?></p>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="info info-card">
                                 <img width="350" height="180"  src="assets/images/chat.jpg">
-                                <h4 class="info-title">Fingerprint</h4>
-                                <p class="padding-5">Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                                <h4 class="info-title"><?php echo $this->helper->translate('Game','LBL_IMPROVE')?></h4>
+                                <p class="padding-5"><?php echo $this->helper->translate('Game','LBL_IMPROVE_DESC')?></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="info info-card">
+                                <img width="350" height="180"  src="assets/images/chat.jpg">
+                                <h4 class="info-title"><?php echo $this->helper->translate('Game','LBL_CHAT')?></h4>
+                                <p class="padding-5"><?php echo $this->helper->translate('Game','LBL_CHAT_DESC')?></p>
                             </div>
                         </div>
                     </div>

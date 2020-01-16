@@ -63,11 +63,17 @@ $language = array(
     'Game' => array(
         'LBL_GAMES' => 'Games',
         'LBL_MANAGE' => 'Manage your team',
+        'LBL_MANAGE_DESC' => '',
         'LBL_CHAT' => 'Chat',
+        'LBL_CHAT_DESC' => '',
         'LBL_FA' => 'Free agent list',
+        'LBL_FA_DESC' => '',
         'LBL_TS' => 'Team scrims',
-        'LBL_KICK_OUT' => 'Kick out',
-        'LBL_LEAVE_TEAM' => 'Leave team',
+        'LBL_TS_DESC' => '',
+        'LBL_SIGN' => 'Team scrims',
+        'LBL_SIGN_DESC' => '',
+        'LBL_IMPROVE' => 'Improve',
+        'LBL_IMPROVE_DESC' => '',
     ),
     'Team' => array(
         'LBL_NAME' => 'Name',
@@ -83,7 +89,8 @@ $language = array(
         'LBL_TEAM_DELETE' => 'Delete team',
         'LBL_TEAM_EDIT' => 'Edit team',
         'LBL_NAME_EXISTING' => 'A team with that name already exists',
-        'LBL_NAME_EXISTING' => 'A player with that name already exists',
+        'LBL_KICK_OUT' => 'Kick out',
+        'LBL_LEAVE_TEAM' => 'Leave team',
     ),
     'GameProfile' => array(
         'LBL_NAME' => 'Name',
@@ -104,6 +111,7 @@ $language = array(
         'LBL_PLAYER_EDIT' => 'Edit player',
         'LBL_DELETE_PLAYER' => 'Delete',
         'LBL_VERSATILE' => 'Versatile',
+        'LBL_NAME_EXISTING' => 'A player with that name already exists',
     ),
     'Message' => array(
         'LBL_MESSAGES' => 'Messages',

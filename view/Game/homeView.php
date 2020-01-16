@@ -17,8 +17,7 @@
                     <div class="info info-card">
                         <img src="assets/images/manage.jpg">
                         <h4 class="info-title"><?php echo $this->helper->translate('Game', 'LBL_MANAGE') ?></h4>
-                        <p class="padding-5">Divide details about your product or agency work into parts. Write a few lines about each
-                            one. A paragraph describing a feature will be enough.</p>
+                        <p class="padding-5"><?php echo $this->helper->translate('Game', 'LBL_MANAGE_DESC') ?></p>
                     </div>
                 </a>
             </div>
@@ -27,8 +26,7 @@
                     <div class="info info-card">
                         <img src="assets/images/users.jpg">
                         <h4 class="info-title"><?php echo $this->helper->translate('Game', 'LBL_FA') ?></h4>
-                        <p class="padding-5">Divide details about your product or agency work into parts. Write a few lines about each
-                            one. A paragraph describing a feature will be enough.</p>
+                        <p class="padding-5"><?php echo $this->helper->translate('Game', 'LBL_FA_DESC') ?></p>
                     </div>
                 </a>
             </div>
@@ -37,8 +35,7 @@
                     <div class="info info-card">
                         <img src="assets/images/ts.jpg">
                         <h4 class="info-title"><?php echo $this->helper->translate('Game', 'LBL_TS') ?></h4>
-                        <p class="padding-5">Divide details about your product or agency work into parts. Write a few lines about each
-                            one. A paragraph describing a feature will be enough.</p>
+                        <p class="padding-5"><?php echo $this->helper->translate('Game', 'LBL_TS_DESC') ?></p>
                     </div>
                 </a>
             </div>
@@ -47,8 +44,7 @@
                     <div class="info info-card">
                         <img src="assets/images/chat.jpg">
                         <h4 class="info-title"><?php echo $this->helper->translate('Trade', 'LBL_TRADE_TITLE') ?></h4>
-                        <p class="padding-5">Divide details about your product or agency work into parts. Write a few lines about each
-                            one. A paragraph describing a feature will be enough.</p>
+                        <p class="padding-5"><?php echo $this->helper->translate('Game', 'LBL_SIGN_DESC') ?></p>
                     </div>
                 </a>
             </div>

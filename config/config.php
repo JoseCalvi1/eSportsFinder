@@ -25,6 +25,6 @@ $config['emailsetting'] = array(
     'mail_smtppass' => 'cocotroco',
     'mail_smtpssl' => '',
     'mail_smtpport' => '25',
-    'smtp_from_addr' => 'dev1@setneuf.com',
-    'smtp_from_name' => 'DEV1 Setneuf',
+    'smtp_from_addr' => 'esportsfinder@gmail.com',
+    'smtp_from_name' => 'Esports Finder',
 );
