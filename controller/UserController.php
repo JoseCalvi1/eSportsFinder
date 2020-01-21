@@ -28,16 +28,20 @@ class UserController extends ControladorBase
         global $current_user;
         if (!empty($current_user)) {
             $this->redirect(CONTROLADOR_HOME_DEFECTO, 'index');
-        } else if(!empty($_REQUEST['user'])){
+        } else if (!empty($_REQUEST['user'])) {
             $user = new User();
             $error = $user->validateRegister($_REQUEST['user']);
-            if(empty($error)){
+            if (empty($error)) {
                 $user->name = $_REQUEST['user']['name'];
                 $user->email = $_REQUEST['user']['email'];
                 $user->user_name = $_REQUEST['user']['user_name'];
                 $user->password = @crypt(strtolower(md5($_REQUEST['user']['password'])));
-                $user->save();
-                // TODO: redirect to "we send you a confirmation email and send the email"
+                $user->active = 0;
+                if ($user->sendConfirmEmailMail()) {
+                    $user->save();
+                } else {
+                    $error = $user->validateRegister($_REQUEST['user']);
+                }
                 $this->redirect(CONTROLADOR_HOME_DEFECTO, 'index');
             }
         }
@@ -49,8 +53,32 @@ class UserController extends ControladorBase
         ));
     }
 
-    public function confirmation(){
-        // TODO: confirmar el registro, activar el usuario y mostrar un mensaje y un enlace al login
+    public function confirm()
+    {
+        global $current_user;
+        if (!empty($current_user)) {
+            $this->redirect(CONTROLADOR_HOME_DEFECTO, 'index');
+        }
+        $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
+        $guid = $_REQUEST['gui'];
+        if (empty($guid)) {
+            $error = $this->helper->translate('User', 'LBL_ERROR_INVALID_TOKEN');
+        } else {
+            $user = new User();
+            $user->retrieveByToken($guid);
+            if ($user->confirmEmail()) {
+                $this->redirect(CONTROLADOR_HOME_DEFECTO, 'index');
+            } else {
+                $error = $this->helper->translate('User', 'LBL_ERROR_RESET_PASSWORD');
+            }
+
+        }
+        //Cargamos la vista index y le pasamos valores
+        $this->view("User/login", array(
+            'title' => $this->helper->translate('User', 'LBL_INIT_SESSION'),
+            'error' => $error,
+            'msg' => $this->helper->translate('User', 'LBL_RESET_TITLE'),
+        ));
     }
 
     public function login()
@@ -115,7 +143,7 @@ class UserController extends ControladorBase
         }
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
         if (!empty($_REQUEST['useremail'])) {
-            
+
             $user = new User();
             $user_exist = $user->getBy('email', $_REQUEST['useremail']);
             $user->getById($user_exist[0]->id);
@@ -150,7 +178,7 @@ class UserController extends ControladorBase
         global $current_user;
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
         $players = new GameProfile();
-        $player = $players->getInnerJoin('p.*, g.name AS game_name', 'AS p INNER JOIN esf_games AS g ON p.id_game = g.id' ,"id_user='{$current_user->id}'", 'id');
+        $player = $players->getInnerJoin('p.*, g.name AS game_name', 'AS p INNER JOIN esf_games AS g ON p.id_game = g.id', "id_user='{$current_user->id}'", 'id');
 
         //Cargamos la vista teamlist y le pasamos valores
         $this->view("User/profile", array(
@@ -162,14 +190,15 @@ class UserController extends ControladorBase
 
     }
 
-    public function editPlayer() {
+    public function editPlayer()
+    {
         $player = new GameProfile();
 
         $player->id = $_REQUEST['player']['id'];
         $player->name = $_REQUEST['player']['name'];
         $player->description = $_REQUEST['player']['description'];
         $player->play_time = $_REQUEST['player']['play_time'];
-        $player->availability = $_REQUEST['player']['availability'][0].' | '.$_REQUEST['player']['availability'][1].' | '.$_REQUEST['player']['availability'][2];
+        $player->availability = $_REQUEST['player']['availability'][0] . ' | ' . $_REQUEST['player']['availability'][1] . ' | ' . $_REQUEST['player']['availability'][2];
 
 
         $player->updateN("name='{$player->name}', play_time='{$player->play_time}', description='{$player->description}', availability='{$player->availability}'", "id={$player->id}");
@@ -177,7 +206,8 @@ class UserController extends ControladorBase
         die();
     }
 
-    public function deleteProfile() {
+    public function deleteProfile()
+    {
         $player = new GameProfile();
         $player->id = $_REQUEST['player']['id'];
 
