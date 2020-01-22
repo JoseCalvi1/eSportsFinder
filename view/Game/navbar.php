@@ -2,7 +2,7 @@
     <div class="container">
         <div class="navbar-translate">
             <a class="navbar-brand" href="<?php echo $this->helper->url("Game", "index"); ?>">
-                eSports Finder </a>
+                Esports Finder </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="navbar-toggler-icon"></span>

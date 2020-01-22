@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-8 ml-auto mr-auto">
                 <div class="brand text-center">
-                    <h1>eSports Finder</h1>
+                    <h1>Esports Finder</h1>
                     <h3 class="title text-center">online</h3>
                 </div>
             </div>

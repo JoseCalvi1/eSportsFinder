@@ -31,7 +31,7 @@
                 </a>
             </div>
             <div class="col-12 col-md-4 card-title padding-5">
-                <a href="#" class="link-title">
+                <a href="<?php echo $this->helper->url("Scrim", "index").'&id='.$_GET['id'] ?>" class="link-title">
                     <div class="info info-card">
                         <img src="assets/images/ts.jpg">
                         <h4 class="info-title"><?php echo $this->helper->translate('Game', 'LBL_TS') ?></h4>

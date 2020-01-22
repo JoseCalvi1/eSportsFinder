@@ -3,7 +3,7 @@
 $config = array();
 $config['debug'] = true;
 $config['session_name'] = 'a92a506b-708a-b1ae-gap-5b27871c5261';
-$config['app_name'] = 'eSportsFinder';
+$config['app_name'] = 'EsportsFinder';
 $config['site_url'] = 'http://127.0.0.1/eSportsFinder';
 $config['max_result_list'] = 100;
 $config['default_timezone'] = 'Europe/Madrid';
@@ -26,6 +26,6 @@ $config['emailsetting'] = array(
     'mail_smtppass' => 'cocotroco',
     'mail_smtpssl' => '',
     'mail_smtpport' => '25',
-    'smtp_from_addr' => 'esportsfinder@gmail.com',
+    'smtp_from_addr' => 'esportsfinder.online@gmail.com',
     'smtp_from_name' => 'Esports Finder',
 );

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Material Design for Bootstrap fonts and icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
-    <title>eSportsFinder <?php echo !empty($title) ? ' - ' . $title : '' ?></title>
+    <title>EsportsFinder <?php echo !empty($title) ? ' - ' . $title : '' ?></title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link href="vendor/bootstrap-material-design/bootstrap-material-design.css" rel="stylesheet" type="text/css"/>
     <link href="vendor/rippler/rippler.min.css" rel="stylesheet" type="text/css"/>

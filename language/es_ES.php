@@ -132,4 +132,10 @@ $language = array(
         'LBL_IN' => 'ha entrado a formar parte de',
         'LBL_OUT' => 'ha dejado de pertenecer a',
     ),
+    'Scrim' => array(
+        'LBL_TITLE' => 'Team Scrims',
+        'LBL_SCRIMS' => 'Scrims',
+        'LBL_MY_SCRIMS' => 'Mis scrims',
+        'LBL_CREATE_SCRIM' => 'Crear scrim',
+    ),
 );

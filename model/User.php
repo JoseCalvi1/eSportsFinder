@@ -217,7 +217,7 @@ class User extends ModeloBase
         $pwd_last_changed = new DateTime('now', new DateTimeZone($timezone));
         $email_template = str_replace('{pwd_last_changed}', $pwd_last_changed->format($date_format . ' ' . $time_format), $email_template);
         $email_template = str_replace('{link_guid}', $link, $email_template);
-        $email_subject = 'Reseteo de contraseña solicitado';
+        $email_subject = 'Activar cuenta';
         if ($this->sendMail($this, $email_subject, $email_template)) {
             return array('success' => true, 'msg' => "{$this->helper->translate('User','LBL_RESET_LINK_SENT')}");
         } else {
