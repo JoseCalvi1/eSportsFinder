@@ -24,10 +24,21 @@ class ScrimController extends ControladorBase
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
         $id_game = $_GET['id'];
 
+        $player = new GameProfile();
+        $user = $player->getList("id_game='{$id_game}' AND id_user='{$current_user->id}'", 'id', '100');
+        $user[0];
+
+        $scrim = new Scrim();
+        $scrims = $scrim->getInnerJoin('s.*, g.name AS NAME1, t.name AS NAME2', 'AS s INNER JOIN esf_teams AS g ON s.id_team1 = g.id INNER JOIN esf_teams AS t ON s.id_team2 = t.id',"s.id_game='{$id_game}'", 's.date_entered');
+        $my_scrims = $scrim->getInnerJoin('s.*, g.name AS NAME1, t.name AS NAME2', 'AS s INNER JOIN esf_teams AS g ON s.id_team1 = g.id INNER JOIN esf_teams AS t ON s.id_team2 = t.id',"s.id_team1='{$user[0]->id_team}' AND s.id_game='{$id_game}'", 's.date_entered');
+
         //Cargamos la vista index y le pasamos valores
         $this->view("Scrim/scrim", array(
             'title' => 'Team scrims',
             'current_user' => $current_user,
+            'user' => $user[0],
+            'scrims' => $scrims,
+            'my_scrims' => $my_scrims,
             'error' => $error,
         ));
     }

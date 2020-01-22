@@ -5,9 +5,9 @@ if (!$my_scrims) {
 foreach ($my_scrims as $my_scrim) { ?>
     <div class="col-12">
         <div class="card-message">
-            <h4 class="info-title"><?php echo $my_scrim->subject ?></h4>
-            <h6><?php echo $this->helper->translate('LBL_FROM') . ' ' . $my_scrim->name . ' ' . $this->helper->translate('LBL_AT') . ' ' . $my_scrim->date_modified ?></h6>
-            <p><?php echo $my_scrim->message ?></p>
+            <h4 class="info-title"><?php echo $my_scrim->NAME1 ?>  VS  <?php echo $my_scrim->NAME2 ?></h4>
+            <h6><?php echo $my_scrim->date_scrim ?></h6>
+            <h6><?php echo $my_scrim->duration ?></h6>
         </div>
     </div>
 <?php } ?>

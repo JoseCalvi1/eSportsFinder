@@ -1,69 +1,21 @@
-<?php
-if (!$invitations) {
-    echo $this->helper->translate('LBL_NO_RECORD');
-}
-foreach ($invitations as $invitation) { ?>
-    <div class="col-12">
-        <div class="card-message">
-            <h4 class="info-title"><?php echo $invitation->subject ?></h4>
-            <h6><?php echo $this->helper->translate('LBL_FROM') . ' ' . $invitation->name . ' ' . $this->helper->translate('LBL_AT') . ' ' . $invitation->date_modified ?></h6>
-            <p><?php echo $invitation->message ?></p>
-            <a data-toggle="modal" href="#myModalAcp" data-target="#accept-modal-<?php echo $invitation->id; ?>"
-               id="<?php echo $invitation->id; ?>">
-                <i class="material-icons">check</i><?php echo $this->helper->translate('LBL_ACCEPT'); ?></a>
-            <a data-toggle="modal" href="#myModalRef" data-target="#refuse-modal-<?php echo $invitation->id; ?>"
-               id="<?php echo $invitation->id; ?>">
-                <i class="material-icons">clear</i><?php echo $this->helper->translate('LBL_REFUSE'); ?></a>
-        </div>
+<form action="<?php echo $this->helper->url("Message", "sendMessage"); ?>" method="POST"
+      class="align-middle padding-5">
+    <input type="hidden" class="form-control" id="description" name="message[id_user_from]"
+           value="<?php echo $scrim->id_user_to ?>">
+    <input type="hidden" class="form-control" id="description" name="message[id_user_to]" required
+           value="<?php echo $scrim->id_user_from ?>">
+    <div class="form-group">
+        <label for="subject"
+               class="bmd-label-floating"><?php echo $this->helper->translate('Message', 'LBL_SUBJECT'); ?></label>
+        <input type="text" class="form-control" id="subject" name="message[subject]" required
+               value="<?php echo $scrim->subject ?>">
     </div>
-
-    <div id="accept-modal-<?php echo $invitation->id; ?>" class="modal fade" tabindex="-1" role="dialog"
-         aria-labelledby="myModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content" style="padding: 10px;">
-                <div class="modal-header">
-                    <h4 class="modal-title"
-                        id="myModalLabel"><?php echo $this->helper->translate('Message', 'LBL_ACCEPT_INV'); ?></h4>
-                </div>
-                <form action="<?php echo $this->helper->url("Message", "acceptInv"); ?>" method="POST"
-                      class="align-middle padding-5">
-                    <input type="hidden" class="form-control" id="description" name="message[id]"
-                           value="<?php echo $invitation->id ?>">
-                    <input type="hidden" class="form-control" id="id_game" name="message[id_game]"
-                           value="<?php echo $invitation->id_game ?>">
-                    <input type="hidden" class="form-control" id="id_team" name="message[id_team]"
-                           value="<?php echo $invitation->id_team ?>">
-                    <button type="submit" class="btn btn-primary btn-raised" name="registrar"
-                            value="Registrar"><?php echo $this->helper->translate('User', 'LBL_SUBMIT'); ?></button>
-                </form>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
+    <div class="form-group">
+        <label for="description"
+               class="bmd-label-floating"><?php echo $this->helper->translate('Message', 'LBL_DESCRIPTION'); ?></label>
+        <textarea class="form-control" rows="3" id="description" name="message[description]"
+                  required></textarea>
     </div>
-
-    <div id="refuse-modal-<?php echo $invitation->id; ?>" class="modal fade" tabindex="-1" role="dialog"
-         aria-labelledby="myModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content" style="padding: 10px;">
-                <div class="modal-header">
-                    <h4 class="modal-title"
-                        id="myModalLabel"><?php echo $this->helper->translate('Message', 'LBL_REFUSE_INV'); ?></h4>
-                </div>
-                <form action="<?php echo $this->helper->url("Message", "refuseInv"); ?>" method="POST"
-                      class="align-middle padding-5">
-                    <input type="hidden" class="form-control" id="description" name="message[id]"
-                           value="<?php echo $invitation->id ?>">
-                    <button type="submit" class="btn btn-primary btn-raised" name="registrar"
-                            value="Registrar"><?php echo $this->helper->translate('User', 'LBL_SUBMIT'); ?></button>
-                </form>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-<?php } ?>
+    <button type="submit" class="btn btn-primary btn-raised" name="registrar"
+            value="Registrar"><?php echo $this->helper->translate('User', 'LBL_SUBMIT'); ?></button>
+</form>
