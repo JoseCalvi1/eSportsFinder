@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `esf_game_profiles` (
   KEY `Índice 3` (`id_team`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Volcando datos para la tabla esportsfinder_v2.esf_game_profiles: ~7 rows (aproximadamente)
+-- Volcando datos para la tabla esportsfinder_v2.esf_game_profiles: ~6 rows (aproximadamente)
 DELETE FROM `esf_game_profiles`;
 /*!40000 ALTER TABLE `esf_game_profiles` DISABLE KEYS */;
 INSERT INTO `esf_game_profiles` (`id`, `id_user`, `id_game`, `id_team`, `name`, `description`, `play_time`, `availability`, `created_by`, `date_entered`, `modified_by`, `date_modified`, `deleted`) VALUES
@@ -134,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `esf_messages` (
   `deleted` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `Índice 2` (`id_user_from`,`id_user_to`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT;
 
 -- Volcando datos para la tabla esportsfinder_v2.esf_messages: ~1 rows (aproximadamente)
 DELETE FROM `esf_messages`;
@@ -159,13 +159,15 @@ CREATE TABLE IF NOT EXISTS `esf_scrims` (
   `date_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `deleted` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT;
 
 -- Volcando datos para la tabla esportsfinder_v2.esf_scrims: ~1 rows (aproximadamente)
 DELETE FROM `esf_scrims`;
 /*!40000 ALTER TABLE `esf_scrims` DISABLE KEYS */;
 INSERT INTO `esf_scrims` (`id`, `id_game`, `id_team1`, `id_team2`, `status`, `duration`, `date_scrim`, `created_by`, `date_entered`, `modified_by`, `date_modified`, `deleted`) VALUES
-	(5, 1, 1, 2, 'READY', 'Más o menos 2 horas', '2020-01-22 16:00:00', 0, '2020-01-22 12:43:51', 0, '2020-01-22 13:11:11', 0);
+	(5, 1, 1, 2, 'READY', 'Más o menos 2 horas', '2020-01-22 16:00:00', 0, '2020-01-22 12:43:51', 0, '2020-01-22 13:11:11', 0),
+	(6, 1, 1, 0, 'WAITING', 'Entre 2h y 3h', '2020-01-24 17:30:00', 3, '2020-01-22 15:46:09', 0, '2020-01-22 15:46:09', 0),
+	(8, 1, 1, 2, 'RESPONSED', 'Entre 2h y 3h', '2020-01-24 17:30:00', 6, '2020-01-22 17:33:32', 0, '2020-01-22 17:33:32', 0);
 /*!40000 ALTER TABLE `esf_scrims` ENABLE KEYS */;
 
 -- Volcando estructura para tabla esportsfinder_v2.esf_teams
@@ -241,7 +243,7 @@ CREATE TABLE IF NOT EXISTS `esf_users` (
   UNIQUE KEY `Índice 2` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Volcando datos para la tabla esportsfinder_v2.esf_users: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla esportsfinder_v2.esf_users: ~3 rows (aproximadamente)
 DELETE FROM `esf_users`;
 /*!40000 ALTER TABLE `esf_users` DISABLE KEYS */;
 INSERT INTO `esf_users` (`id`, `name`, `email`, `user_name`, `password`, `active`, `last_visit_date`, `date_entered`, `modified_by`, `date_modified`, `deleted`) VALUES
@@ -262,7 +264,7 @@ CREATE TABLE IF NOT EXISTS `esf_users_password_link` (
   KEY `idx_username` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- Volcando datos para la tabla esportsfinder_v2.esf_users_password_link: ~9 rows (aproximadamente)
+-- Volcando datos para la tabla esportsfinder_v2.esf_users_password_link: ~8 rows (aproximadamente)
 DELETE FROM `esf_users_password_link`;
 /*!40000 ALTER TABLE `esf_users_password_link` DISABLE KEYS */;
 INSERT INTO `esf_users_password_link` (`id`, `email`, `date_generated`, `deleted`) VALUES

@@ -58,7 +58,7 @@
     </div>
     <?php if($teams[0]->id_captain == $current_user->id) { ?>
     <form action="<?php echo $this->helper->url("Team", "deleteTeam"); ?>" method="POST" class="delete">
-        <input type="hidden" class="form-control" id="id_game" name="player[id_team]" required
+        <input type="hidden" class="form-control" id="id_team" name="player[id_team]" required
                value="<?php echo $teams[0]->id ?>">
         <input type="hidden" class="form-control" id="id_game" name="player[id_game]" required
                value="<?php echo $id_game ?>">

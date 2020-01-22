@@ -136,5 +136,7 @@ $language = array(
         'LBL_MY_SCRIMS' => 'My scrims',
         'LBL_CREATE_SCRIM' => 'Create scrim',
         'LBL_DURATION' => 'how long is it going to last?',
+        'LBL_RESPONSE' => 'Ask for it',
+        'LBL_RESPONSE_TEXT' => 'Do you want to request this team scrim?',
     ),
 );
