@@ -151,6 +151,7 @@ CREATE TABLE IF NOT EXISTS `esf_scrims` (
   `id_team1` int(11) NOT NULL DEFAULT '0',
   `id_team2` int(11) NOT NULL DEFAULT '0',
   `status` varchar(255) COLLATE utf8_bin NOT NULL,
+  `duration` varchar(255) COLLATE utf8_bin NOT NULL,
   `date_scrim` datetime NOT NULL,
   `created_by` int(11) NOT NULL,
   `date_entered` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -158,11 +159,13 @@ CREATE TABLE IF NOT EXISTS `esf_scrims` (
   `date_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `deleted` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT;
 
--- Volcando datos para la tabla esportsfinder_v2.esf_scrims: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla esportsfinder_v2.esf_scrims: ~1 rows (aproximadamente)
 DELETE FROM `esf_scrims`;
 /*!40000 ALTER TABLE `esf_scrims` DISABLE KEYS */;
+INSERT INTO `esf_scrims` (`id`, `id_game`, `id_team1`, `id_team2`, `status`, `duration`, `date_scrim`, `created_by`, `date_entered`, `modified_by`, `date_modified`, `deleted`) VALUES
+	(5, 1, 1, 2, 'READY', 'Más o menos 2 horas', '2020-01-22 16:00:00', 0, '2020-01-22 12:43:51', 0, '2020-01-22 13:11:11', 0);
 /*!40000 ALTER TABLE `esf_scrims` ENABLE KEYS */;
 
 -- Volcando estructura para tabla esportsfinder_v2.esf_teams
