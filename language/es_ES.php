@@ -137,5 +137,6 @@ $language = array(
         'LBL_SCRIMS' => 'Scrims',
         'LBL_MY_SCRIMS' => 'Mis scrims',
         'LBL_CREATE_SCRIM' => 'Crear scrim',
+        'LBL_DURATION' => '¿Cuanto durará?',
     ),
 );

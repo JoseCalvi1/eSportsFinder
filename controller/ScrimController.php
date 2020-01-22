@@ -29,8 +29,8 @@ class ScrimController extends ControladorBase
         $user[0];
 
         $scrim = new Scrim();
-        $scrims = $scrim->getInnerJoin('s.*, g.name AS NAME1, t.name AS NAME2', 'AS s INNER JOIN esf_teams AS g ON s.id_team1 = g.id INNER JOIN esf_teams AS t ON s.id_team2 = t.id',"s.id_game='{$id_game}'", 's.date_entered');
-        $my_scrims = $scrim->getInnerJoin('s.*, g.name AS NAME1, t.name AS NAME2', 'AS s INNER JOIN esf_teams AS g ON s.id_team1 = g.id INNER JOIN esf_teams AS t ON s.id_team2 = t.id',"s.id_team1='{$user[0]->id_team}' AND s.id_game='{$id_game}'", 's.date_entered');
+        $scrims = $scrim->getInnerJoin('s.*, g.name AS NAME1', 'AS s INNER JOIN esf_teams AS g ON s.id_team1 = g.id',"s.id_game='{$id_game}' AND s.status='WAITING'", 's.date_entered');
+        $my_scrims = $scrim->getInnerJoin('s.*, g.name AS NAME1, t.name AS NAME2', 'AS s INNER JOIN esf_teams AS g ON s.id_team1 = g.id INNER JOIN esf_teams AS t ON s.id_team2 = t.id',"(s.id_team1='{$user[0]->id_team}') or (s.id_team2='{$user[0]->id_team}') AND s.id_game='{$id_game}'", 's.date_entered');
 
         //Cargamos la vista index y le pasamos valores
         $this->view("Scrim/scrim", array(
@@ -41,6 +41,22 @@ class ScrimController extends ControladorBase
             'my_scrims' => $my_scrims,
             'error' => $error,
         ));
+    }
+
+    public function createTS()
+    {
+        global $current_user;
+        $scrim = new Scrim();
+
+        $scrim->id_game = $_REQUEST['scrim']['id_game'];
+        $scrim->id_team1 = $_REQUEST['scrim']['id_team'];
+        $scrim->duration = $_REQUEST['scrim']['duration'];
+        $scrim->date_scrim = $_REQUEST['scrim']['date_scrim'];
+        $scrim->status = "WAITING";
+        $scrim->save();
+
+        header("Location: index.php?controller=Scrim&action=index&id={$_REQUEST['scrim']['id_game']}");
+        die();
     }
 
 }
