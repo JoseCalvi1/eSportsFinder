@@ -29,8 +29,9 @@ class ScrimController extends ControladorBase
         $user[0];
 
         $scrim = new Scrim();
-        $scrims = $scrim->getInnerJoin('s.*, g.name AS NAME1', 'AS s INNER JOIN esf_teams AS g ON s.id_team1 = g.id', "s.id_game='{$id_game}' AND s.status='WAITING'", 's.date_entered');
-        $my_scrims = $scrim->getInnerJoin('s.*, g.name AS NAME1, t.name AS NAME2', 'AS s INNER JOIN esf_teams AS g ON s.id_team1 = g.id INNER JOIN esf_teams AS t ON s.id_team2 = t.id', "(s.id_team1='{$user[0]->id_team}') or (s.id_team2='{$user[0]->id_team}') AND s.id_game='{$id_game}'", 's.date_entered');
+        $scrims = $scrim->getInnerJoin('s.*, g.name AS NAME1', 'AS s INNER JOIN esf_teams AS g ON s.id_team1 = g.id', "s.id_game='{$id_game}' AND s.status='WAITING' AND s.id_team1!='{$user[0]->id_team}' AND s.id_team2!='{$user[0]->id_team}'", 's.date_entered');
+        $my_scrims = $scrim->getInnerJoin('s.*, g.name AS NAME1, t.name AS NAME2', 'AS s INNER JOIN esf_teams AS g ON s.id_team1 = g.id INNER JOIN esf_teams AS t ON s.id_team2 = t.id', "((s.id_team1='{$user[0]->id_team}') or (s.id_team2='{$user[0]->id_team}')) AND s.id_game='{$id_game}' AND s.status ='READY'", 's.date_entered');
+        $waiting_scrims = $scrim->getInnerJoin('s.*, g.name AS NAME1, t.name AS NAME2', 'AS s INNER JOIN esf_teams AS g ON s.id_team1 = g.id INNER JOIN esf_teams AS t ON s.id_team2 = t.id', "((s.id_team1='{$user[0]->id_team}') or (s.id_team2='{$user[0]->id_team}')) AND s.id_game='{$id_game}' AND s.status ='RESPONSED'", 's.date_entered');
 
         //Cargamos la vista index y le pasamos valores
         $this->view("Scrim/scrim", array(
@@ -39,6 +40,7 @@ class ScrimController extends ControladorBase
             'user' => $user[0],
             'scrims' => $scrims,
             'my_scrims' => $my_scrims,
+            'waiting' => $waiting_scrims,
             'error' => $error,
         ));
     }

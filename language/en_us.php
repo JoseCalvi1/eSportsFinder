@@ -138,5 +138,7 @@ $language = array(
         'LBL_DURATION' => 'how long is it going to last?',
         'LBL_RESPONSE' => 'Ask for it',
         'LBL_RESPONSE_TEXT' => 'Do you want to request this team scrim?',
+        'LBL_READY' => 'Accepted',
+        'LBL_WAITING' => 'Pending',
     ),
 );
