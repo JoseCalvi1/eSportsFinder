@@ -3,6 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-8 card-title padding-5">
+                <h4 class="info-title"><?php echo $this->helper->translate('Team', 'LBL_TEAM_TITLE') ?></h4>
                 <a class="link-theme" href="<?php echo $this->helper->url("Game", "teamlist").'&id='.$_GET['id'] ?>"><?php echo $this->helper->translate('LBL_SEE_MORE') ?></a><br>
                 <?php if(!$teams) { echo $this->helper->translate('LBL_NO_RECORD'); } ?>
                 <?php foreach ($teams as $team) { ?>

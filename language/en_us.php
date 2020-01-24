@@ -140,5 +140,6 @@ $language = array(
         'LBL_RESPONSE_TEXT' => 'Do you want to request this team scrim?',
         'LBL_READY' => 'Accepted',
         'LBL_WAITING' => 'Pending',
+        'LBL_ACCEPT' => 'Accept TS',
     ),
 );

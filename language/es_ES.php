@@ -83,7 +83,7 @@ $language = array(
         'LBL_DESCRIPTION' => 'Descripción',
         'LBL_PLAY_TIME' => 'Horas de juego',
         'LBL_AVAILABILITY' => 'Disponibilidad',
-        'LBL_TEAM_TITLE' => 'Búsqueda de equipos',
+        'LBL_TEAM_TITLE' => 'Listado de equipos',
         'LBL_SEARCH' => 'Puedes buscar un equipo por su nombre, tiempo de juego o disponibilidad:',
         'LBL_PLAYERS' => 'Jugadores',
         'LBL_NEW_PLAYER' => 'Agregar nuevo jugador',
@@ -142,5 +142,6 @@ $language = array(
         'LBL_RESPONSE_TEXT' => '¿Quieres solicitar esta team scrim?',
         'LBL_READY' => 'Aceptadas',
         'LBL_WAITING' => 'Pendientes',
+        'LBL_ACCEPT' => 'Aceptar TS',
     ),
 );
