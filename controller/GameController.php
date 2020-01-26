@@ -50,7 +50,7 @@ class GameController extends ControladorBase
                 'teams' => $teams,
             ), true);
         } else {
-            //Cargamos la vista index y le pasamos valores
+            //Cargamos la vista create player y le pasamos valores
             $this->view("Game/createplayer", array(
                 'title' => 'Player create',
                 'error' => $error,

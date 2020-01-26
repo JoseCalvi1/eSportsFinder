@@ -88,7 +88,7 @@ class UserController extends ControladorBase
         if ($user->login($_REQUEST['username'], $_REQUEST['password'])) {
             $this->redirect(CONTROLADOR_HOME_DEFECTO, ACCION_HOME_DEFECTO);
         } else {
-            $this->redirect('User', 'index', array('error' => $this->helper->translate('User', '')));
+            $this->redirect('User', 'index', array('error' => $this->helper->translate('User', 'LBL_ERROR_LOGIN')));
         }
     }
 

@@ -38,6 +38,7 @@ $language = array(
         'LBL_ENTER' => 'Entrar',
         'LBL_SUBMIT' => 'Enviar',
         'LBL_ERROR_LOGIN' => 'Usuario o contraseña incorrectos',
+        'LBL_ERROR_CONFIRM' => 'Error al confirmar email',
         'LBL_REGISTER' => 'Registro',
         'LBL_FORGOT_PASS' => '¿No puedes ingresar?',
         'LBL_FORGOT_TITLE' => 'Enviaremos un email a',
@@ -143,5 +144,6 @@ $language = array(
         'LBL_READY' => 'Aceptadas',
         'LBL_WAITING' => 'Pendientes',
         'LBL_ACCEPT' => 'Aceptar TS',
+        'LBL_ERROR_CREATE' => 'Error al crear la scrim',
     ),
 );

@@ -23,6 +23,12 @@
     </style>
     <div class="container">
         <h2><?php echo $this->helper->translate('Scrim', 'LBL_TITLE'); ?></h2>
+       <!-- <?php /*echo('<pre>'.print_r($this, true).'</pre>');
+        if ($error) { */?>
+            <div class="alert alert-danger" role="alert">
+                This is a danger alert—check it out!
+            </div>
+        --><?php /*} */?>
         <div class="row">
 
             <ul class="nav nav-tabs" id="myTab" role="tablist">
