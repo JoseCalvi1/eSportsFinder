@@ -7,10 +7,10 @@
         <p><?= $this->helper->translate('GameProfile', 'LBL_SEARCH') ?></p>
         <div id="myBtnContainer">
             <button class="btn active" onclick="filterSelection('all')"> <?= $this->helper->translate('LBL_ALL'); ?></button>
-            <?php foreach ($users as $key => $user) { 
-                if ($users[$key]->description) { ?>
+            <?php foreach ($roles as $key => $rol) {
+                if ($roles[$key]->name) { ?>
                 <button class="btn"
-                        onclick="filterSelection('<?= $users[$key]->description ?>')"> <?= $users[$key]->description ?></button>
+                        onclick="filterSelection('<?= $roles[$key]->name ?>')"> <?= $roles[$key]->name ?></button>
             <?php }  
         } ?>
         </div>

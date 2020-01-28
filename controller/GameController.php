@@ -86,13 +86,16 @@ class GameController extends ControladorBase
         $user_team = new GameProfile();
         $id_team = $user_team->getList("id_user='{$current_user->id}' AND id_game='{$id_game}'", 'id', 1);
         $user = new GameProfile();
+        $rol = new GameRole();
         $users = $user->getList("id_game='{$id_game}' AND id_team='0'", 'id', '100');
+        $roles = $rol->getList("id_game='{$id_game}'", 'id', '100');
 
         //Cargamos la vista teamlist y le pasamos valores
         $this->view("Game/falist", array(
             'title' => 'Free agents list',
             'error' => $error,
             'users' => $users,
+            'roles' => $roles,
             'id_team' => $id_team[0]->id_team,
             'id_game' => $id_game,
         ), true);
