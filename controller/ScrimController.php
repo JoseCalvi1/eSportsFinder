@@ -91,4 +91,19 @@ class ScrimController extends ControladorBase
         die();
     }
 
+    public function deleteScrim()
+    {
+        global $current_user;
+        $scrim = new Scrim();
+        $scrim->id = $_REQUEST['scrim']['id'];
+        $scrim->id_game = $_REQUEST['scrim']['id_game'];
+
+        if($scrim->id) {
+            $scrim->deleteBy('id', $scrim->id);
+        }
+
+        header("Location: index.php?controller=Scrim&action=index&id={$scrim->id_game}");
+        die();
+    }
+
 }

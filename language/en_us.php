@@ -60,6 +60,7 @@ $language = array(
         'LBL_PASSWORD_NOT_EQUAL' => 'Debe repetir la contraseña, los valores no son iguales.',
         'LBL_LOGOUT' => 'Logout',
         'LBL_NO_RECORD' => 'No records',
+        'LBL_NO_TEAM' => 'You need to be in a team to create team scrims',
     ),
     'Game' => array(
         'LBL_GAMES' => 'Games',
@@ -138,7 +139,9 @@ $language = array(
         'LBL_CREATE_SCRIM' => 'Create scrim',
         'LBL_DURATION' => 'how long is it going to last?',
         'LBL_RESPONSE' => 'Ask for it',
+        'LBL_DECLINE' => 'Delete',
         'LBL_RESPONSE_TEXT' => 'Do you want to request this team scrim?',
+        'LBL_DECLINE_TEXT' => 'Do you want to delete this team scrim?',
         'LBL_READY' => 'Accepted',
         'LBL_WAITING' => 'Pending',
         'LBL_ACCEPT' => 'Accept TS',

@@ -1,3 +1,8 @@
+<?php if(!$user->id_team) { ?>
+    <div class="alert alert-warning" role="alert">
+        <?php echo $this->helper->translate('User', 'LBL_NO_TEAM'); ?>
+    </div>
+<?php } else { ?>
 <form action="<?php echo $this->helper->url("Scrim", "createTS"); ?>" method="POST"
       class="align-middle padding-5">
     <input type="hidden" class="form-control" id="id_game" name="scrim[id_game]"
@@ -15,3 +20,4 @@
     <button type="submit" class="btn btn-primary btn-raised" name="registrar"
             value="Registrar"><?php echo $this->helper->translate('User', 'LBL_SUBMIT'); ?></button>
 </form>
+<?php } ?>
