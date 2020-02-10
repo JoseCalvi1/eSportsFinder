@@ -3,25 +3,29 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <form action="<?php echo $this->helper->url("", ""); ?>" method="POST"
+            <form action="<?php echo $this->helper->url("User", "editUser"); ?>" method="POST"
                   class="align-middle padding-5">
+                <input type="hidden" class="form-control" id="name" name="user[id]" value="<?= $current_user->id; ?>">
                 <div class="form-group">
                     <label for="name"
                            class="bmd-label-floating"><?php echo $this->helper->translate('User', 'LBL_NAME'); ?></label>
-                    <input type="text" class="form-control" id="name" name="name" value="<?= $current_user->name; ?>">
+                    <input type="text" class="form-control" id="name" name="user[name]" value="<?= $current_user->name; ?>">
                 </div>
                 <div class="form-group">
                     <label for="name"
                            class="bmd-label-floating"><?php echo $this->helper->translate('User', 'LBL_EMAIL'); ?></label>
-                    <input type="text" class="form-control" id="email" name="email"
+                    <input type="text" class="form-control" id="email" name="user[email]"
                            value="<?= $current_user->email; ?>">
                 </div>
                 <div class="form-group">
                     <label for="name"
                            class="bmd-label-floating"><?php echo $this->helper->translate('User', 'LBL_USERNAME'); ?></label>
-                    <input type="text" class="form-control" id="name" name="user_name"
+                    <input type="text" class="form-control" id="name" name="user[user_name]"
                            value="<?= $current_user->user_name; ?>">
                 </div>
+                <button type="submit" class="btn btn-info btn-raised">
+                    <i class="material-icons">create</i> <?php echo $this->helper->translate('GameProfile', 'LBL_PLAYER_EDIT'); ?>
+                </button>
             </form>
         </div>
 
@@ -115,6 +119,13 @@
                 </div>
             <?php } ?>
         </div>
+        <form action="<?php echo $this->helper->url("User", "deleteFUser"); ?>" method="POST"
+              class="align-middle padding-5">
+            <input type="hidden" class="form-control" id="name" name="user[id]" value="<?= $current_user->id; ?>">
+            <button type="submit" class="btn btn-danger btn-raised">
+                <i class="material-icons">block</i> <?php echo $this->helper->translate('GameProfile', 'LBL_DELETE_PLAYER'); ?>
+            </button>
+        </form>
     </div>
 </div>
 

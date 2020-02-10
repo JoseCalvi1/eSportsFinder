@@ -132,10 +132,10 @@ class EntidadBase
     public function update($id = '')
     {
         if(empty($id)) $id = $this->id;
-
         $sets = array();
         foreach ($this->fields as $key => $value) {
             $value = $this->$key;
+            // TODO: No puedo mandar el active = 0 porque lo detecta como vacío
             if (!empty($value) && $key != 'id') {
                 $sets[] = " {$key} = '{$value}' ";
             }

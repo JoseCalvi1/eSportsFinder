@@ -173,9 +173,38 @@ class UserController extends ControladorBase
         ));
     }
 
+    public function editUser()
+    {
+        $user = new User();
+
+        $user->id = $_REQUEST['user']['id'];
+        $user->name = $_REQUEST['user']['name'];
+        $user->email = $_REQUEST['user']['email'];
+        $user->user_name = $_REQUEST['user']['user_name'];
+
+        $user->save();
+        header("Location: index.php?controller=User&action=profile");
+        die();
+    }
+
+    public function deleteFUser()
+    {
+        $user = new User();
+
+        $user->id = $_REQUEST['user']['id'];
+        $user->active = '2';
+
+        $user->save();
+        $this->logout();
+    }
+
     public function profile()
     {
         global $current_user;
+
+        $user = new User();
+        $user = $user->getBy('id', $current_user->id);
+
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
         $players = new GameProfile();
         $player = $players->getInnerJoin('p.*, g.name AS game_name', 'AS p INNER JOIN esf_games AS g ON p.id_game = g.id', "id_user='{$current_user->id}'", 'id');
@@ -184,7 +213,7 @@ class UserController extends ControladorBase
         $this->view("User/profile", array(
             'title' => 'Profile',
             'error' => $error,
-            'current_user' => $current_user,
+            'current_user' => $user[0],
             'player' => $player,
         ), true);
 
