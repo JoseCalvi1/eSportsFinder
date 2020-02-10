@@ -123,6 +123,7 @@ $language = array(
         'LBL_INVITES' => 'Invitaciones',
         'LBL_SENT_MESSAGE' => 'Enviados',
         'LBL_SEND_MESSSAGE' => 'Enviar mensaje',
+        'LBL_USER_TO' => 'Enviar a',
         'LBL_SUBJECT' => 'Asunto',
         'LBL_DESCRIPTION' => 'Mensaje',
         'LBL_REPLY' => 'Contestar',

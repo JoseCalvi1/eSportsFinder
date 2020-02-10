@@ -41,6 +41,11 @@
                        aria-controls="contact"
                        aria-selected="false"><?php echo $this->helper->translate('Message', 'LBL_INVITES'); ?></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#create" role="tab"
+                       aria-controls="contact"
+                       aria-selected="false"><?php echo $this->helper->translate('User', 'LBL_SUBMIT'); ?></a>
+                </li>
             </ul>
         </div>
         <div class="row">
@@ -51,6 +56,8 @@
                      aria-labelledby="profile-tab"><?php include_once "sent_messages.php"; ?></div>
                 <div class="tab-pane fade" id="contact" role="tabpanel"
                      aria-labelledby="contact-tab"><?php include_once "invites.php"; ?></div>
+                <div class="tab-pane fade" id="create" role="tabpanel"
+                     aria-labelledby="contact-tab"><?php include_once "create.php"; ?></div>
             </div>
         </div>
     </div>

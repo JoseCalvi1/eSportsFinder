@@ -19,7 +19,7 @@ class MessageController extends ControladorBase
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
 
         $message = new Message();
-        $messages = $message->getInnerJoin('m.*, u.name','AS m INNER JOIN esf_users AS u ON m.id_user_from = u.id',"id_user_to='{$current_user->id}'", 'date_entered');
+        $messages = $message->getInnerJoin('m.*, u.name','AS m INNER JOIN esf_users AS u ON m.id_user_from = u.id',"id_user_to='{$current_user->id}' AND status!='INV'", 'date_entered');
         $sent_messages = $message->getInnerJoin('m.*, u.name', 'AS m INNER JOIN esf_users AS u ON m.id_user_from = u.id',"id_user_from='{$current_user->id}'", 'date_entered');
         $invitations = $message->getInnerJoin('m.*, u.name', 'AS m INNER JOIN esf_users AS u ON m.id_user_from = u.id',"id_user_to='{$current_user->id}' AND status='INV'", 'date_entered');
         //Cargamos la vista index y le pasamos valores
@@ -39,12 +39,20 @@ class MessageController extends ControladorBase
         global $current_user;
         $message = new Message();
 
+        if($_REQUEST['message']['user_to']) {
+            $user = new User();
+            $id = $user->getBy('user_name', $_REQUEST['message']['user_to']);
+            $message->id_user_to = $id[0]->id;
+        } else {
+            $message->id_user_to = $_REQUEST['message']['id_user_to'];
+        }
+
         $message->id_user_from = $current_user->id;
-        $message->id_user_to = $_REQUEST['message']['id_user_to'];
         $message->subject = $_REQUEST['message']['subject'];
         $message->message = $_REQUEST['message']['description'];
         $message->created_by = $current_user->id;
         $message->modified_by = $current_user->id;
+        
         $message->save();
 
         $this->redirect('Message', 'index');

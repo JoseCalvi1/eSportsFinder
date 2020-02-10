@@ -25,9 +25,9 @@ foreach ($messages as $message) { ?>
                 </div>
                 <form action="<?php echo $this->helper->url("Message", "sendMessage"); ?>" method="POST"
                       class="align-middle padding-5">
-                    <input type="hidden" class="form-control" id="description" name="message[id_user_from]"
+                    <input type="hidden" class="form-control" id="description" name="message[id_user_to]"
                            value="<?php echo $message->id_user_to ?>">
-                    <input type="hidden" class="form-control" id="description" name="message[id_user_to]" required
+                    <input type="hidden" class="form-control" id="description" name="message[id_user_from]" required
                            value="<?php echo $message->id_user_from ?>">
                     <div class="form-group">
                         <label for="subject"
