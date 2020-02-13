@@ -20,10 +20,10 @@ $config['passwordsetting'] =
     );
 
 $config['emailsetting'] = array(
-    'mail_smtpserver' => 'mail.setneuf.com',
+    'mail_smtpserver' => 'in-v3.mailjet.com',
     'mail_smtpauth_req' => 1,
-    'mail_smtpuser' => 'dev1@setneuf.com',
-    'mail_smtppass' => 'cocotroco',
+    'mail_smtpuser' => '710fca766b2e62b20187057e09274331',
+    'mail_smtppass' => '00e083d154b74b93bb0d4ab826ff068d',
     'mail_smtpssl' => '',
     'mail_smtpport' => '25',
     'smtp_from_addr' => 'esportsfinder.online@gmail.com',
