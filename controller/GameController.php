@@ -37,8 +37,10 @@ class GameController extends ControladorBase
         $players = new GameProfile();
         $roles = new GameRole();
         $game = new Game();
-        $id_game = $game->getBy('id', $_GET['id']);
-        $media = $id_game[0]->media;
+        $id_game = $_GET['id'];
+
+        $idgame = $game->getBy('id', $_GET['id']);
+        $media = $idgame[0]->media;
 
         $teams = $team->getList("id_game='{$id_game}'", 'id', 4);
         $player = $players->getList("id_user='{$current_user->id}' AND id_game='{$id_game}'", 'id', 1);
@@ -68,9 +70,8 @@ class GameController extends ControladorBase
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
         $team = new Team();
         $game = new Game();
-        $id_game = $game->getBy('id', $_GET['id']);
-        $media = $id_game[0]->media;
-        $teams = $team->getList("media='{$media}'", 'id', 20);
+        $id_game = $_GET['id'];
+        $teams = $team->getList("id_game='{$id_game}'", 'id', 20);
 
 
         //Cargamos la vista teamlist y le pasamos valores
