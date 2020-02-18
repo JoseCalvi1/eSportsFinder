@@ -39,7 +39,7 @@ class GameController extends ControladorBase
         $game = new Game();
         $id_game = $_GET['id'];
 
-        $idgame = $game->getBy('id', $_GET['id']);
+        $idgame = $game->getBy('id', $id_game);
         $media = $idgame[0]->media;
 
         $teams = $team->getList("id_game='{$id_game}'", 'id', 4);
@@ -52,6 +52,7 @@ class GameController extends ControladorBase
                 'title' => 'Game home',
                 'error' => $error,
                 'teams' => $teams,
+                'game' => $idgame[0],
             ), true);
         } else {
             //Cargamos la vista create player y le pasamos valores

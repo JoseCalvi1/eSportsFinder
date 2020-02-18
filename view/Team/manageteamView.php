@@ -1,7 +1,7 @@
 <?php include_once "view/Game/header.php"; ?>
 
 <div class="container-fluid d-none d-sm-block"
-     style="margin-top:-20px; background-image: url('assets/images/<?php echo strtolower($id_game); ?>/option1.jpg'); position:relative; background-size: cover; height: 100%; width: 100% ;">
+     style="margin-top:-20px; background-image: url('assets/images/<?php echo strtolower($game->media); ?>/option1.jpg'); position:relative; background-size: cover; height: 100%; width: 100% ;">
     <div class="container">
         <h1 class="info-title"
             style="color: white; padding-top: 150px"><?php echo $teams[0]->name . ' [' . $teams[0]->team_tag . ']' ?></h1>

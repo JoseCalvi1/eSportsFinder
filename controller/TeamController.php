@@ -22,6 +22,8 @@ class TeamController extends ControladorBase
         global $current_user;
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
         $id_game = $_GET['id'];
+        $games = new Game();
+        $game = $games->getBy('id', $id_game);
         $player = new GameProfile();
         $players = $player->getList("id_user = {$current_user->id} AND id_game={$id_game}", 'id', '1');
         $team = new Team();
@@ -38,6 +40,7 @@ class TeamController extends ControladorBase
                 'players' => $players,
                 'id_game' => $id_game,
                 'current_user' => $current_user,
+                'game' => $game[0],
                 //'id_captain' => $id_captain[0]->id,
             ), true);
         } else {
