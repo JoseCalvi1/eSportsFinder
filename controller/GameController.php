@@ -49,7 +49,7 @@ class GameController extends ControladorBase
         if ($player) {
             //Cargamos la vista home y le pasamos valores
             $this->view("Game/home", array(
-                'title' => 'Game home',
+                'title' => $idgame[0]->name,
                 'error' => $error,
                 'teams' => $teams,
                 'game' => $idgame[0],

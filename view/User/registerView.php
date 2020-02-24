@@ -46,8 +46,8 @@
                         <label for="password"
                                class="bmd-label-floating"><?php echo $this->helper->translate('User', 'LBL_PASSWORD'); ?></label>
                         <input type="password" class="form-control" id="password" name="user[password]"
-                               pattern="[A-Za-z0-9!?-_]{8,12}"
-                               title="Letras mayúsculas, minúsculas, números y los caracteres !?-_ Su tamaño: entre 8 y 12 caracteres."
+                               pattern="[A-Za-z0-9!?-_.]{5,12}"
+                               title="Letras mayúsculas, minúsculas, números y los caracteres !?-_. Su tamaño: entre 5 y 12 caracteres."
                                required>
                         <span class="bmd-help"><?php echo $this->helper->translate('User', 'LBL_PASSWORD_REGEX'); ?></span>
                         <?php if (!empty($error['password'])): ?>

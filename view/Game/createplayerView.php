@@ -21,7 +21,7 @@
                         <input id="id_game" type="hidden" class="form-control" name="player[id_game]"
                                value="<?php echo $id_game ?>" required>
                         <label for="name"><?= $this->helper->translate('GameProfile','LBL_NAME') ?>:</label>
-                        <input id="name" type="text" class="form-control" pattern="[a-zA-Z]{1,15}" placeholder="<?= $this->helper->translate('GameProfile','LBL_NAME') ?>"
+                        <input id="name" type="text" class="form-control" placeholder="<?= $this->helper->translate('GameProfile','LBL_NAME') ?>"
                                name="player[name]" required>
                     </div>
                     <?php if ($role) { ?>
