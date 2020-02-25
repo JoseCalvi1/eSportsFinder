@@ -207,14 +207,18 @@ class UserController extends ControladorBase
 
         $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
         $players = new GameProfile();
-        $player = $players->getInnerJoin('p.*, g.name AS game_name', 'AS p INNER JOIN esf_games AS g ON p.id_game = g.id', "id_user='{$current_user->id}'", 'id');
+        $player = $players->getInnerJoin('p.*, g.name AS game_name, g.media AS media', 'AS p INNER JOIN esf_games AS g ON p.id_game = g.id', "id_user='{$current_user->id}'", 'id');
 
+        $roles = new GameRole();
+        $role[] = $roles->getAll('media');
+    
         //Cargamos la vista teamlist y le pasamos valores
         $this->view("User/profile", array(
             'title' => 'Profile',
             'error' => $error,
             'current_user' => $user[0],
             'player' => $player,
+            'roles' => $role[0],
         ), true);
 
     }
