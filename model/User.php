@@ -111,9 +111,9 @@ class User extends ModeloBase
             if($data['password'] != $data['rep_password']){
                 $errores['rep_password'] = $this->helper->translate('User','LBL_PASSWORD_NOT_EQUAL');
             }
-            if(!preg_match('/[A-Za-z0-9!?-_.]{5,12}/',$data['password'])){
+            /*if(!preg_match('/{5,12}/',$data['password'])){
                 $errores['password'] = $this->helper->translate('User','LBL_PASSWORD_NOT_EQUAL');
-            }
+            }*/
         }
 
         if(!empty($data['email']) && !preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i',$data['email'])){
