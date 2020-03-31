@@ -50,7 +50,6 @@ class UserController extends ControladorBase
                 } else {
                     $error = $user->validateRegister($_REQUEST['user']);
                 }
-                die('<pre>'.print_r('fuera',true).'</pre>');
                 $this->redirect(CONTROLADOR_HOME_DEFECTO, 'index');
             }
         }
@@ -183,20 +182,6 @@ class UserController extends ControladorBase
         ));
     }
 
-    public function editUser()
-    {
-        $user = new User();
-
-        $user->id = $_REQUEST['user']['id'];
-        $user->name = $_REQUEST['user']['name'];
-        $user->email = $_REQUEST['user']['email'];
-        $user->user_name = $_REQUEST['user']['user_name'];
-
-        $user->save();
-        header("Location: index.php?controller=User&action=profile");
-        die();
-    }
-
     public function deleteFUser()
     {
         $user = new User();
@@ -211,11 +196,30 @@ class UserController extends ControladorBase
     public function profile()
     {
         global $current_user;
-
+        $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
+        if($_REQUEST['user']['id']) {
+            $user = new User();
+            $error = $user->validateRegister($_REQUEST['user']);
+            if($_REQUEST['user']['email'] == $current_user->email) {
+                $error['email'] = '';
+            }
+            if($_REQUEST['user']['user_name'] == $current_user->user_name) {
+                $error['user_name'] = '';
+            }
+            $user->id = $_REQUEST['user']['id'];
+            $user->name = $_REQUEST['user']['name'];
+            if (empty($error['email'])) {
+                $user->email = $_REQUEST['user']['email'];
+            }
+            if(empty($error['user_name'])) {
+                $user->user_name = $_REQUEST['user']['user_name'];
+            }
+            $user->save();
+        }
         $user = new User();
         $user = $user->getBy('id', $current_user->id);
 
-        $error = !empty($_REQUEST['error']) ? $_REQUEST['error'] : '';
+
         $players = new GameProfile();
         $player = $players->getInnerJoin('p.*, g.name AS game_name, g.media AS media', 'AS p INNER JOIN esf_games AS g ON p.id_game = g.id', "id_user='{$current_user->id}'", 'id');
 

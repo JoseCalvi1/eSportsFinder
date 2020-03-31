@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <form action="<?php echo $this->helper->url("User", "editUser"); ?>" method="POST"
+            <form action="<?php echo $this->helper->url("User", "profile"); ?>" method="POST"
                   class="align-middle padding-5">
                 <input type="hidden" class="form-control" id="name" name="user[id]" value="<?= $current_user->id; ?>">
                 <div class="form-group">
@@ -17,12 +17,18 @@
                            class="bmd-label-floating"><?php echo $this->helper->translate('User', 'LBL_EMAIL'); ?></label>
                     <input type="text" class="form-control" id="email" name="user[email]"
                            value="<?= $current_user->email; ?>">
+                    <?php if (!empty($error['email'])): ?>
+                        <span class=" text-danger"><?php echo $error['email']; ?></span>
+                    <?php endif; ?>
                 </div>
                 <div class="form-group">
                     <label for="name"
                            class="bmd-label-floating"><?php echo $this->helper->translate('User', 'LBL_USERNAME'); ?></label>
                     <input type="text" class="form-control" id="name" name="user[user_name]"
                            value="<?= $current_user->user_name; ?>">
+                    <?php if (!empty($error['user_name'])): ?>
+                        <span class=" text-danger"><?php echo $error['user_name']; ?></span>
+                    <?php endif; ?>
                 </div>
                 <button type="submit" class="btn btn-info btn-raised">
                     <i class="material-icons">create</i> <?php echo $this->helper->translate('GameProfile', 'LBL_PLAYER_EDIT'); ?>
