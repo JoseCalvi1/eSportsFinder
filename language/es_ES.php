@@ -58,6 +58,7 @@ $language = array(
         'LBL_ERROR_RETRIEVING_USER' => 'Error al recuperar el usuario',
         'LBL_ERROR_RETRIEVING_TEMPLATE' => 'Error al recuperar el Email template',
         'LBL_EMAIL_EXISTING' => 'Este email ya está en uso',
+        'LBL_USERNAME_EXISTING' => 'Este usuario ya está en uso',
         'LBL_EMAIL_REGEX' => 'Correo electrónico no válido',
         'LBL_PASSWORD_REGEX' => 'Tamaño: entre 5 y 12 caracteres',
         'LBL_PASSWORD_NOT_EQUAL' => 'Debe repetir la contraseña, los valores no son iguales.',

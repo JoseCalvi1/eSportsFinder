@@ -128,6 +128,14 @@ class User extends ModeloBase
             }
         }
 
+        if(empty($errores['user_name'])){
+            $sql = "SELECT user_name from esf_users WHERE user_name = '{$data['user_name']}'";
+            $res = $this->ejecutarSql($sql);
+            if(!empty($res->user_name)){
+                $errores['user_name'] = $this->helper->translate('User', 'LBL_USERNAME_EXISTING');
+            }
+        }
+
         // Validación de required
         foreach ($data as $campo => $dato) {
             if(!$dato) {
