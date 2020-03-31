@@ -63,6 +63,7 @@ $language = array(
         'LBL_PASSWORD_NOT_EQUAL' => 'Debe repetir la contraseña, los valores no son iguales.',
         'LBL_LOGOUT' => 'Cerrar sesión',
         'LBL_NO_TEAM' => 'Necesitas estar en un equipo para crear team scrims',
+        'LBL_SEND_EMAIL_CONFIRMATION' => 'Hemos enviado un email de confirmación a:',
     ),
     'Game' => array(
         'LBL_GAMES' => 'Juegos',

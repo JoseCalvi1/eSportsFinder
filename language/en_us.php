@@ -61,6 +61,7 @@ $language = array(
         'LBL_LOGOUT' => 'Logout',
         'LBL_NO_RECORD' => 'No records',
         'LBL_NO_TEAM' => 'You need to be in a team to create team scrims',
+        'LBL_SEND_EMAIL_CONFIRMATION' => 'We sent you a confirmation email to:',
     ),
     'Game' => array(
         'LBL_GAMES' => 'Games',

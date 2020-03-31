@@ -39,9 +39,18 @@ class UserController extends ControladorBase
                 $user->active = 0;
                 if ($user->sendConfirmEmailMail()) {
                     $user->save();
+                    //Cargamos la vista index y le pasamos valores
+                    $this->view("User/emailSent", array(
+                        'title' => $this->helper->translate('User', 'LBL_FORGOT_TITLE'),
+                        'email' => $_REQUEST['user']['email'],
+                        'error' => $error,
+                        'msg' => $this->helper->translate('User', 'LBL_SEND_EMAIL_CONFIRMATION'),
+                    ));
+                    return true;
                 } else {
                     $error = $user->validateRegister($_REQUEST['user']);
                 }
+                die('<pre>'.print_r('fuera',true).'</pre>');
                 $this->redirect(CONTROLADOR_HOME_DEFECTO, 'index');
             }
         }
@@ -146,8 +155,9 @@ class UserController extends ControladorBase
 
             $user = new User();
             $user_exist = $user->getBy('email', $_REQUEST['useremail']);
-            $user->getById($user_exist[0]->id);
+
             if ($user_exist) {
+                $user->getById($user_exist[0]->id);
                 $result = $user->sendResetPasswordMail($_REQUEST['useremail']);
                 if ($result['success']) {
                     $msg = $result['msg'] ? $result['msg'] : '';
@@ -211,7 +221,7 @@ class UserController extends ControladorBase
 
         $roles = new GameRole();
         $role[] = $roles->getAll('media');
-    
+
         //Cargamos la vista teamlist y le pasamos valores
         $this->view("User/profile", array(
             'title' => 'Profile',
