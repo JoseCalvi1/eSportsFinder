@@ -2,8 +2,11 @@
     <div class="container">
         <div class="navbar-translate">
             <a class="navbar-brand" href="<?php echo $this->config['site_url']; ?>">
-                Esports Finder </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="d-none d-sm-block"><img height="50" src="assets/images/logo_header.png"></div>
+                <div class="d-block d-sm-none"><img height="50" src="assets/images/icono_finder.svg"></div>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
+                    aria-label="Toggle navigation">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="navbar-toggler-icon"></span>
                 <span class="navbar-toggler-icon"></span>
@@ -14,12 +17,13 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a href="<?php echo $this->helper->url("User", "index"); ?>" class="nav-link">
-                        <?php echo $this->helper->translate('User','LBL_INIT_SESSION');?>
+                        <?php echo $this->helper->translate('User', 'LBL_INIT_SESSION'); ?>
                     </a>
                 </li>
+                |
                 <li class="nav-item">
                     <a href="<?php echo $this->helper->url("User", "register"); ?>" class="nav-link">
-                        <?php echo $this->helper->translate('User','LBL_REGISTER');?>
+                        <?php echo $this->helper->translate('User', 'LBL_REGISTER'); ?>
                     </a>
                 </li>
             </ul>

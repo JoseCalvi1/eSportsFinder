@@ -1,11 +1,22 @@
-<footer>
-    <hr/>
-    <center>
-    <a class="showLoader" href="<?php echo $this->config['site_url']; ?>"><?php echo $this->config['app_name']; ?></a> -
-    Copyright
-    &copy; <?php echo date("Y"); ?>
-    <br><br>
-    </center>
+<footer style="background-color: #1A1A1A">
+    <div class="container">
+        <div class="row" style="padding: 50px 0px;">
+            <div class="col-sm-6 col-xs-12">
+                <img height="50" src="assets/images/logo_footer.png" style="width: 100%;">
+            </div>
+            <div class="col-sm-6 col-xs-12">
+                <h2 style="color: white;margin-top: unset;"><strong><?php echo $this->helper->translate('LBL_FIND_US'); ?></strong></h2>
+                <a href="https://twitter.com/esportFinder_" class="fa fa-twitter"></a>
+            </div>
+        </div>
+        <div class="row" style="color: white;padding: 10px 0px;">
+            <div class="col-sm-6 col-xs-12">
+                <a style="color:white;" href="<?php echo $this->config['site_url']; ?>"><strong><?php echo $this->config['app_name']; ?></strong></a> -
+                Copyright
+                &copy; <?php echo date("Y"); ?>
+            </div>
+        </div>
+    </div>
 </footer>
 </div>
 

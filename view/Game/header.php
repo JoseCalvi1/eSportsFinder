@@ -6,7 +6,7 @@
     <!-- Material Design for Bootstrap fonts and icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
     <title>EsportsFinder <?php echo !empty($title) ? ' - ' . $title : '' ?></title>
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="assets/images/icono_finder.svg">
     <link href="vendor/bootstrap-material-design/bootstrap-material-design.css" rel="stylesheet" type="text/css"/>
     <link href="vendor/rippler/rippler.min.css" rel="stylesheet" type="text/css"/>
     <script src="vendor/jQuery/jquery.min.js"></script>
