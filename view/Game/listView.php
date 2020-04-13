@@ -4,6 +4,12 @@
 <div class="container" style="max-width: 100vw;">
     <div class="row">
 
+        <div class="col-12 col-md-6 card-title">
+            <iframe style="width: 70%" src="https://discordapp.com/widget?id=686877443109158913&theme=dark"
+                    height="250" allowtransparency="true"
+                    frameborder="0"></iframe>
+        </div>
+
         <?php foreach($games as $game) { ?>
             <div class="col-6 col-md-3 card-title">
                 <a href="<?php echo ($game->status)=='READY' ? $this->helper->url("Game", "home").'&id='.$game->id : '#'; ?>" class="link-title">
