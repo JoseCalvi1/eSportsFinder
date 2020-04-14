@@ -2,7 +2,7 @@
     <div class="container">
         <div class="navbar-translate">
             <a class="navbar-brand" href="<?php echo $this->helper->url("Game", "index"); ?>">
-                <div class="d-none d-sm-block"><img height="50" src="assets/images/logo_header.png"></div>
+                <div class="d-none d-sm-block"><img height="50" src="assets/images/logo_header_black.png"></div>
                 <div class="d-block d-sm-none"><img height="50" src="assets/images/icono_finder.svg"></div>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"

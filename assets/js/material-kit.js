@@ -157,11 +157,13 @@ materialKit = {
       if (materialKit.misc.transparent) {
         materialKit.misc.transparent = false;
         $('.navbar-color-on-scroll').removeClass('navbar-transparent');
+        $('body > nav > div > div.navbar-translate > a > div.d-none.d-sm-block > img').attr("src", "assets/images/logo_header_black.png");
       }
     } else {
       if (!materialKit.misc.transparent) {
         materialKit.misc.transparent = true;
         $('.navbar-color-on-scroll').addClass('navbar-transparent');
+        $('body > nav > div > div.navbar-translate > a > div.d-none.d-sm-block > img').attr("src", "assets/images/logo_header.png");
       }
     }
   }, 17)

@@ -37,7 +37,6 @@ $(document).ready(function () {
     });
     $('[data-toggle="collapse"]').on('click',function(e){
         $target = $($(this).data('target'));
-        console.log($target.attr('id'));
         if($target.attr('id') == 'd-actions') {
             $('.collapse-layout-backdrop').toggleClass('fixed-top');
         }
