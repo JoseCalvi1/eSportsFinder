@@ -6,7 +6,7 @@
                 <p class="text-center text-danger"><?php echo $error; ?></p>
             <?php endif; ?>
             <div class="card">
-                <img class="card-img-top" src="assets/images/company_logo.png">
+                <img class="card-img-top"  src="assets/images/company_logo.png">
                 <div class="card-body">
 
                     <h5 class="card-title"><?php echo $this->helper->translate('User', 'LBL_INIT_SESSION') ?></h5>
@@ -31,7 +31,7 @@
                             </fieldset>
                             <div style="margin-top:10px" class="form-group">
                                 <button id="btn-login" type="submit"
-                                        class="btn btn-raised btn-primary showLoader">
+                                        class="btn btn-raised btn-primary showLoader" style="background-color: #1A1A1A">
                                     <?php echo $this->helper->translate('User', 'LBL_ENTER'); ?>
                                 </button>
                                 <a href="<?php echo $this->helper->url("User", "register"); ?>"

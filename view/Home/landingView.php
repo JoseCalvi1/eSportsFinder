@@ -20,13 +20,13 @@
             <div class="row">
                 <div class="col-md-6">
                     <img height="65" style="float: left;padding-top:20px;" src="assets/images/icono_finder.svg">
-                    <p style="font-size: 25px; padding: 20px 5px;"> Únete
+                    <p style="font-size: 25px; padding: 20px;margin-left: 40px;"> Únete
                         <strong>gratis</strong> y comienza a
                         competir con otros equipos</p>
                 </div>
                 <div class="col-md-6">
                     <img height="65" style="float: left;padding-top: 20px;" src="assets/images/icono_finder.svg">
-                    <p style="font-size: 25px; padding: 20px 5px;"> Encuentra
+                    <p style="font-size: 25px; padding: 20px;margin-left: 40px;"> Encuentra
                         a otros jugadores y juega junto
                         a
                         ellos contra tus oponentes</p>
@@ -75,9 +75,9 @@
                         </div>
                         <div class="col-md-4">
                             <div class="info info-card">
-                                <img width="350" height="180" src="assets/images/chat.jpg">
-                                <h4 class="info-title"><?php echo $this->helper->translate('Game', 'LBL_IMPROVE') ?></h4>
-                                <p class="padding-5"><?php echo $this->helper->translate('Game', 'LBL_IMPROVE_DESC') ?></p>
+                                <img width="350" height="180" src="assets/images/discord.jpg">
+                                <h4 class="info-title"><?php echo $this->helper->translate('Game', 'LBL_DISCORD') ?></h4>
+                                <p class="padding-5"><?php echo $this->helper->translate('Game', 'LBL_DISCORD_DESC') ?></p>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -94,7 +94,7 @@
                                 <h1 style="font-weight: bold;">
                                     <strong><?php echo $this->helper->translate('LBL_KNOW_MORE') ?></strong></h1>
                                 <p style="font-size: large"><?php echo $this->helper->translate('LBL_KNOW_MORE_TEXT') ?></p>
-                                <a style="font-size: large; padding: 20px;border-radius: 50px;" href="<?php echo $this->helper->url("User", "register"); ?>"
+                                <a style="font-size: large; padding: 20px;border-radius: 50px;bottom: 5px;position:absolute;" href="<?php echo $this->helper->url("User", "register"); ?>"
                                    class="badge badge-dark"><?php echo $this->helper->translate('User', 'LBL_REGISTER'); ?></a>
                             </div>
                         </div>

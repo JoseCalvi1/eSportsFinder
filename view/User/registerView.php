@@ -2,8 +2,9 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-7 d-none d-sm-none d-md-block"
-                 style="background-image: url('assets/images/esports.jpg'); background-size: cover; min-height: 100vh;">
+            <div class="col-7 d-none d-sm-none d-md-block align-items-center"
+                 style="background-color: #1A1A1A; min-height: 100vh;vertical-align:middle;">
+                    <img class="card-img-top" style="top: 10%;position: absolute;width: 90%;" src="assets/images/company_logo.png">
             </div>
             <div class="col-sm-5">
                 <div class="padding-5"><h3><?php echo $this->helper->translate('User', 'LBL_REGISTER_TITLE'); ?></h3>
@@ -61,12 +62,10 @@
                         <?php endif; ?>
                     </div>
                     <button type="submit" class="btn btn-primary btn-raised" name="registrar"
-                            value="Registrar"><?php echo $this->helper->translate('User', 'LBL_SUBMIT'); ?></button>
+                            value="Registrar" style="background-color: #1A1A1A"><?php echo $this->helper->translate('User', 'LBL_SUBMIT'); ?></button>
                     <a href="<?php echo $this->helper->url("User", "index"); ?>" class="forgot-button showLoader">
                         <?php echo $this->helper->translate('User','LBL_BACK_TO_LOGIN');?></a>
                 </form>
             </div>
         </div>
     </div>
-
-<?php include_once "footer.php"; ?>
