@@ -3,7 +3,7 @@
          style="width: 100%;height: 100%;background-image: url('assets/images/fondo-inicio-sesion.jpg');background-size: cover;">
         <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3 login-block">
             <div class="card" style="z-index: 999;">
-                <img class="card-img-top"  src="assets/images/company_logo.png">
+                <img class="card-img-top" style="width: 80%;"  src="assets/images/company_logo.png">
                 <div class="card-body">
                     <?php if (!empty($error)): ?>
                         <p class="text-center text-danger"><?php echo $error; ?></p>
