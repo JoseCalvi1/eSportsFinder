@@ -23,6 +23,14 @@ class UserController extends ControladorBase
         ));
     }
 
+    public function avisolegal()
+    {
+
+        $this->view("User/avisolegal", array(
+            'title' => 'Aviso legal ',
+        ));
+    }
+
     public function register()
     {
         global $current_user;

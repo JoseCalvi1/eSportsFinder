@@ -31,6 +31,7 @@ $language = array(
     'LBL_FIND_US' => 'Find us in',
     'LBL_KNOW_MORE' => 'More information',
     'LBL_KNOW_MORE_TEXT' => '',
+    'LBL_LEGAL' => 'Legal warning',
     'User' => array(
         'LBL_INIT_SESSION' => 'Login',
         'LBL_REGISTER_TITLE' => 'User register',

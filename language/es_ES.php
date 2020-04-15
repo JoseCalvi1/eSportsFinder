@@ -30,6 +30,7 @@ $language = array(
     'LBL_SOON' => 'Próximamente',
     'LBL_DISCOVER' => 'Descubre',
     'LBL_FIND_US' => 'Encuentranos en',
+    'LBL_LEGAL' => 'Aviso Legal y Política de Privacidad',
     'LBL_KNOW_MORE' => 'Saber más',
     'LBL_KNOW_MORE_TEXT' => 'Para saber más acerca de la plataforma,<br> haz clic en el botón de debajo para dirigirte<br> a la pestaña de registro y crear una cuenta<br> y poder ver todos los juegos y opciones de la web.',
     'User' => array(
