@@ -15,11 +15,6 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a href="<?php echo $this->helper->url("Game", "index"); ?>" class="nav-link">
-                        <?php echo $this->helper->translate('Game', 'LBL_GAMES'); ?>
-                    </a>
-                </li>
                 <?php if ($_GET['id']) { ?>
                     <li class="nav-item">
                         <a href="<?php echo $this->helper->url("Game", "home") . '&id=' . $_GET['id']; ?>"
@@ -28,6 +23,11 @@
                         </a>
                     </li>
                 <?php } ?>
+                <li class="nav-item">
+                    <a href="<?php echo $this->helper->url("Game", "index"); ?>" class="nav-link">
+                        <?php echo $this->helper->translate('Game', 'LBL_GAMES'); ?>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a href="<?php echo $this->helper->url("Message", "index"); ?>" class="nav-link">
                         <?php echo $this->helper->translate('Message', 'LBL_MESSAGES'); ?>
