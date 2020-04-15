@@ -13,10 +13,9 @@
         <?php foreach($games as $game) { ?>
             <div class="col-6 col-md-3 card-title">
                 <a href="<?php echo ($game->status)=='READY' ? $this->helper->url("Game", "home").'&id='.$game->id : '#'; ?>" class="link-title">
-                    <?php if(($game->status)=='READY') { ?>
                     <img class="title-img" width="150" height="230" src="assets/images/<?php echo strtolower($game->media); ?>.jpg"><br>
-                    <?php } elseif (($game->status)=='PENDING') { ?>
-                        <img class="title-img" width="150" height="230" src="assets/images/<?php echo strtolower($game->media); ?>_soon.jpg"><br>
+                    <?php if(($game->status)=='PENDING') { ?>
+                        <span>Próximamente</span><br>
                     <?php } ?>
                     <span class="title"><?php echo $game->name; ?> / <?php echo ($game->crossplay) ? "All platforms" : $game->platform; ?></span>
                     <span class="platform"></span><br>

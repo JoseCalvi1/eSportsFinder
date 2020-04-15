@@ -94,7 +94,7 @@
                                 <h1 style="font-weight: bold;">
                                     <strong><?php echo $this->helper->translate('LBL_KNOW_MORE') ?></strong></h1>
                                 <p style="font-size: large"><?php echo $this->helper->translate('LBL_KNOW_MORE_TEXT') ?></p>
-                                <a style="font-size: large; padding: 20px;border-radius: 50px;bottom: 5px;position:absolute;" href="<?php echo $this->helper->url("User", "register"); ?>"
+                                <a style="font-size: large; padding: 20px;border-radius: 50px;margin-top:10px;position:absolute;" href="<?php echo $this->helper->url("User", "register"); ?>"
                                    class="badge badge-dark"><?php echo $this->helper->translate('User', 'LBL_REGISTER'); ?></a>
                             </div>
                         </div>

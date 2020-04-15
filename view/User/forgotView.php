@@ -34,3 +34,4 @@
             </div>
         </div>
     </div>
+<?php include_once "view/Global/footer.php"; ?>

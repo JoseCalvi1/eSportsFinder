@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-7 d-none d-sm-none d-md-block align-items-center"
                  style="background-color: #1A1A1A; min-height: 100vh;vertical-align:middle;">
-                    <img class="card-img-top" style="top: 10%;position: absolute;width: 90%;" src="assets/images/company_logo.png">
+                    <img class="card-img-top" style="top: 25%;left: 25%;position: absolute;width: 50%;" src="assets/images/company_logo.png">
             </div>
             <div class="col-sm-5">
                 <div class="padding-5"><h3><?php echo $this->helper->translate('User', 'LBL_REGISTER_TITLE'); ?></h3>
@@ -63,8 +63,8 @@
                     </div>
                     <button type="submit" class="btn btn-primary btn-raised" name="registrar"
                             value="Registrar" style="background-color: #1A1A1A"><?php echo $this->helper->translate('User', 'LBL_SUBMIT'); ?></button>
-                    <a href="<?php echo $this->helper->url("User", "index"); ?>" class="forgot-button showLoader">
-                        <?php echo $this->helper->translate('User','LBL_BACK_TO_LOGIN');?></a>
+                    <a href="<?php echo $this->helper->url("User", "index"); ?>"
+                       class="float-right btn btn-raised btn-secondary showLoader"><?php echo $this->helper->translate('User', 'LBL_BACK_TO_LOGIN'); ?></a>
                 </form>
             </div>
         </div>

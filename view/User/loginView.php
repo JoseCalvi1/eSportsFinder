@@ -1,14 +1,13 @@
 <?php include_once "header.php"; ?>
     <div class="row justify-content-center align-items-center h-100"
-         style="width: 100%;height: 100%;background-image: url('assets/images/esports.jpg')">
+         style="width: 100%;height: 100%;background-image: url('assets/images/fondo-inicio-sesion.jpg');background-size: cover;">
         <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3 login-block">
-            <?php if (!empty($error)): ?>
-                <p class="text-center text-danger"><?php echo $error; ?></p>
-            <?php endif; ?>
-            <div class="card">
+            <div class="card" style="z-index: 999;">
                 <img class="card-img-top"  src="assets/images/company_logo.png">
                 <div class="card-body">
-
+                    <?php if (!empty($error)): ?>
+                        <p class="text-center text-danger"><?php echo $error; ?></p>
+                    <?php endif; ?>
                     <h5 class="card-title"><?php echo $this->helper->translate('User', 'LBL_INIT_SESSION') ?></h5>
                     <div style="" class="panel-body">
 
