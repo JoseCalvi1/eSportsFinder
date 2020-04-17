@@ -2,11 +2,13 @@
 if (!$messages) {
     echo $this->helper->translate('LBL_NO_RECORD');
 }
-foreach ($messages as $message) { ?>
+foreach ($messages as $message) {
+    $date = new DateTime($message->date_modified)
+    ?>
     <div class="col-12">
         <div class="card-message">
             <h4 class="info-title"><?php echo $message->subject ?></h4>
-            <h6><?php echo $this->helper->translate('LBL_FROM') . ' ' . $message->name . ' ' . $this->helper->translate('LBL_AT') . ' ' . $message->date_modified ?></h6>
+            <h6><?php echo $this->helper->translate('LBL_FROM') . ' ' . $message->name . ' ' . $this->helper->translate('LBL_AT') . ' ' . date_format($date, 'H:i - d/m/y'); ?></h6>
             <p><?php echo $message->message ?></p>
             <a data-toggle="modal" href="#myModal" data-target="#edit-modal-<?php echo $message->id; ?>"
                id="<?php echo $message->id; ?>">

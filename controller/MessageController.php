@@ -21,7 +21,7 @@ class MessageController extends ControladorBase
         $message = new Message();
         $messages = $message->getInnerJoin('m.*, u.name','AS m INNER JOIN esf_users AS u ON m.id_user_from = u.id',"id_user_to='{$current_user->id}' AND status!='INV'", 'date_entered');
         $sent_messages = $message->getInnerJoin('m.*, u.name', 'AS m INNER JOIN esf_users AS u ON m.id_user_from = u.id',"id_user_from='{$current_user->id}'", 'date_entered');
-        $invitations = $message->getInnerJoin('m.*, u.name', 'AS m INNER JOIN esf_users AS u ON m.id_user_from = u.id',"id_user_to='{$current_user->id}' AND status='INV'", 'date_entered');
+        $invitations = $message->getInnerJoin('m.*, u.name, t.name AS team_name, g.name AS game', 'AS m INNER JOIN esf_games AS g ON  m.id_game = g.id INNER JOIN esf_teams AS t ON  m.id_team = t.id INNER JOIN esf_users AS u ON m.id_user_from = u.id',"id_user_to='{$current_user->id}' AND m.status='INV'", 'date_entered');
         //Cargamos la vista index y le pasamos valores
 
         $this->view("Message/inbox", array(

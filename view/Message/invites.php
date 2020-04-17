@@ -2,11 +2,13 @@
 if (!$invitations) {
     echo $this->helper->translate('LBL_NO_RECORD');
 }
-foreach ($invitations as $invitation) { ?>
+foreach ($invitations as $invitation) {
+    $date = new DateTime($invitation->date_modified)
+    ?>
     <div class="col-12">
         <div class="card-message">
-            <h4 class="info-title"><?php echo $invitation->subject ?></h4>
-            <h6><?php echo $this->helper->translate('LBL_FROM') . ' ' . $invitation->name . ' ' . $this->helper->translate('LBL_AT') . ' ' . $invitation->date_modified ?></h6>
+            <h4 class="info-title"><?php echo $invitation->subject . ' ' . $this->helper->translate('LBL_FROM') . ' ' . $invitation->team_name . ' (' . $invitation->game . ')' ?></h4>
+            <h6><?php echo $this->helper->translate('LBL_FROM') . ' ' . $invitation->name . ' ' . $this->helper->translate('LBL_AT') . ' ' . date_format($date, 'H:i - d/m/y'); ?></h6>
             <p><?php echo $invitation->message ?></p>
             <a data-toggle="modal" href="#myModalAcp" data-target="#accept-modal-<?php echo $invitation->id; ?>"
                id="<?php echo $invitation->id; ?>">
