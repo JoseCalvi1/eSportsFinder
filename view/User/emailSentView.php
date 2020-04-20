@@ -18,7 +18,7 @@
                             </fieldset>
                             <div class="text-center">
                                 <div>
-                                    <a href="<?php echo $this->helper->url("User", "forgot",array('useremail'=> $email)); ?>" class="forgot-button showLoader"><?php echo $this->helper->translate('User','LBL_RESEND_FORGOT');?></a>
+                                    <a href="<?php echo $this->helper->url("User", "login",array('useremail'=> $email)); ?>" class="forgot-button showLoader"><?php echo $this->helper->translate('User','LBL_RESEND_FORGOT');?></a>
                                 </div>
 
                                 <div>
