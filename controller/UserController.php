@@ -105,6 +105,7 @@ class UserController extends ControladorBase
         $login_code = $user->login($_REQUEST['username'], $_REQUEST['password']);
         if($login_code['activation'] == 2) {
             $user->email = $login_code['email'];
+            $user->name = $_REQUEST['username'];
             if ($user->sendConfirmEmailMail()) {
                 //Cargamos la vista index y le pasamos valores
                 $this->view("User/emailSent", array(
