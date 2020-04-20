@@ -17,7 +17,7 @@
             <ul class="navbar-nav ml-auto">
                 <?php if ($_GET['id']) { ?>
                     <li class="nav-item">
-                        <a href="<?php echo $this->helper->url("Game", "home") . '&id=' . $_GET['id']; ?>"
+                        <a href="<?php echo $this->helper->url("Game", "home", (array("id" => $_GET['id']))); ?>"
                            class="nav-link">
                             <?php echo $this->helper->translate('LBL_HOME'); ?>
                         </a>
