@@ -28,9 +28,9 @@ foreach ($messages as $message) {
                 <form action="<?php echo $this->helper->url("Message", "sendMessage"); ?>" method="POST"
                       class="align-middle padding-5">
                     <input type="hidden" class="form-control" id="description" name="message[id_user_to]"
-                           value="<?php echo $message->id_user_from ?>">
+                           value="<?php echo $message->id_user_to ?>">
                     <input type="hidden" class="form-control" id="description" name="message[id_user_from]" required
-                           value="">
+                           value="<?php echo $message->id_user_from ?>">
                     <div class="form-group">
                         <label for="subject"
                                class="bmd-label-floating"><?php echo $this->helper->translate('Message', 'LBL_SUBJECT'); ?></label>

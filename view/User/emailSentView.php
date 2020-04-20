@@ -5,7 +5,7 @@
                 <img class="card-img-top" src="assets/images/check-your-email.svg">
                 <div class="card-body">
 
-                    <h6 class="<?php echo $error;?>"><?php echo $msg;?></h6>
+                    <h6 class="<?php echo $error;?> text-center"><?php echo $msg;?></h6>
                     <div style="" class="panel-body">
 
                         <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>

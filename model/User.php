@@ -33,11 +33,16 @@ class User extends ModeloBase
     public function login($user_name, $password)
     {
         global $current_user;
+        $data = [];
         $user_hash_md5 = md5($password);
         $users = $this->getBy('user_name', $user_name);
         if (is_array($users)) {
             foreach ($users as $user) {
-                if ($this->checkPasswordMD5($user_hash_md5, $user->password) && $user->active == 1) {
+                if ($user->active == 2) {
+                    $data['activation'] = 2;
+                    $data['email'] = $user->email;
+                    return $data;
+                } else if ($this->checkPasswordMD5($user_hash_md5, $user->password) && $user->active == 1) {
                     $current_user = $user;
                     $_SESSION['current_user'] = $user;
                 } else {
@@ -45,7 +50,11 @@ class User extends ModeloBase
                 }
             }
         } else if ($users) {
-            if ($this->checkPasswordMD5($user_hash_md5, $this->password) && $users->active == 1) {
+            if ($users->active == 2) {
+                $data['activation'] = 2;
+                $data['email'] = $users->email;
+                return $data;
+            } if ($this->checkPasswordMD5($user_hash_md5, $this->password) && $users->active == 1) {
                 $current_user = new User($this->id);
                 $_SESSION['current_user'] = $this;
             } else {
@@ -107,38 +116,38 @@ class User extends ModeloBase
     {
         $errores = array();
         // Validación de contraseñas
-        if(!empty($data['password']) && !empty($data['rep_password'])){
-            if($data['password'] != $data['rep_password']){
-                $errores['rep_password'] = $this->helper->translate('User','LBL_PASSWORD_NOT_EQUAL');
+        if (!empty($data['password']) && !empty($data['rep_password'])) {
+            if ($data['password'] != $data['rep_password']) {
+                $errores['rep_password'] = $this->helper->translate('User', 'LBL_PASSWORD_NOT_EQUAL');
             }
             /*if(!preg_match('/{5,12}/',$data['password'])){
                 $errores['password'] = $this->helper->translate('User','LBL_PASSWORD_NOT_EQUAL');
             }*/
         }
 
-        if(!empty($data['email']) && !preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i',$data['email'])){
+        if (!empty($data['email']) && !preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i', $data['email'])) {
             $errores['email'] = $this->helper->translate('User', 'LBL_EMAIL_REGEX');
         }
 
-        if(empty($errores['email'])){
+        if (empty($errores['email'])) {
             $sql = "SELECT email from esf_users WHERE email = '{$data['email']}'";
             $res = $this->ejecutarSql($sql);
-            if(!empty($res->email)){
+            if (!empty($res->email)) {
                 $errores['email'] = $this->helper->translate('User', 'LBL_EMAIL_EXISTING');
             }
         }
 
-        if(empty($errores['user_name'])){
+        if (empty($errores['user_name'])) {
             $sql = "SELECT user_name from esf_users WHERE user_name = '{$data['user_name']}'";
             $res = $this->ejecutarSql($sql);
-            if(!empty($res->user_name)){
+            if (!empty($res->user_name)) {
                 $errores['user_name'] = $this->helper->translate('User', 'LBL_USERNAME_EXISTING');
             }
         }
 
         // Validación de required
         foreach ($data as $campo => $dato) {
-            if(!$dato) {
+            if (!$dato) {
                 $errores[$campo] = $this->helper->translate('LBL_REQUIRED');
             }
         }

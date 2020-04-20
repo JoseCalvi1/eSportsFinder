@@ -101,7 +101,21 @@ class UserController extends ControladorBase
     {
         global $current_user;
         $user = new User();
-        if ($user->login($_REQUEST['username'], $_REQUEST['password'])) {
+        $error = '';
+        $login_code = $user->login($_REQUEST['username'], $_REQUEST['password']);
+        if($login_code['activation'] == 2) {
+            $user->email = $login_code['email'];
+            if ($user->sendConfirmEmailMail()) {
+                //Cargamos la vista index y le pasamos valores
+                $this->view("User/emailSent", array(
+                    'title' => $this->helper->translate('LBL_REACTIVE_ACCOUNT'),
+                    'email' => $login_code['email'],
+                    'error' => $error,
+                    'msg' => $this->helper->translate('LBL_REACTIVE'),
+                ));
+                return true;
+            }
+        } elseif ($user->login($_REQUEST['username'], $_REQUEST['password'])) {
             $this->redirect(CONTROLADOR_HOME_DEFECTO, ACCION_HOME_DEFECTO);
         } else {
             $this->redirect('User', 'index', array('error' => $this->helper->translate('User', 'LBL_ERROR_LOGIN')));
