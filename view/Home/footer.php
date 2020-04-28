@@ -7,6 +7,7 @@
             <div class="col-sm-6 col-xs-12">
                 <h2 style="color: white;margin-top: unset;"><strong><?php echo $this->helper->translate('LBL_FIND_US'); ?></strong></h2>
                 <a href="https://twitter.com/esportFinder_" class="fa fa-twitter"></a>
+                <a href="https://www.instagram.com/esportsfinderonline/" class="fa fa-instagram"></a>
             </div>
         </div>
         <div class="row" style="color: white;padding: 10px 0px;">

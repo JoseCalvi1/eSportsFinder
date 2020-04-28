@@ -2,7 +2,7 @@
 
 <?php include_once "navbar.php"; ?>
 
-<div class="page-header header-filter" data-parallax="true"
+<div class="page-header header-filter d-none d-sm-block" data-parallax="true"
      style="background-image: url('assets/images/finderonline.jpg')">
     <div class="container">
         <div class="row">
@@ -14,6 +14,20 @@
         </div>
     </div>
 </div>
+
+<div class="page-header header-filter d-block d-sm-none" data-parallax="true"
+     style="background-image: url('assets/images/fondo-inicio-sesion.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 ml-auto mr-auto">
+                <div class="brand text-center" style="height: 100vh;display: table-cell;vertical-align: middle;">
+                    <img style="width: 100%;top: 25%;" src="assets/images/company_logo.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="main">
     <div class="container-fluid" style="background-color: #b1b1b1;">
         <div class="container">
