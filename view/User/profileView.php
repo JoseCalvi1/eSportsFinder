@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-12">
             <form action="<?php echo $this->helper->url("User", "profile"); ?>" method="POST"
-                  class="align-middle padding-5 delete">
+                  class="align-middle padding-5">
                 <input type="hidden" class="form-control" id="name" name="user[id]" value="<?= $current_user->id; ?>">
                 <div class="form-group">
                     <label for="name"
