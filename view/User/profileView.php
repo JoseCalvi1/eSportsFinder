@@ -107,7 +107,7 @@
                             </fieldset>
                             <fieldset class="form-group">
                                 <label for="availability"><?= $this->helper->translate('GameProfile', 'LBL_AVAILABILITY') ?></label>
-                                <div class="form-check">
+                                <div class="form- checkbox">
                                     <label class="form-check-label">
                                         <input type="checkbox" name="player[availability][]"
                                                value="<?= $this->helper->translate('GameProfile', 'LBL_MORNING') ?>"> <?= $this->helper->translate('GameProfile', 'LBL_MORNING') ?>
