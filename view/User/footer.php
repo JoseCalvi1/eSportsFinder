@@ -11,10 +11,15 @@
             </div>
         </div>
         <div class="row" style="color: white;padding: 10px 0px;">
-            <div class="col-sm-6 col-xs-12">
+            <div class="col-sm-6 col-xs-12" style="padding-top: 10px;">
                 <a style="color:white;" href="<?php echo $this->config['site_url']; ?>"><strong><?php echo $this->config['app_name']; ?></strong></a> -
                 Copyright
                 &copy; <?php echo date("Y"); ?>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+                <a href="<?php echo $this->helper->url("User", "avisolegal"); ?>" class="nav-link" style="color:white;">
+                    <?php echo $this->helper->translate('LBL_LEGAL'); ?>
+                </a>
             </div>
         </div>
     </div>
