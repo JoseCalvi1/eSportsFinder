@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="06dfb73e-807b-4378-8c19-1bef7ccd96af" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>_EXISTING</find>
+      <find>Este email ya está en uso</find>
+      <find>LBL_EMAIL_EXISTING</find>
+      <find>editUser</find>
+      <find>profi</find>
+      <find>validate</find>
+      <find>validateRegister</find>
+      <find>favicon</find>
+      <find>Listado de jugadores disponibles para tu equipo los cuales puedes filtrar por posición y ver sus estadísticas de juego.</find>
+      <find>info</find>
+      <find>impro</find>
+      <find>nav</find>
+      <find>navbar-transparent</find>
+      <find>navbar</find>
+      <find>#9c27b0</find>
+      <find>header-filter</find>
+      <find>volver</find>
+      <find>home</find>
+      <find>sendc</find>
+      <find>rese</find>
+      <find>err</find>
+      <find>confir</find>
+      <find>delete</find>
+      <find>link_guid</find>
+      <find>name</find>
+      <find>sendcon</find>
+      <find>url</find>
+      <find>$_GET['id']</find>
+      <find>juegos</find>
+      <find>profile</find>
+    </findStrings>
+    <dirStrings>
+      <dir>C:\xampp\htdocs\esportsfinder\myltchat</dir>
+      <dir>C:\xampp\htdocs\esportsfinder\controller</dir>
+      <dir>C:\xampp\htdocs\esportsfinder\assets\css</dir>
+      <dir>C:\xampp\htdocs\esportsfinder\assets</dir>
+      <dir>C:\xampp\htdocs\esportsfinder</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/config/config.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/config.php" />
+        <option value="$PROJECT_DIR$/controller/TeamController.php" />
+        <option value="$PROJECT_DIR$/controller/GameController.php" />
+        <option value="$PROJECT_DIR$/view/Message/inboxView.php" />
+        <option value="$PROJECT_DIR$/view/Scrim/scrimView.php" />
+        <option value="$PROJECT_DIR$/view/Game/createplayerView.php" />
+        <option value="$PROJECT_DIR$/view/Game/header.php" />
+        <option value="$PROJECT_DIR$/view/Global/header.php" />
+        <option value="$PROJECT_DIR$/view/User/header.php" />
+        <option value="$PROJECT_DIR$/view/Home/header.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/header.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/custom.css" />
+        <option value="$PROJECT_DIR$/view/Global/css/common.css" />
+        <option value="$PROJECT_DIR$/view/Global/javascript/global.js" />
+        <option value="$PROJECT_DIR$/view/Home/navbar.php" />
+        <option value="$PROJECT_DIR$/assets/js/material-kit.js" />
+        <option value="$PROJECT_DIR$/assets/css/material-kit.css" />
+        <option value="$PROJECT_DIR$/view/User/forgotView.php" />
+        <option value="$PROJECT_DIR$/view/User/resetView.php" />
+        <option value="$PROJECT_DIR$/view/User/registerView.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/navbar.php" />
+        <option value="$PROJECT_DIR$/view/User/loginView.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/loginView.php" />
+        <option value="$PROJECT_DIR$/view/User/avisolegalView.php" />
+        <option value="$PROJECT_DIR$/controller/MessageController.php" />
+        <option value="$PROJECT_DIR$/core/EntidadBase.php" />
+        <option value="$PROJECT_DIR$/view/Message/sent_messages.php" />
+        <option value="$PROJECT_DIR$/view/Message/invites.php" />
+        <option value="$PROJECT_DIR$/view/Message/inbox.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/inbox.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/UserController.php" />
+        <option value="$PROJECT_DIR$/model/User.php" />
+        <option value="$PROJECT_DIR$/view/User/emailSentView.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/emailSentView.php" />
+        <option value="$PROJECT_DIR$/view/Game/navbar.php" />
+        <option value="$USER_HOME$/Downloads/credentials.json" />
+        <option value="$PROJECT_DIR$/view/Home/landingView.php" />
+        <option value="$PROJECT_DIR$/view/Game/footer.php" />
+        <option value="$PROJECT_DIR$/view/Home/footer.php" />
+        <option value="$PROJECT_DIR$/view/Game/listView.php" />
+        <option value="$PROJECT_DIR$/assets/css/custom.css" />
+        <option value="$PROJECT_DIR$/controller/UserController.php" />
+        <option value="$PROJECT_DIR$/view/User/profileView.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/profileView.php" />
+        <option value="$PROJECT_DIR$/view/Team/manageteamView.php" />
+        <option value="$PROJECT_DIR$/view/Game/homeView.php" />
+        <option value="$PROJECT_DIR$/view/User/footer.php" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/footer.php" />
+        <option value="$PROJECT_DIR$/language/es_ES.php" />
+        <option value="$PROJECT_DIR$/language/en_us.php" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="209" />
+    <option name="y" value="-27" />
+    <option name="width" value="1377" />
+    <option name="height" value="739" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="esportsfinder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="esportsfinder" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="esportsfinder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="esportsfinder" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="esportsfinder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="esportsfinder" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="esportsfinder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="esportsfinder" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="emails" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="esportsfinder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="esportsfinder" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="esportsfinder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="esportsfinder" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="esportsfinder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="esportsfinder" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="esportsfinder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="esportsfinder" type="462c0819:PsiDirectoryNode" />
+              <item name="language" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="esportsfinder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="esportsfinder" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="esportsfinder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="esportsfinder" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="esportsfinder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="esportsfinder" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="Game" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="esportsfinder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="esportsfinder" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="Global" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="esportsfinder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="esportsfinder" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="Global" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="esportsfinder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="esportsfinder" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="Global" type="462c0819:PsiDirectoryNode" />
+              <item name="javascript" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="esportsfinder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="esportsfinder" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="Home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="esportsfinder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="esportsfinder" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="Message" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="esportsfinder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="esportsfinder" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="Scrim" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="esportsfinder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="esportsfinder" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="Team" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="esportsfinder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="esportsfinder" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="Trade" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="esportsfinder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="esportsfinder" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="User" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../gap" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\esportsfinder\view\Message" />
+      <recent name="C:\xampp\htdocs\esportsfinder\view" />
+      <recent name="C:\xampp\htdocs\esportsfinder\assets\emails" />
+      <recent name="C:\xampp\htdocs\esportsfinder\controller" />
+      <recent name="C:\xampp\htdocs\esportsfinder\view\Game" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\esportsfinder\assets" />
+      <recent name="C:\xampp\htdocs\esportsfinder\view\Team" />
+      <recent name="C:\xampp\htdocs\esportsfinder\view\Game" />
+      <recent name="C:\xampp\htdocs\esportsfinder\view\Message" />
+      <recent name="C:\xampp\htdocs\esportsfinder\view\Home" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="06dfb73e-807b-4378-8c19-1bef7ccd96af" name="Default Changelist" comment="" />
+      <created>1570182252487</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1570182252487</updated>
+      <workItem from="1570182253651" duration="3675000" />
+      <workItem from="1570429473767" duration="20000" />
+      <workItem from="1570439893567" duration="17360000" />
+      <workItem from="1570788957736" duration="8879000" />
+      <workItem from="1571036241458" duration="1733000" />
+      <workItem from="1571215476010" duration="1032000" />
+      <workItem from="1571227381058" duration="167000" />
+      <workItem from="1571301292310" duration="5981000" />
+      <workItem from="1571379431131" duration="604000" />
+      <workItem from="1571386342430" duration="6597000" />
+      <workItem from="1571655938956" duration="1175000" />
+      <workItem from="1571755528034" duration="3238000" />
+      <workItem from="1571831256447" duration="4023000" />
+      <workItem from="1571906551807" duration="13868000" />
+      <workItem from="1572001914801" duration="1211000" />
+      <workItem from="1572360847296" duration="599000" />
+      <workItem from="1572420456795" duration="93000" />
+      <workItem from="1572966701415" duration="3019000" />
+      <workItem from="1573033535904" duration="13000" />
+      <workItem from="1573117243400" duration="15243000" />
+      <workItem from="1573217596007" duration="2391000" />
+      <workItem from="1573464896963" duration="10096000" />
+      <workItem from="1573543571793" duration="13000" />
+      <workItem from="1573573880105" duration="5616000" />
+      <workItem from="1574073271492" duration="10513000" />
+      <workItem from="1574146871206" duration="18760000" />
+      <workItem from="1574245164394" duration="652000" />
+      <workItem from="1574321372507" duration="5409000" />
+      <workItem from="1574332098059" duration="5683000" />
+      <workItem from="1574344304357" duration="255000" />
+      <workItem from="1574417904707" duration="7467000" />
+      <workItem from="1574532819400" duration="121000" />
+      <workItem from="1574665511731" duration="7000" />
+      <workItem from="1574700297329" duration="2290000" />
+      <workItem from="1574859297896" duration="1303000" />
+      <workItem from="1574932008107" duration="10519000" />
+      <workItem from="1575020980353" duration="4817000" />
+      <workItem from="1575279089214" duration="15897000" />
+      <workItem from="1575359313150" duration="4141000" />
+      <workItem from="1575368203745" duration="642000" />
+      <workItem from="1575375974415" duration="3350000" />
+      <workItem from="1575450894728" duration="12747000" />
+      <workItem from="1575477978063" duration="84000" />
+      <workItem from="1575530022149" duration="21000" />
+      <workItem from="1575539582300" duration="10373000" />
+      <workItem from="1576054417454" duration="104000" />
+      <workItem from="1576078420381" duration="17000" />
+      <workItem from="1578650221699" duration="2403000" />
+      <workItem from="1578661669382" duration="2916000" />
+      <workItem from="1579004551743" duration="257000" />
+      <workItem from="1579179085336" duration="1955000" />
+      <workItem from="1579599150212" duration="6454000" />
+      <workItem from="1579612132240" duration="478000" />
+      <workItem from="1579614704450" duration="539000" />
+      <workItem from="1579685720190" duration="7873000" />
+      <workItem from="1579706592027" duration="6199000" />
+      <workItem from="1579771728266" duration="1779000" />
+      <workItem from="1580208226200" duration="1330000" />
+      <workItem from="1581068941410" duration="1726000" />
+      <workItem from="1581347164651" duration="6299000" />
+      <workItem from="1581406128538" duration="16000" />
+      <workItem from="1581596570504" duration="5273000" />
+      <workItem from="1582025107868" duration="2769000" />
+      <workItem from="1582544099494" duration="2280000" />
+      <workItem from="1582626822714" duration="6496000" />
+      <workItem from="1582633657915" duration="442000" />
+      <workItem from="1582717814863" duration="612000" />
+      <workItem from="1583141524512" duration="1598000" />
+      <workItem from="1583313526692" duration="789000" />
+      <workItem from="1584691111845" duration="335000" />
+      <workItem from="1585643782403" duration="8923000" />
+      <workItem from="1586174255586" duration="1284000" />
+      <workItem from="1586715746342" duration="1696000" />
+      <workItem from="1586760368567" duration="302000" />
+      <workItem from="1586764593926" duration="7816000" />
+      <workItem from="1586780814841" duration="276000" />
+      <workItem from="1586781208650" duration="18000" />
+      <workItem from="1586783831974" duration="1535000" />
+      <workItem from="1586790391045" duration="563000" />
+      <workItem from="1586847004886" duration="4749000" />
+      <workItem from="1586858207682" duration="4866000" />
+      <workItem from="1586933041039" duration="4255000" />
+      <workItem from="1586946521477" duration="1065000" />
+      <workItem from="1586948857484" duration="1024000" />
+      <workItem from="1586950929656" duration="1956000" />
+      <workItem from="1587118561326" duration="2842000" />
+      <workItem from="1587199602483" duration="1088000" />
+      <workItem from="1587366521180" duration="9071000" />
+      <workItem from="1587394505342" duration="2125000" />
+      <workItem from="1588071072175" duration="4617000" />
+      <workItem from="1588148876413" duration="2107000" />
+      <workItem from="1588240564252" duration="2542000" />
+      <workItem from="1588576113164" duration="12000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="347368000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21375267" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289689" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/view/User/registerView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="53" selection-start-line="13" selection-start-column="53" selection-end-line="13" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/Game/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/Global/header.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/navbar.php" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/loginView.php" />
+    <entry file="file://$PROJECT_DIR$/view/Home/navbar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/User/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="72" selection-start-line="21" selection-start-column="72" selection-end-line="21" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/User/loginView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="32" lean-forward="true" selection-start-line="35" selection-start-column="32" selection-end-line="36" selection-end-column="162" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/User/avisolegalView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/Message/invites.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/Message/sent_messages.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="169" selection-start-line="10" selection-start-column="169" selection-end-line="10" selection-end-column="169" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/TeamController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="25" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/inbox.php" />
+    <entry file="file://$PROJECT_DIR$/view/Message/inbox.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="30" column="67" selection-start-line="30" selection-start-column="67" selection-end-line="30" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/MessageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-570">
+          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inbox.php" />
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/emails/confirmemail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="87" selection-start-line="30" selection-start-column="78" selection-end-line="30" selection-end-column="87" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#center#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#center#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#1;n#center#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#1;n#center#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#center#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#center#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/UserController.php" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/emailSentView.php" />
+    <entry file="file://$PROJECT_DIR$/core/AyudaVistas.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/Conectar.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/User/emailSentView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="53" lean-forward="true" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/ModeloBase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-261">
+          <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/ControladorFrontal.func.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/EntidadBase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1411">
+          <caret line="83" column="95" selection-start-line="83" selection-start-column="95" selection-end-line="83" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/Game/navbar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="43" lean-forward="true" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/ControladorBase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/credentials.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/Util.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/Game/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="101" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#1;n#div#1;n#div#0;n#footer#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/Global/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/Global/css/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="796">
+          <caret line="341" column="1" selection-start-line="341" selection-start-column="1" selection-end-line="341" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/Home/landingView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="61" column="51" selection-start-line="61" selection-start-column="51" selection-end-line="61" selection-end-column="51" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/Game/listView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="45" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="45" />
+          <folding>
+            <element signature="e#369#409#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/config.php" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/database.php" />
+    <entry file="file://$PROJECT_DIR$/assets/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1768">
+          <caret line="104" column="54" selection-start-line="104" selection-start-column="54" selection-end-line="104" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/profileView.php" />
+    <entry file="file://$PROJECT_DIR$/view/User/profileView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="109" column="58" selection-start-line="109" selection-start-column="58" selection-end-line="109" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/Game/createplayerView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="47" column="24" lean-forward="true" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="250" lean-forward="true" selection-start-line="250" selection-end-line="250" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="114" column="20" selection-start-line="114" selection-start-column="20" selection-end-line="114" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/footer.php" />
+    <entry file="file://$PROJECT_DIR$/view/Game/homeView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="133" selection-start-line="3" selection-start-column="133" selection-end-line="3" selection-end-column="133" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/Home/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="14" selection-start-line="12" selection-start-column="8" selection-end-line="23" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/User/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/Team/manageteamView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="129" selection-start-line="3" selection-start-column="113" selection-end-line="3" selection-end-column="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/language/es_ES.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/language/en_us.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="51" lean-forward="true" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
