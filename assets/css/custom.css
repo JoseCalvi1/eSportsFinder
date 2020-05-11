@@ -1,0 +1,106 @@
+.info-card {
+    padding-top: 0px !important;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0px 2px 20px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 2px 20px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 2px 20px -5px rgba(0, 0, 0, 0.75);
+}
+
+.info-card img {
+    width: 100%;
+    height: auto;
+}
+
+/* TAB PANEL */
+.nav-tabs .nav-item .nav-link {
+    color: #000 !important;
+}
+
+/* ADJUST CSS */
+.padding-5 {
+    padding: 5px;
+}
+
+.border-bottom {
+    border-bottom: 2px solid #9c27b0;
+    text-align: center;
+}
+
+/* MESSAGES */
+.card-message {
+    background-color: white;
+    padding: 5px 5px 5px 10px;
+    border-left: 5px solid #9c27b0;
+    margin: 15px 0;
+}
+
+/* TEAM */
+.card-team {
+    background-color: white;
+    padding: 5px 5px 5px 5px;
+    border-top: 5px solid #111bb0;
+    margin: 15px 0;
+    text-align: center;
+}
+
+@media (max-width: 991px) {
+    .collapse:not(.show) {
+        display: unset !important;
+    }
+}
+/* FILTRO */
+.filterDiv {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: #666;
+    color: white;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgba(156, 39, 176, 0.53);
+}
+
+.btn.active {
+    background-color: #9c27b0;
+    color: white;
+}
+
+.fa {
+    font-size: 40px !important;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Twitter */
+.fa-twitter, .fa-instagram {
+    background: white;
+    color: #1a1a1a;
+}
+
+h1, h2, h3, h4, h5, p, a, span, div {
+    font-family: montserrat;
+}
+
+.title-img {
+    -webkit-box-shadow: 0px 2px 20px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 2px 20px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 2px 20px -5px rgba(0, 0, 0, 0.75);
+}
