@@ -46,7 +46,7 @@ class GameController extends ControladorBase
         $player = $players->getList("id_user='{$current_user->id}' AND id_game='{$id_game}'", 'id', 1);
         $role = $roles->getList("media='{$media}'", 'id', 30);
 
-        if ($player) {
+        if ($player || $current_user->admin == '1') {
             //Cargamos la vista home y le pasamos valores
             $this->view("Game/home", array(
                 'title' => $idgame[0]->name,
