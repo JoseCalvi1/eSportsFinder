@@ -29,6 +29,7 @@
                             <label for="description"><?= $this->helper->translate('GameProfile','LBL_GAME_ROL') ?></label>
                             <select class="form-control" name="player[description]">
                             <option><?= $this->helper->translate('GameProfile','LBL_VERSATILE') ?></option>
+                            <option><?= $this->helper->translate('GameProfile','LBL_COACH') ?></option>
                                 <?php foreach ($role as $key => $item) { ?>
                                     <option><?= $role[$key]->name; ?></option>
                                 <?php } ?>

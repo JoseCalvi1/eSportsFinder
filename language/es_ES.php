@@ -125,6 +125,7 @@ $language = array(
         'LBL_DELETE_PLAYER' => 'Eliminar',
         'LBL_NAME_EXISTING' => 'Ya existe un jugador con ese nombre',
         'LBL_VERSATILE' => 'Polivalente',
+        'LBL_COACH' => 'Coach/Analista',
     ),
     'Message' => array(
         'LBL_MESSAGES' => 'Mensajes',
