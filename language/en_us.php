@@ -139,6 +139,7 @@ $language = array(
         'LBL_REPLY' => 'Reply',
         'LBL_ACCEPT_INV' => 'Are you sure you want to accept the invitation?',
         'LBL_REFUSE_INV' => 'Are you sure you want to refuse the invitation?',
+        'LBL_READ' => 'Mark as read',
     ),
     'Trade' => array(
         'LBL_TRADE_TITLE' => 'Transfer market',

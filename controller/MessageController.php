@@ -98,4 +98,16 @@ class MessageController extends ControladorBase
         $this->redirect('Message', 'index');
     }
 
+    public function readMessage()
+    {
+        global $current_user;
+        $message = new Message();
+
+        $message->id = $_REQUEST['message']['id'];
+        $message->markread = 1;
+        $message->save();
+
+        $this->redirect('Message', 'index');
+    }
+
 }

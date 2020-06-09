@@ -139,6 +139,7 @@ $language = array(
         'LBL_REPLY' => 'Contestar',
         'LBL_ACCEPT_INV' => '¿Estás seguro de que quieres aceptar la invitación?',
         'LBL_REFUSE_INV' => '¿Estás seguro de que quieres denegar la invitación?',
+        'LBL_READ' => 'Marcar como leído',
     ),
     'Trade' => array(
         'LBL_TRADE_TITLE' => 'Movimiento de jugadores',

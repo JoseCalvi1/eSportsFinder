@@ -10,6 +10,15 @@ foreach ($messages as $message) {
             <h4 class="info-title"><?php echo $message->subject ?></h4>
             <h6><?php echo $this->helper->translate('LBL_FROM') . ' ' . $message->name . ' ' . $this->helper->translate('LBL_AT') . ' ' . date_format($date, 'H:i - d/m/y'); ?></h6>
             <p><?php echo $message->message ?></p>
+            <?php if ($message->markread == 0) { ?>
+                <form action="<?php echo $this->helper->url("Message", "readMessage"); ?>" method="POST"
+                      class="align-middle padding-5">
+                    <input type="hidden" class="form-control" id="description" name="message[id]"
+                           value="<?php echo $message->id ?>">
+                    <button type="submit" class="btn btn-outline-primary waves-effect" name="registrar" style="float: right;"
+                            value="Registrar"><?php echo $this->helper->translate('Message', 'LBL_READ'); ?></button>
+                </form>
+            <?php } ?>
             <a data-toggle="modal" href="#myModal" data-target="#edit-modal-<?php echo $message->id; ?>"
                id="<?php echo $message->id; ?>">
                 <i class="material-icons">chat</i><?php echo $this->helper->translate('Message', 'LBL_REPLY'); ?></a>

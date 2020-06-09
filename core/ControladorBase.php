@@ -90,6 +90,18 @@ class ControladorBase
         ), true);
         die;
     }
+
+    public function getNoMessages(){
+
+        global $current_user;
+        $res = '0';
+        $message = new Message();
+        $messages = $message->getInnerJoin('m.*, u.name','AS m INNER JOIN esf_users AS u ON m.id_user_from = u.id',"id_user_to='{$current_user->id}' AND markread=0", 'date_entered');
+
+        if($messages) $res = count($messages);
+
+        return $res;
+    }
 }
 
 ?>

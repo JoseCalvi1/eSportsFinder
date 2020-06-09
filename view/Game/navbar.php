@@ -30,7 +30,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="<?php echo $this->helper->url("Message", "index"); ?>" class="nav-link">
-                        <?php echo $this->helper->translate('Message', 'LBL_MESSAGES'); ?>
+                        <?php echo $this->helper->translate('Message', 'LBL_MESSAGES') . ' <span style="color: #ff0000;font-weight: bold">(' . $this->getNoMessages() . ')</span>'; ?>
                     </a>
                 </li>
                 <li class="nav-item">

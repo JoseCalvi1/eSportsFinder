@@ -16,6 +16,7 @@ class Message extends ModeloBase
             'message' => '',
             'status' => '',
             'accepted' => '',
+            'markread' => '',
         );
         parent::__construct($this->table, $this->fields, $id);
     }
